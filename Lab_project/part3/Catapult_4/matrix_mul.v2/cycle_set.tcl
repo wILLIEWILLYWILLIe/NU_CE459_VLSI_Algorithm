@@ -1,0 +1,145 @@
+
+# Loop constraints
+directive set /matrix_mul/core/core:rlp CSTEPS_FROM {{. == 0}}
+directive set /matrix_mul/core/core:rlp/main CSTEPS_FROM {{. == 2} {.. == 0}}
+directive set /matrix_mul/core/core:rlp/main/for CSTEPS_FROM {{. == 1} {.. == 1}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for CSTEPS_FROM {{. == 35} {.. == 0}}
+
+# IO operation constraints
+
+# Sync operation constraints
+
+# Real operation constraints
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@) CSTEPS_FROM {{.. == 1}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@) CSTEPS_FROM {{.. == 1}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-1:mul CSTEPS_FROM {{.. == 2}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#1 CSTEPS_FROM {{.. == 2}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#1 CSTEPS_FROM {{.. == 2}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-2:mul CSTEPS_FROM {{.. == 3}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-2:acc#7 CSTEPS_FROM {{.. == 4}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#2 CSTEPS_FROM {{.. == 3}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#2 CSTEPS_FROM {{.. == 3}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-3:mul CSTEPS_FROM {{.. == 4}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-3:acc#7 CSTEPS_FROM {{.. == 5}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#3 CSTEPS_FROM {{.. == 4}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#3 CSTEPS_FROM {{.. == 4}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-4:mul CSTEPS_FROM {{.. == 5}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-4:acc#7 CSTEPS_FROM {{.. == 6}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#4 CSTEPS_FROM {{.. == 5}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#4 CSTEPS_FROM {{.. == 5}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-5:mul CSTEPS_FROM {{.. == 6}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-5:acc#7 CSTEPS_FROM {{.. == 7}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#5 CSTEPS_FROM {{.. == 6}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#5 CSTEPS_FROM {{.. == 6}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-6:mul CSTEPS_FROM {{.. == 7}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-6:acc#7 CSTEPS_FROM {{.. == 8}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#6 CSTEPS_FROM {{.. == 7}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#6 CSTEPS_FROM {{.. == 7}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-7:mul CSTEPS_FROM {{.. == 8}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-7:acc#7 CSTEPS_FROM {{.. == 9}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#7 CSTEPS_FROM {{.. == 8}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#7 CSTEPS_FROM {{.. == 8}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-8:mul CSTEPS_FROM {{.. == 9}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-8:acc#7 CSTEPS_FROM {{.. == 10}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#8 CSTEPS_FROM {{.. == 9}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#8 CSTEPS_FROM {{.. == 9}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-9:mul CSTEPS_FROM {{.. == 10}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-9:acc#7 CSTEPS_FROM {{.. == 11}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#9 CSTEPS_FROM {{.. == 10}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#9 CSTEPS_FROM {{.. == 10}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-10:mul CSTEPS_FROM {{.. == 11}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-10:acc#7 CSTEPS_FROM {{.. == 12}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#10 CSTEPS_FROM {{.. == 11}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#10 CSTEPS_FROM {{.. == 11}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-11:mul CSTEPS_FROM {{.. == 12}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-11:acc#7 CSTEPS_FROM {{.. == 13}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#11 CSTEPS_FROM {{.. == 12}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#11 CSTEPS_FROM {{.. == 12}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-12:mul CSTEPS_FROM {{.. == 13}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-12:acc#7 CSTEPS_FROM {{.. == 14}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#12 CSTEPS_FROM {{.. == 13}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#12 CSTEPS_FROM {{.. == 13}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-13:mul CSTEPS_FROM {{.. == 14}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-13:acc#7 CSTEPS_FROM {{.. == 15}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#13 CSTEPS_FROM {{.. == 14}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#13 CSTEPS_FROM {{.. == 14}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-14:mul CSTEPS_FROM {{.. == 15}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-14:acc#7 CSTEPS_FROM {{.. == 16}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#14 CSTEPS_FROM {{.. == 15}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#14 CSTEPS_FROM {{.. == 15}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-15:mul CSTEPS_FROM {{.. == 16}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-15:acc#7 CSTEPS_FROM {{.. == 17}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#15 CSTEPS_FROM {{.. == 16}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#15 CSTEPS_FROM {{.. == 16}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-16:mul CSTEPS_FROM {{.. == 17}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-16:acc#7 CSTEPS_FROM {{.. == 18}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#16 CSTEPS_FROM {{.. == 17}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#16 CSTEPS_FROM {{.. == 17}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-17:mul CSTEPS_FROM {{.. == 18}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-17:acc#7 CSTEPS_FROM {{.. == 19}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#17 CSTEPS_FROM {{.. == 18}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#17 CSTEPS_FROM {{.. == 18}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-18:mul CSTEPS_FROM {{.. == 19}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-18:acc#7 CSTEPS_FROM {{.. == 20}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#18 CSTEPS_FROM {{.. == 19}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#18 CSTEPS_FROM {{.. == 19}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-19:mul CSTEPS_FROM {{.. == 20}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-19:acc#7 CSTEPS_FROM {{.. == 21}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#19 CSTEPS_FROM {{.. == 20}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#19 CSTEPS_FROM {{.. == 20}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-20:mul CSTEPS_FROM {{.. == 21}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-20:acc#7 CSTEPS_FROM {{.. == 22}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#20 CSTEPS_FROM {{.. == 21}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#20 CSTEPS_FROM {{.. == 21}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-21:mul CSTEPS_FROM {{.. == 22}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-21:acc#7 CSTEPS_FROM {{.. == 23}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#21 CSTEPS_FROM {{.. == 22}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#21 CSTEPS_FROM {{.. == 22}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-22:mul CSTEPS_FROM {{.. == 23}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-22:acc#7 CSTEPS_FROM {{.. == 24}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#22 CSTEPS_FROM {{.. == 23}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#22 CSTEPS_FROM {{.. == 23}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-23:mul CSTEPS_FROM {{.. == 24}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-23:acc#7 CSTEPS_FROM {{.. == 25}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#23 CSTEPS_FROM {{.. == 24}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#23 CSTEPS_FROM {{.. == 24}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-24:mul CSTEPS_FROM {{.. == 25}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-24:acc#7 CSTEPS_FROM {{.. == 26}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#24 CSTEPS_FROM {{.. == 25}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#24 CSTEPS_FROM {{.. == 25}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-25:mul CSTEPS_FROM {{.. == 26}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-25:acc#7 CSTEPS_FROM {{.. == 27}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#25 CSTEPS_FROM {{.. == 26}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#25 CSTEPS_FROM {{.. == 26}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-26:mul CSTEPS_FROM {{.. == 27}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-26:acc#7 CSTEPS_FROM {{.. == 28}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#26 CSTEPS_FROM {{.. == 27}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#26 CSTEPS_FROM {{.. == 27}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-27:mul CSTEPS_FROM {{.. == 28}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-27:acc#7 CSTEPS_FROM {{.. == 29}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#27 CSTEPS_FROM {{.. == 28}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#27 CSTEPS_FROM {{.. == 28}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-28:mul CSTEPS_FROM {{.. == 29}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-28:acc#7 CSTEPS_FROM {{.. == 30}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#28 CSTEPS_FROM {{.. == 29}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#28 CSTEPS_FROM {{.. == 29}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-29:mul CSTEPS_FROM {{.. == 30}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-29:acc#7 CSTEPS_FROM {{.. == 31}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#29 CSTEPS_FROM {{.. == 30}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#29 CSTEPS_FROM {{.. == 30}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-30:mul CSTEPS_FROM {{.. == 31}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-30:acc#7 CSTEPS_FROM {{.. == 32}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#30 CSTEPS_FROM {{.. == 31}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#30 CSTEPS_FROM {{.. == 31}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-31:mul CSTEPS_FROM {{.. == 32}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-31:acc#7 CSTEPS_FROM {{.. == 33}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(A:rsc.@)#31 CSTEPS_FROM {{.. == 32}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for:read_mem(B:rsc.@)#31 CSTEPS_FROM {{.. == 32}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-32:mul CSTEPS_FROM {{.. == 33}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-32:acc#7 CSTEPS_FROM {{.. == 34}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:for-32:acc#3 CSTEPS_FROM {{.. == 34}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:write_mem(C:rsc.@) CSTEPS_FROM {{.. == 34}}
+directive set /matrix_mul/core/core:rlp/main/for/for:for/for:for:acc#2 CSTEPS_FROM {{.. == 1}}
+directive set /matrix_mul/core/core:rlp/main/for/for:acc#1 CSTEPS_FROM {{.. == 1}}
+
+# Probe constraints

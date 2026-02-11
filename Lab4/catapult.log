@@ -1,0 +1,1261 @@
+//  Catapult Ultra Synthesis 10.4a/835166 (Production Release) Thu Sep  5 21:35:46 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux gel8580@finagle.wot.ece.northwestern.edu 4.18.0-553.78.1.el8_10.x86_64 x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_1.0, HLS_PKGS v23.4_1.0, 
+//                       SIF_TOOLKITS v23.4_1.0, SIF_XILINX v23.4_1.0, 
+//                       SIF_ALTERA v23.4_1.0, CCS_LIBS v23.4_1.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4a, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Thu Nov  6 19:23:57 2025
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log1573466f432156a.0"
+dofile /home/gel8580/CE459/Lab4/directives_mem_merge.tcl
+dofile /home/gel8580/CE459/Lab4/directives_mem_merge.tcl
+# > solution new -state initial
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# solution.v2
+# > solution options defaults
+# > flow package require /SCVerify
+# 10.4
+# > flow package option set /SCVerify/USE_CCS_BLOCK true
+# true
+# > flow package option set /SCVerify/USE_NCSIM true
+# true
+# > flow package option set /SCVerify/USE_VCS true
+# true
+# > solution options set /Output/GenerateCycleNetlist false
+# false
+# > solution file add ./test.cpp -type C++
+# /INPUTFILES/1
+# > solution file add ./tb.cpp -type C++ -exclude true
+# /INPUTFILES/2
+# > directive set -DESIGN_GOAL area
+# /DESIGN_GOAL area
+# > directive set -SPECULATE true
+# /SPECULATE true
+# > directive set -MERGEABLE true
+# /MERGEABLE true
+# > directive set -REGISTER_THRESHOLD 256
+# /REGISTER_THRESHOLD 256
+# > directive set -MEM_MAP_THRESHOLD 32
+# /MEM_MAP_THRESHOLD 32
+# > directive set -LOGIC_OPT false
+# /LOGIC_OPT false
+# > directive set -FSM_ENCODING none
+# /FSM_ENCODING none
+# > directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+# /FSM_BINARY_ENCODING_THRESHOLD 64
+# > directive set -REG_MAX_FANOUT 0
+# /REG_MAX_FANOUT 0
+# > directive set -NO_X_ASSIGNMENTS true
+# /NO_X_ASSIGNMENTS true
+# > directive set -SAFE_FSM false
+# /SAFE_FSM false
+# > directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+# /REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+# > directive set -REGISTER_SHARING_LIMIT 0
+# /REGISTER_SHARING_LIMIT 0
+# > directive set -ASSIGN_OVERHEAD 0
+# /ASSIGN_OVERHEAD 0
+# > directive set -TIMING_CHECKS true
+# /TIMING_CHECKS true
+# > directive set -MUXPATH true
+# /MUXPATH true
+# > directive set -REALLOC true
+# /REALLOC true
+# > directive set -UNROLL no
+# /UNROLL no
+# > directive set -IO_MODE super
+# /IO_MODE super
+# > directive set -CHAN_IO_PROTOCOL standard
+# /CHAN_IO_PROTOCOL standard
+# > directive set -ARRAY_SIZE 1024
+# /ARRAY_SIZE 1024
+# > directive set -REGISTER_IDLE_SIGNAL false
+# /REGISTER_IDLE_SIGNAL false
+# > directive set -IDLE_SIGNAL {}
+# /IDLE_SIGNAL {}
+# > directive set -STALL_FLAG false
+# /STALL_FLAG false
+# > directive set -TRANSACTION_DONE_SIGNAL true
+# /TRANSACTION_DONE_SIGNAL true
+# > directive set -DONE_FLAG {}
+# /DONE_FLAG {}
+# > directive set -READY_FLAG {}
+# /READY_FLAG {}
+# > directive set -START_FLAG {}
+# /START_FLAG {}
+# > directive set -BLOCK_SYNC none
+# /BLOCK_SYNC none
+# > directive set -TRANSACTION_SYNC ready
+# /TRANSACTION_SYNC ready
+# > directive set -DATA_SYNC none
+# /DATA_SYNC none
+# > directive set -RESET_CLEARS_ALL_REGS true
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+# /RESET_CLEARS_ALL_REGS yes
+# > directive set -CLOCK_OVERHEAD 20.000000
+# /CLOCK_OVERHEAD 20.000000
+# > directive set -OPT_CONST_MULTS use_library
+# /OPT_CONST_MULTS use_library
+# > directive set -CHARACTERIZE_ROM false
+# /CHARACTERIZE_ROM false
+# > directive set -PROTOTYPE_ROM true
+# /PROTOTYPE_ROM true
+# > directive set -ROM_THRESHOLD 64
+# /ROM_THRESHOLD 64
+# > directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# /CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# > directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+# /CLUSTER_OPT_CONSTANT_INPUTS true
+# > directive set -CLUSTER_RTL_SYN false
+# /CLUSTER_RTL_SYN false
+# > directive set -CLUSTER_FAST_MODE false
+# /CLUSTER_FAST_MODE false
+# > directive set -CLUSTER_TYPE combinational
+# /CLUSTER_TYPE combinational
+# > directive set -COMPGRADE fast
+# /COMPGRADE fast
+# > directive set -PIPELINE_RAMP_UP true
+# /PIPELINE_RAMP_UP true
+# > go new
+# > directive set -DESIGN_HIERARCHY test
+# solution design add test -type top -unlocked (HC-1)
+# /DESIGN_HIERARCHY test
+# > go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Moving session transcript to file "/home/gel8580/CE459/Lab4/catapult.log"
+# Front End called with arguments: -- /home/gel8580/CE459/Lab4/test.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# Source file analysis completed (CIN-68)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 0.63 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# $PROJECT_HOME/test.cpp(4): Found top design routine 'test' specified by directive (CIN-52)
+# $PROJECT_HOME/test.cpp(4): Found top design routine 'test' specified by directive (CIN-52)
+# $PROJECT_HOME/test.cpp(4): Synthesizing routine 'test' (CIN-13)
+# $PROJECT_HOME/test.cpp(4): Inlining routine 'test' (CIN-14)
+# $PROJECT_HOME/test.cpp(10): Pragma 'hls_unroll<yes>' detected on '/test/core/SHIFT' (CIN-203)
+# $PROJECT_HOME/test.cpp(4): Optimizing block '/test' ... (CIN-4)
+# $PROJECT_HOME/test.cpp(4): INOUT port 'data_in' is only used as an input. (OPT-10)
+# $PROJECT_HOME/test.cpp(4): INOUT port 'coeffs' is only used as an input. (OPT-10)
+# $PROJECT_HOME/test.cpp(5): INOUT port 'coeff_addr' is only used as an input. (OPT-10)
+# $PROJECT_HOME/test.cpp(5): INOUT port 'result' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/test': (Total ops = 49, Real ops = 11, Vars = 26) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 43, Real ops = 11, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 43, Real ops = 11, Vars = 21) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'pref' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(15): Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(19): Splitting object 'pref#3' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(19): Splitting object 'pref:pref.pref#2' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'pref#4' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(19): Splitting object 'pref:pref.pref#3' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(19): Splitting object 'pref:pref.pref.pref#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(19): Splitting object 'MAC:acc.tdx' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 39, Real ops = 10, Vars = 25) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 70, Real ops = 10, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 70, Real ops = 10, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 70, Real ops = 10, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 70, Real ops = 10, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 70, Real ops = 10, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' iterated at most 4 times. (LOOP-2)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' iterated at most 4 times. (LOOP-2)
+# Info: Optimizing partition '/test/core': (Total ops = 44, Real ops = 10, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 36, Real ops = 6, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 36, Real ops = 6, Vars = 10) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(11): Splitting object 'SHIFT:i' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(18): Splitting object 'MAC:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 34, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 34, Real ops = 6, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 34, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 34, Real ops = 6, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 34, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 34, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 34, Real ops = 6, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 34, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 34, Real ops = 6, Vars = 6) (SOL-10)
+# Design 'test' was read (SOL-1)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v1/CDesignChecker/design_checker.sh'
+# Info: Completed transformation 'compile' on solution 'test.v1': elapsed time 0.50 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# > solution library add ccs_sample_mem -file {$MGC_HOME/pkgs/siflibs/ccs_sample_mem.lib}
+# > go libraries
+# Info: Starting transformation 'libraries' on solution 'test.v1' (SOL-8)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib' [nangate-45nm_beh]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/ccs_sample_mem.lib' [ccs_sample_mem]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Info: Completed transformation 'libraries' on solution 'test.v1': elapsed time 0.21 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > directive set -CLOCKS {clk {-CLOCK_PERIOD 3.33 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 1.665 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# /CLOCKS {clk {-CLOCK_PERIOD 3.33 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 1.665 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# > go assembly
+# Info: Starting transformation 'assembly' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 35, Real ops = 7, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 35, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'test.v1': elapsed time 0.03 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > directive set /test/core/main -PIPELINE_INIT_INTERVAL 1
+# /test/core/main/PIPELINE_INIT_INTERVAL 1
+# > directive set /test/coeffs:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+# /test/coeffs:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+# > go extract
+# Info: Starting transformation 'loops' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 4, Vars = 5) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 4, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 4, Vars = 12) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v1': elapsed time 0.04 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v1' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 128 x 7). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 30, Real ops = 4, Vars = 15) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 4, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 28, Real ops = 4, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 28, Real ops = 4, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 28, Real ops = 4, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 28, Real ops = 4, Vars = 14) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v1': elapsed time 0.04 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v1': elapsed time 0.01 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 5, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 36, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 32, Real ops = 4, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 118, Real ops = 15, Vars = 61) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 13, Vars = 18) (SOL-10)
+# Design 'test' contains '14' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v1': elapsed time 0.08 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test.cpp(4): Initial schedule of SEQUENTIAL '/test/core': Latency = 5, Area (Datapath, Register, Total) = 847.66, 497.25, 1344.91 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 837.64, 497.25, 1334.89 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 828.08, 497.25, 1325.33 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 826.89, 497.25, 1324.14 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 737.97, 497.25, 1235.22 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 703.12, 497.25, 1200.37 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 623.57, 497.25, 1120.82 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 595.92, 497.25, 1093.17 (CRAAS-10)
+# Info: $PROJECT_HOME/test.cpp(4): Final schedule of SEQUENTIAL '/test/core': Latency = 5, Area (Datapath, Register, Total) = 595.92, 497.25, 1093.17 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test.v1': elapsed time 0.05 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'test.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Global signal 'data_in:rsc.rdy' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.vld' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.dat' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(13): Creating buffer for wait controller for component 'data_in:rsc' (SCHD-46)
+# Global signal 'coeffs:rsc.q' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.we' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.d' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.adr' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc' (SCHD-46)
+# Global signal 'coeff_addr:rsc.rdy' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.vld' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.dat' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(9): Creating buffer for wait controller for component 'coeff_addr:rsc' (SCHD-46)
+# Global signal 'result:rsc.rdy' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.vld' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.dat' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.triosy.lz' added to design 'test' for component 'coeffs:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test': (Total ops = 528, Real ops = 100, Vars = 364) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'coeffs:rsci.adr_d.core' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(18): Splitting object 'MAC:i(2:0).lpi#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(18): Splitting object 'MAC:i(2:0).lpi#1.dfm' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 137, Real ops = 14, Vars = 31) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 111, Real ops = 14, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 415, Real ops = 61, Vars = 305) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 373, Real ops = 61, Vars = 265) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 351, Real ops = 58, Vars = 243) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'coeffs:conc.tmp' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 344, Real ops = 58, Vars = 237) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 339, Real ops = 58, Vars = 232) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 100, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 331, Real ops = 58, Vars = 230) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'test.v1': elapsed time 0.46 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'test.v1' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 134, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 387, Real ops = 125, Vars = 337) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 353, Real ops = 133, Vars = 245) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 319, Real ops = 113, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 314, Real ops = 113, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 329, Real ops = 113, Vars = 224) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 323, Real ops = 113, Vars = 214) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 108, Vars = 208) (SOL-10)
+# Warning: Extrapolation detected. Script '/home/gel8580/CE459/Lab4/Catapult/test.v1/adjust_char_library.tcl' generated. (LIB-142)
+# Info: Completed transformation 'dpfsm' on solution 'test.v1': elapsed time 0.24 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'test.v1' (SOL-8)
+# Reassigned operation MAC:acc#2:mgc_add(19,0,17,1,19,3) to mgc_add(19,0,17,1,19,4) (ASG-1)
+# Reassigned operation MAC:acc#3:mgc_add(2,0,2,1,3,3) to mgc_add(2,0,1,0,3,1) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 318, Real ops = 110, Vars = 296) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 311, Real ops = 107, Vars = 211) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 107, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 306, Real ops = 105, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 212) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'test.v1': elapsed time 0.37 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 287) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v1/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v1/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_ncsim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_vcs.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_ncsim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_vcs.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v1/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v1/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_ncsim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_vcs.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_ncsim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_vcs.mk'
+# Info: Completed transformation 'extract' on solution 'test.v1': elapsed time 2.89 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > end dofile /home/gel8580/CE459/Lab4/directives_mem_merge.tcl
+go assembly
+directive set /test/core/MAC -UNROLL yes
+# Info: Branching solution 'test.v2' at state 'assembly' (PRJ-2)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v2/CDesignChecker/design_checker.sh'
+# /test/core/MAC/UNROLL yes
+go extract
+# Info: Starting transformation 'loops' on solution 'test.v2' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v2': elapsed time 0.05 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v2' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 128 x 7). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 33, Real ops = 6, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 33, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v2': elapsed time 0.04 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v2' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v2': elapsed time 0.02 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v2' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 81, Real ops = 6, Vars = 38) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 8) (SOL-10)
+# Design 'test' contains '8' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v2': elapsed time 0.03 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v2' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Error:  insufficient resources 'ccs_sample_mem.ccs_ram_sync_singleport_rwport(2,7,7,128,128,7,5)' to schedule '/test/core'. 4 are needed, but only 1 instances are available (SCHD-4)
+# Error: $PROJECT_HOME/test.cpp(4):  please merge accesses to 'coeffs:rsc' to reduce the number of required resources (SCHD-39)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'architect' on solution 'test.v2': elapsed time 0.17 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Error: Design 'test' could not schedule partition '/test/core' - resource competition
+go allocate
+# Info: Starting transformation 'allocate' on solution 'test.v2' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Error:  insufficient resources 'ccs_sample_mem.ccs_ram_sync_singleport_rwport(2,7,7,128,128,7,5)' to schedule '/test/core'. 4 are needed, but only 1 instances are available (SCHD-4)
+# Error: $PROJECT_HOME/test.cpp(4):  please merge accesses to 'coeffs:rsc' to reduce the number of required resources (SCHD-39)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'architect' on solution 'test.v2': elapsed time 0.11 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Error: Design 'test' could not schedule partition '/test/core' - resource competition
+go assembly
+directive set /test/core/MAC -UNROLL no
+# Info: Branching solution 'test.v3' at state 'assembly' (PRJ-2)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v3/CDesignChecker/design_checker.sh'
+# /test/core/MAC/UNROLL no
+go extract
+# Info: Starting transformation 'loops' on solution 'test.v3' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 4, Vars = 5) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 4, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 4, Vars = 12) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v3': elapsed time 0.05 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v3' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 128 x 7). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 30, Real ops = 4, Vars = 15) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 4, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 28, Real ops = 4, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 28, Real ops = 4, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 28, Real ops = 4, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 28, Real ops = 4, Vars = 14) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v3': elapsed time 0.04 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v3' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v3': elapsed time 0.01 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v3' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 5, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 36, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 32, Real ops = 4, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 118, Real ops = 15, Vars = 61) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 13, Vars = 18) (SOL-10)
+# Design 'test' contains '14' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v3': elapsed time 0.07 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v3' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test.cpp(4): Initial schedule of SEQUENTIAL '/test/core': Latency = 5, Area (Datapath, Register, Total) = 847.66, 497.25, 1344.91 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 837.64, 497.25, 1334.89 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 828.08, 497.25, 1325.33 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 826.89, 497.25, 1324.14 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 737.97, 497.25, 1235.22 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 703.12, 497.25, 1200.37 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 623.57, 497.25, 1120.82 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 595.92, 497.25, 1093.17 (CRAAS-10)
+# Info: $PROJECT_HOME/test.cpp(4): Final schedule of SEQUENTIAL '/test/core': Latency = 5, Area (Datapath, Register, Total) = 595.92, 497.25, 1093.17 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test.v3': elapsed time 0.05 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'test.v3' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Global signal 'data_in:rsc.rdy' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.vld' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.dat' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(13): Creating buffer for wait controller for component 'data_in:rsc' (SCHD-46)
+# Global signal 'coeffs:rsc.q' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.we' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.d' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.adr' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc' (SCHD-46)
+# Global signal 'coeff_addr:rsc.rdy' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.vld' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.dat' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(9): Creating buffer for wait controller for component 'coeff_addr:rsc' (SCHD-46)
+# Global signal 'result:rsc.rdy' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.vld' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.dat' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.triosy.lz' added to design 'test' for component 'coeffs:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test': (Total ops = 528, Real ops = 100, Vars = 364) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'coeffs:rsci.adr_d.core' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(18): Splitting object 'MAC:i(2:0).lpi#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(18): Splitting object 'MAC:i(2:0).lpi#1.dfm' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 137, Real ops = 14, Vars = 31) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 111, Real ops = 14, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 415, Real ops = 61, Vars = 305) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 373, Real ops = 61, Vars = 265) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 351, Real ops = 58, Vars = 243) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'coeffs:conc.tmp' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 344, Real ops = 58, Vars = 237) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 339, Real ops = 58, Vars = 232) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 108, Real ops = 9, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 100, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 331, Real ops = 58, Vars = 230) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'test.v3': elapsed time 0.49 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'test.v3' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 134, Real ops = 9, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 387, Real ops = 125, Vars = 337) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 353, Real ops = 133, Vars = 245) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 319, Real ops = 113, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 314, Real ops = 113, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 329, Real ops = 113, Vars = 224) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 323, Real ops = 113, Vars = 214) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 111, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 316, Real ops = 108, Vars = 208) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'test.v3': elapsed time 0.24 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'test.v3' (SOL-8)
+# Reassigned operation MAC:acc#2:mgc_add(19,0,17,1,19,3) to mgc_add(19,0,17,1,19,4) (ASG-1)
+# Reassigned operation MAC:acc#3:mgc_add(2,0,2,1,3,3) to mgc_add(2,0,1,0,3,1) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 318, Real ops = 110, Vars = 296) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 311, Real ops = 107, Vars = 211) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 107, Vars = 208) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 306, Real ops = 105, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 212) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'test.v3': elapsed time 0.41 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'test.v3' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 287) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 309, Real ops = 108, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v3/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v3/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_ncsim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_vcs.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_ncsim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_vcs.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v3/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v3/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_ncsim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_vcs.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_ncsim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_vcs.mk'
+# Info: Completed transformation 'extract' on solution 'test.v3': elapsed time 3.03 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+go assembly
+directive set /test/core/MAC -UNROLL yes
+# Info: Branching solution 'test.v4' at state 'assembly' (PRJ-2)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v4/CDesignChecker/design_checker.sh'
+# /test/core/MAC/UNROLL yes
+go extract
+# Info: Starting transformation 'loops' on solution 'test.v4' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v4': elapsed time 0.04 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v4' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 128 x 7). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 33, Real ops = 6, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 33, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v4': elapsed time 0.05 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v4' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v4': elapsed time 0.02 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v4' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 81, Real ops = 6, Vars = 38) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 8) (SOL-10)
+# Design 'test' contains '8' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v4': elapsed time 0.03 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v4' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Error:  insufficient resources 'ccs_sample_mem.ccs_ram_sync_singleport_rwport(2,7,7,128,128,7,5)' to schedule '/test/core'. 4 are needed, but only 1 instances are available (SCHD-4)
+# Error: $PROJECT_HOME/test.cpp(4):  please merge accesses to 'coeffs:rsc' to reduce the number of required resources (SCHD-39)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'architect' on solution 'test.v4': elapsed time 0.22 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Error: Design 'test' could not schedule partition '/test/core' - resource competition
+go assembly
+directive set /test/core/main -PIPELINE_INIT_INTERVAL 0
+# Info: Branching solution 'test.v5' at state 'assembly' (PRJ-2)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v5/CDesignChecker/design_checker.sh'
+# /test/core/main/PIPELINE_INIT_INTERVAL 0
+go allocate
+# Info: Starting transformation 'loops' on solution 'test.v5' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v5': elapsed time 0.05 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v5' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 128 x 7). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 33, Real ops = 6, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 33, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v5': elapsed time 0.04 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v5' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v5': elapsed time 0.02 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v5' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 81, Real ops = 6, Vars = 38) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 8) (SOL-10)
+# Design 'test' contains '8' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v5': elapsed time 0.03 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v5' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test.cpp(4): Initial schedule of SEQUENTIAL '/test/core': Latency = 5, Area (Datapath, Register, Total) = 838.96, 510.00, 1348.96 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 750.04, 510.00, 1260.04 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 711.75, 510.00, 1221.75 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 670.30, 510.00, 1180.30 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 590.75, 510.00, 1100.75 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 570.84, 510.00, 1080.84 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 5, Area (Datapath, Register, Total) = 570.84, 510.00, 1080.84 (CRAAS-10)
+# Info: $PROJECT_HOME/test.cpp(4): Final schedule of SEQUENTIAL '/test/core': Latency = 5, Area (Datapath, Register, Total) = 570.84, 510.00, 1080.84 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test.v5': elapsed time 0.04 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+go assembly
+directive set /test/coeffs -WORD_WIDTH 28
+# Info: Branching solution 'test.v6' at state 'assembly' (PRJ-2)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v6/CDesignChecker/design_checker.sh'
+# /test/coeffs/WORD_WIDTH 28
+directive set /test/core/main -PIPELINE_INIT_INTERVAL 1
+# /test/core/main/PIPELINE_INIT_INTERVAL 1
+go extract
+# Info: Starting transformation 'loops' on solution 'test.v6' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v6': elapsed time 0.05 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v6' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 32 x 28). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 33, Real ops = 6, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 33, Real ops = 6, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 26, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 26, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 26, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 26, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v6': elapsed time 0.04 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v6' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v6': elapsed time 0.01 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v6' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 78, Real ops = 6, Vars = 38) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27, Real ops = 6, Vars = 8) (SOL-10)
+# Design 'test' contains '8' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v6': elapsed time 0.03 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v6' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test.cpp(4): Initial schedule of SEQUENTIAL '/test/core': Latency = 2, Area (Datapath, Register, Total) = 2465.84, 510.00, 2975.84 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 2110.17, 510.00, 2620.17 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 2068.72, 510.00, 2578.72 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 1992.13, 510.00, 2502.13 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 1673.93, 510.00, 2183.93 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 1653.31, 510.00, 2163.31 (CRAAS-10)
+# Info: $PROJECT_HOME/test.cpp(4): Final schedule of SEQUENTIAL '/test/core': Latency = 2, Area (Datapath, Register, Total) = 1653.31, 510.00, 2163.31 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test.v6': elapsed time 0.08 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'test.v6' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Global signal 'data_in:rsc.rdy' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.vld' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.dat' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(13): Creating buffer for wait controller for component 'data_in:rsc' (SCHD-46)
+# Global signal 'coeffs:rsc.q' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.we' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.d' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.adr' added to design 'test' for component 'coeffs:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc' (SCHD-46)
+# Global signal 'coeff_addr:rsc.rdy' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.vld' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.dat' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(9): Creating buffer for wait controller for component 'coeff_addr:rsc' (SCHD-46)
+# Global signal 'result:rsc.rdy' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.vld' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.dat' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'coeffs:rsc.triosy.lz' added to design 'test' for component 'coeffs:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test': (Total ops = 498, Real ops = 94, Vars = 354) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 106, Real ops = 8, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 95, Real ops = 8, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 94, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 400, Real ops = 60, Vars = 297) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 94, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 358, Real ops = 60, Vars = 257) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 94, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 336, Real ops = 57, Vars = 234) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 94, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 328, Real ops = 57, Vars = 227) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 94, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 325, Real ops = 57, Vars = 224) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 94, Real ops = 8, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 86, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 317, Real ops = 57, Vars = 222) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'test.v6': elapsed time 0.40 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'test.v6' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 112, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 333, Real ops = 98, Vars = 278) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 290, Real ops = 91, Vars = 225) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 260, Real ops = 76, Vars = 194) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 257, Real ops = 77, Vars = 193) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 273, Real ops = 78, Vars = 210) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 266, Real ops = 78, Vars = 199) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 260, Real ops = 76, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 260, Real ops = 76, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 260, Real ops = 76, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 260, Real ops = 76, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 260, Real ops = 76, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 258, Real ops = 72, Vars = 195) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'test.v6': elapsed time 0.24 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'test.v6' (SOL-8)
+# Reassigned operation MAC:acc#4:mgc_add(17,1,17,1,18,2) to mgc_add(17,1,17,1,18,4) (ASG-1)
+# Reassigned operation MAC:acc:mgc_add(17,1,17,1,18,2) to mgc_add(17,1,17,1,18,4) (ASG-1)
+# Reassigned operation MAC-4:acc#2:mgc_add(18,1,18,1,19,3) to mgc_add(18,1,18,1,19,2) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 258, Real ops = 72, Vars = 236) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 258, Real ops = 72, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 198) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'test.v6': elapsed time 0.41 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'test.v6' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 239) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 261, Real ops = 75, Vars = 195) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v6/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v6/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_ncsim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_vcs.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_ncsim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_vcs.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v6/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v6/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_ncsim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_vcs.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_ncsim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_vcs.mk'
+# Info: Completed transformation 'extract' on solution 'test.v6': elapsed time 3.03 seconds, memory usage 1292928kB, peak memory usage 1293952kB (SOL-9)
+go assembly
+directive set /test/coeffs:rsc -INTERLEAVE 4
+# Info: Branching solution 'test.v7' at state 'assembly' (PRJ-2)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab4/Catapult/test.v7/CDesignChecker/design_checker.sh'
+# /test/coeffs:rsc/INTERLEAVE 4
+directive set /test/coeffs -WORD_WIDTH 7
+# /test/coeffs/WORD_WIDTH 7
+go extract
+# Info: Starting transformation 'loops' on solution 'test.v7' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/SHIFT' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 7, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test.cpp(18): Loop '/test/core/MAC' is being fully unrolled (4 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 85, Real ops = 16, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 115, Real ops = 25, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 30, Real ops = 6, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 29, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 29, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v7': elapsed time 0.05 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v7' (SOL-8)
+# $PROJECT_HOME/test.cpp(4): Resource '/test/coeffs:rsc' split into 1 x 4 blocks (MEM-11)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc(0)(0)' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 32 x 7). (MEM-4)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc(0)(1)' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 32 x 7). (MEM-4)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc(0)(2)' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 32 x 7). (MEM-4)
+# $PROJECT_HOME/test.cpp(4): Memory Resource '/test/coeffs:rsc(0)(3)' (from var: coeffs) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 32 x 7). (MEM-4)
+# Info: $PROJECT_HOME/test.cpp(7): Splitting object 'regs' into 4 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 51, Real ops = 6, Vars = 27) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 51, Real ops = 6, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 31, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 31, Real ops = 6, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 31, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 31, Real ops = 6, Vars = 20) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v7': elapsed time 0.04 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v7' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v7': elapsed time 0.01 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v7' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 83, Real ops = 6, Vars = 38) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 32, Real ops = 6, Vars = 8) (SOL-10)
+# Design 'test' contains '8' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v7': elapsed time 0.04 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v7' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/main' (3 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled LOOP '/test/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(4): Prescheduled SEQUENTIAL '/test/core' (total length 4 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test.cpp(4): Initial schedule of SEQUENTIAL '/test/core': Latency = 2, Area (Datapath, Register, Total) = 2465.84, 510.00, 2975.84 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 2110.17, 510.00, 2620.17 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 2068.72, 510.00, 2578.72 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 1992.13, 510.00, 2502.13 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 1673.93, 510.00, 2183.93 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 2, Area (Datapath, Register, Total) = 1653.31, 510.00, 2163.31 (CRAAS-10)
+# Info: $PROJECT_HOME/test.cpp(4): Final schedule of SEQUENTIAL '/test/core': Latency = 2, Area (Datapath, Register, Total) = 1653.31, 510.00, 2163.31 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test.v7': elapsed time 0.05 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'test.v7' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Global signal 'data_in:rsc.rdy' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.vld' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Global signal 'data_in:rsc.dat' added to design 'test' for component 'data_in:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(13): Creating buffer for wait controller for component 'data_in:rsc' (SCHD-46)
+# Global signal 'coeff_addr:rsc.rdy' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.vld' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Global signal 'coeff_addr:rsc.dat' added to design 'test' for component 'coeff_addr:rsci' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(9): Creating buffer for wait controller for component 'coeff_addr:rsc' (SCHD-46)
+# Global signal 'result:rsc.rdy' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.vld' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.dat' added to design 'test' for component 'result:rsci' (LIB-3)
+# Global signal 'coeffs:rsc(0)(0).q' added to design 'test' for component 'coeffs:rsc(0)(0)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(0).we' added to design 'test' for component 'coeffs:rsc(0)(0)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(0).d' added to design 'test' for component 'coeffs:rsc(0)(0)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(0).adr' added to design 'test' for component 'coeffs:rsc(0)(0)i' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc(0)(0)' (SCHD-46)
+# Global signal 'coeffs:rsc(0)(1).q' added to design 'test' for component 'coeffs:rsc(0)(1)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(1).we' added to design 'test' for component 'coeffs:rsc(0)(1)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(1).d' added to design 'test' for component 'coeffs:rsc(0)(1)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(1).adr' added to design 'test' for component 'coeffs:rsc(0)(1)i' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc(0)(1)' (SCHD-46)
+# Global signal 'coeffs:rsc(0)(2).q' added to design 'test' for component 'coeffs:rsc(0)(2)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(2).we' added to design 'test' for component 'coeffs:rsc(0)(2)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(2).d' added to design 'test' for component 'coeffs:rsc(0)(2)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(2).adr' added to design 'test' for component 'coeffs:rsc(0)(2)i' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc(0)(2)' (SCHD-46)
+# Global signal 'coeffs:rsc(0)(3).q' added to design 'test' for component 'coeffs:rsc(0)(3)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(3).we' added to design 'test' for component 'coeffs:rsc(0)(3)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(3).d' added to design 'test' for component 'coeffs:rsc(0)(3)i' (LIB-3)
+# Global signal 'coeffs:rsc(0)(3).adr' added to design 'test' for component 'coeffs:rsc(0)(3)i' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(19): Creating buffer for wait controller for component 'coeffs:rsc(0)(3)' (SCHD-46)
+# Global signal 'coeffs:rsc.triosy(0)(3).lz' added to design 'test' for component 'coeffs:rsc.triosy(0)(3):obj' (LIB-3)
+# Global signal 'coeffs:rsc.triosy(0)(2).lz' added to design 'test' for component 'coeffs:rsc.triosy(0)(2):obj' (LIB-3)
+# Global signal 'coeffs:rsc.triosy(0)(1).lz' added to design 'test' for component 'coeffs:rsc.triosy(0)(1):obj' (LIB-3)
+# Global signal 'coeffs:rsc.triosy(0)(0).lz' added to design 'test' for component 'coeffs:rsc.triosy(0)(0):obj' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(4): Loop '/test/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test': (Total ops = 1142, Real ops = 196, Vars = 792) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 201, Real ops = 8, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 191, Real ops = 8, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 190, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 868, Real ops = 105, Vars = 639) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 190, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 745, Real ops = 105, Vars = 512) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 190, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 675, Real ops = 93, Vars = 447) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 190, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 652, Real ops = 93, Vars = 419) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 190, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 640, Real ops = 93, Vars = 407) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 190, Real ops = 8, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 158, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 608, Real ops = 93, Vars = 399) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'test.v7': elapsed time 0.56 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'test.v7' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 202, Real ops = 8, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 580, Real ops = 152, Vars = 466) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 527, Real ops = 145, Vars = 399) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 467, Real ops = 112, Vars = 332) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 455, Real ops = 113, Vars = 331) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 455, Real ops = 113, Vars = 325) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 452, Real ops = 113, Vars = 325) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 500, Real ops = 121, Vars = 371) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 489, Real ops = 117, Vars = 344) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 464, Real ops = 112, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 464, Real ops = 112, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 464, Real ops = 112, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 464, Real ops = 112, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 464, Real ops = 112, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 462, Real ops = 108, Vars = 333) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'test.v7': elapsed time 0.38 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'test.v7' (SOL-8)
+# Reassigned operation MAC:acc#4:mgc_add(17,1,17,1,18,2) to mgc_add(17,1,17,1,18,4) (ASG-1)
+# Reassigned operation MAC:acc:mgc_add(17,1,17,1,18,2) to mgc_add(17,1,17,1,18,4) (ASG-1)
+# Reassigned operation MAC-4:acc#2:mgc_add(18,1,18,1,19,3) to mgc_add(18,1,18,1,19,2) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 462, Real ops = 108, Vars = 389) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 462, Real ops = 108, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 339) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'test.v7': elapsed time 0.64 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'test.v7' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 395) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 468, Real ops = 114, Vars = 333) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/test:core/test:core_core:fsm/test:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v7/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v7/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_ncsim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_vcs.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_ncsim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_vcs.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab4/Catapult/test.v7/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab4/Catapult/test.v7/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_ncsim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_vcs.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_ncsim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_vcs.mk'
+# Info: Completed transformation 'extract' on solution 'test.v7': elapsed time 3.67 seconds, memory usage 1358464kB, peak memory usage 1358464kB (SOL-9)
+quit
+# Saving project file '/home/gel8580/CE459/Lab4/Catapult.ccs'. (PRJ-5)
+// Finish time Thu Nov  6 19:39:53 2025, time elapsed 15:56, peak memory 1.30GB, exit status 0

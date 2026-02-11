@@ -1,0 +1,118 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
+true
+flow package option set /SCVerify/USE_CCS_BLOCK true
+true
+flow package option set /SCVerify/USE_NCSIM true
+solution options defaults
+solution.v2
+10.4
+flow package require /SCVerify
+solution file add ./matmul.cpp -type C++
+directive set -DESIGN_GOAL area
+/INPUTFILES/1
+true
+flow package option set /SCVerify/USE_VCS true
+false
+solution options set /Output/GenerateCycleNetlist false
+directive set -REGISTER_THRESHOLD 256
+/MERGEABLE true
+directive set -MEM_MAP_THRESHOLD 32
+/REGISTER_THRESHOLD 256
+directive set -SPECULATE true
+/DESIGN_GOAL area
+directive set -MERGEABLE true
+/SPECULATE true
+directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+/FSM_ENCODING none
+directive set -REG_MAX_FANOUT 0
+/FSM_BINARY_ENCODING_THRESHOLD 64
+directive set -LOGIC_OPT false
+/MEM_MAP_THRESHOLD 32
+directive set -FSM_ENCODING none
+/LOGIC_OPT false
+directive set -START_FLAG {}
+/READY_FLAG {}
+directive set -BLOCK_SYNC none
+/START_FLAG {}
+directive set -DONE_FLAG {}
+/TRANSACTION_DONE_SIGNAL true
+directive set -READY_FLAG {}
+/DONE_FLAG {}
+directive set -RESET_CLEARS_ALL_REGS true
+/DATA_SYNC none
+/RESET_CLEARS_ALL_REGS yes
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+directive set -TRANSACTION_SYNC ready
+/BLOCK_SYNC none
+directive set -DATA_SYNC none
+/TRANSACTION_SYNC ready
+/CHARACTERIZE_ROM false
+directive set -CHARACTERIZE_ROM false
+/PROTOTYPE_ROM true
+directive set -PROTOTYPE_ROM true
+/CLOCK_OVERHEAD 20.000000
+directive set -CLOCK_OVERHEAD 20.000000
+/OPT_CONST_MULTS use_library
+directive set -OPT_CONST_MULTS use_library
+/CLUSTER_OPT_CONSTANT_INPUTS true
+directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+directive set -CLUSTER_RTL_SYN false
+/ROM_THRESHOLD 64
+directive set -ROM_THRESHOLD 64
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+/SAFE_FSM false
+directive set -REGISTER_SHARING_LIMIT 0
+/REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+directive set -NO_X_ASSIGNMENTS true
+/REG_MAX_FANOUT 0
+directive set -SAFE_FSM false
+/NO_X_ASSIGNMENTS true
+directive set -MUXPATH true
+Front End called with arguments: -- /home/gel8580/CE459/Lab_project/part3/matmul.cpp (CIN-69)
+/TIMING_CHECKS true
+directive set -REALLOC true
+Source file analysis completed (CIN-68)
+/MUXPATH true
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+directive set -ASSIGN_OVERHEAD 0
+/REGISTER_SHARING_LIMIT 0
+directive set -TIMING_CHECKS true
+/ASSIGN_OVERHEAD 0
+directive set -CHAN_IO_PROTOCOL standard
+/IO_MODE super
+directive set -ARRAY_SIZE 1024
+/CHAN_IO_PROTOCOL standard
+directive set -UNROLL no
+/REALLOC true
+directive set -IO_MODE super
+/UNROLL no
+directive set -STALL_FLAG false
+/IDLE_SIGNAL {}
+directive set -TRANSACTION_DONE_SIGNAL true
+/STALL_FLAG false
+directive set -REGISTER_IDLE_SIGNAL false
+/ARRAY_SIZE 1024
+directive set -IDLE_SIGNAL {}
+/REGISTER_IDLE_SIGNAL false
+/COMPGRADE fast
+directive set -COMPGRADE fast
+/PIPELINE_RAMP_UP true
+directive set -PIPELINE_RAMP_UP true
+/CLUSTER_FAST_MODE false
+directive set -CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+directive set -CLUSTER_TYPE combinational
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+go compile
+directive set -DESIGN_HIERARCHY matrix_mul
+go new
+/DESIGN_HIERARCHY matrix_mul
+solution design add matrix_mul -type top -unlocked (HC-1)
+Moving session transcript to file "/home/gel8580/CE459/Lab_project/part3/catapult.log"

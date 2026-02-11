@@ -1,0 +1,225 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+solution file add ./conv_fixed.h -type CHEADER
+solution file add ./conv_fixed.cpp -type C++
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+go analyze
+/INPUTFILES/1
+Front End called with arguments: -- /home/gel8580/CE459/Lab_project/conv_fixed.cpp /home/gel8580/CE459/Lab_project/conv_fixed.h (CIN-69)
+/INPUTFILES/2
+Source file analysis completed (CIN-68)
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+solution options defaults
+solution.v2
+
+# Messages from "go compile"
+
+Optimizing block '/conv_fixed' ... (CIN-4)
+INOUT port 'filter' is only used as an input. (OPT-10)
+INOUT port 'output' is only used as an output. (OPT-11)
+# Info: Splitting object 'pref:input.ptr.idx.pref.pref' into 2 segments (OPT-19)
+Design 'conv_fixed' was read (SOL-1)
+# Info: Splitting object 'pref:input.ptr.idx.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 27, Real ops = 5, Vars = 5) (SOL-10)
+# Info: Splitting object 'sum:acc.tdx' into 2 segments (OPT-19)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Splitting object 'pref:input.ptr.idx.pref.pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 28, Real ops = 5, Vars = 2) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 38, Real ops = 13, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 29, Real ops = 5, Vars = 3) (SOL-10)
+# Info: Splitting object 'pref:filter.ptr.idx.pref.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 27, Real ops = 5, Vars = 2) (SOL-10)
+# Info: Splitting object 'pref:filter.ptr.idx.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 28, Real ops = 5, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 30, Real ops = 5, Vars = 2) (SOL-10)
+Loop '/conv_fixed/core/sum' iterated at most 9 times. (LOOP-2)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab_project/Catapult_1/conv_fixed.v3/CDesignChecker/design_checker.sh'
+# Info: Splitting object 'sum:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 30, Real ops = 5, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 35, Real ops = 11, Vars = 22) (SOL-10)
+# Info: Splitting object 'sum:acc.tdx#1' into 2 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 56, Real ops = 5, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 56, Real ops = 5, Vars = 2) (SOL-10)
+Found top design routine 'conv_fixed' specified by directive (CIN-52)
+Generating synthesis internal form... (CIN-3)
+Inlining routine 'conv_fixed' (CIN-14)
+Synthesizing routine 'conv_fixed' (CIN-13)
+/DESIGN_HIERARCHY conv_fixed
+solution design add conv_fixed -type top -unlocked (HC-1)
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+go compile
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 51, Real ops = 13, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 51, Real ops = 13, Vars = 26) (SOL-10)
+directive set -DESIGN_HIERARCHY conv_fixed
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 38, Real ops = 13, Vars = 14) (SOL-10)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 1.34 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 39, Real ops = 13, Vars = 14) (SOL-10)
+INOUT port 'input' is only used as an input. (OPT-10)
+
+# Messages from "go libraries"
+
+solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# Info: Completed transformation 'compile' on solution 'conv_fixed.v3': elapsed time 0.87 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Starting transformation 'libraries' on solution 'conv_fixed.v3' (SOL-8)
+go libraries
+
+# Messages from "go assembly"
+
+directive set -CLOCKS {clk {-CLOCK_PERIOD 2.5 -CLOCK_EDGE rising -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n}}
+# Info: Optimizing partition '/conv_fixed': (Total ops = 28, Real ops = 6, Vars = 7) (SOL-10)
+# Info: Completed transformation 'libraries' on solution 'conv_fixed.v3': elapsed time 0.14 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Starting transformation 'assembly' on solution 'conv_fixed.v3' (SOL-8)
+go assembly
+/CLOCKS {clk {-CLOCK_PERIOD 2.5 -CLOCK_EDGE rising -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n}}
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 28, Real ops = 6, Vars = 2) (SOL-10)
+
+# Messages from "go architect"
+
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 154, Real ops = 38, Vars = 2) (SOL-10)
+Loop '/conv_fixed/core/sum' is being fully unrolled (9 times). (LOOP-7)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 62, Real ops = 11, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 54, Real ops = 11, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 62, Real ops = 11, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 54, Real ops = 11, Vars = 9) (SOL-10)
+go extract
+# Info: Optimizing partition '/conv_fixed': (Total ops = 54, Real ops = 11, Vars = 9) (SOL-10)
+/conv_fixed/core/sum/UNROLL yes
+Loop '/conv_fixed/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 34, Real ops = 6, Vars = 2) (SOL-10)
+# Info: Starting transformation 'loops' on solution 'conv_fixed.v3' (SOL-8)
+directive set /conv_fixed/core -PIPELINE_INIT_INTERVAL 1
+# Info: Completed transformation 'assembly' on solution 'conv_fixed.v3': elapsed time 0.03 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+directive set /conv_fixed/core/sum -UNROLL yes
+/conv_fixed/core/PIPELINE_INIT_INTERVAL 1
+# Info: Optimizing partition '/conv_fixed': (Total ops = 47, Real ops = 11, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 47, Real ops = 11, Vars = 2) (SOL-10)
+# Info: Splitting object 'temp' into 9 segments (OPT-19)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 57, Real ops = 11, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 64, Real ops = 11, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 64, Real ops = 11, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 73, Real ops = 11, Vars = 9) (SOL-10)
+I/O-Port Resource '/conv_fixed/filter:rsc' (from var: filter) mapped to 'ccs_ioport.ccs_in' (size: 144). (MEM-2)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 57, Real ops = 11, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 73, Real ops = 11, Vars = 1) (SOL-10)
+# Info: Starting transformation 'memories' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'loops' on solution 'conv_fixed.v3': elapsed time 0.04 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+I/O-Port Resource '/conv_fixed/output:rsc' (from var: output) mapped to 'ccs_ioport.ccs_out' (size: 16). (MEM-2)
+I/O-Port Resource '/conv_fixed/input:rsc' (from var: input) mapped to 'ccs_ioport.ccs_in' (size: 144). (MEM-2)
+# Info: Starting transformation 'cluster' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'memories' on solution 'conv_fixed.v3': elapsed time 0.04 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Design 'conv_fixed' contains '18' real operations. (SOL-11)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 47, Real ops = 11, Vars = 2) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/core': (Total ops = 61, Real ops = 11, Vars = 10) (SOL-10)
+# Info: Starting transformation 'architect' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'conv_fixed.v3': elapsed time 0.02 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+
+# Messages from "go allocate"
+
+# Info: Starting transformation 'allocate' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'architect' on solution 'conv_fixed.v3': elapsed time 0.03 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+Performing concurrent resource allocation and scheduling on '/conv_fixed/core' (CRAAS-1)
+Resource allocation and scheduling done. (CRAAS-2)
+At least one feasible schedule exists. (CRAAS-9)
+# Info: Initial schedule of SEQUENTIAL '/conv_fixed/core': Latency = 1, Area (Datapath, Register, Total) = 16443.49, 0.00, 16443.49 (CRAAS-11)
+Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Optimized LOOP '/conv_fixed/core/main': Latency = 2, Area (Datapath, Register, Total) = 13013.75, 204.00, 13217.75 (CRAAS-10)
+# Info: Optimized LOOP '/conv_fixed/core/main': Latency = 2, Area (Datapath, Register, Total) = 10807.17, 918.00, 11725.17 (CRAAS-10)
+# Info: Optimized LOOP '/conv_fixed/core/main': Latency = 1, Area (Datapath, Register, Total) = 14610.71, 0.00, 14610.71 (CRAAS-10)
+# Info: Optimized LOOP '/conv_fixed/core/main': Latency = 2, Area (Datapath, Register, Total) = 12822.35, 306.00, 13128.35 (CRAAS-10)
+Prescheduled LOOP '/conv_fixed/core/main' (2 c-steps) (SCHD-7)
+# Info: Final schedule of SEQUENTIAL '/conv_fixed/core': Latency = 2, Area (Datapath, Register, Total) = 10681.09, 918.00, 11599.09 (CRAAS-12)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# Info: Optimized LOOP '/conv_fixed/core/main': Latency = 2, Area (Datapath, Register, Total) = 10681.09, 918.00, 11599.09 (CRAAS-10)
+Prescheduled SEQUENTIAL '/conv_fixed/core' (total length 2 c-steps) (SCHD-8)
+Prescheduled LOOP '/conv_fixed/core/core:rlp' (0 c-steps) (SCHD-7)
+
+# Messages from "go schedule"
+
+Global signal 'input:rsc.dat' added to design 'conv_fixed' for component 'input:rsci' (LIB-3)
+Global signal 'input:rsc.triosy.lz' added to design 'conv_fixed' for component 'input:rsc.triosy:obj' (LIB-3)
+Global signal 'filter:rsc.dat' added to design 'conv_fixed' for component 'filter:rsci' (LIB-3)
+# Info: Starting transformation 'schedule' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'allocate' on solution 'conv_fixed.v3': elapsed time 0.03 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Performing concurrent resource allocation and scheduling on '/conv_fixed/core' (CRAAS-1)
+# Info: Optimizing partition '/conv_fixed/conv_fixed:core/core': (Total ops = 67, Real ops = 18, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/conv_fixed:core/core': (Total ops = 73, Real ops = 18, Vars = 24) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 78, Real ops = 18, Vars = 34) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/conv_fixed:core/core': (Total ops = 58, Real ops = 18, Vars = 12) (SOL-10)
+Global signal 'filter:rsc.triosy.lz' added to design 'conv_fixed' for component 'filter:rsc.triosy:obj' (LIB-3)
+Global signal 'output:rsc.triosy.lz' added to design 'conv_fixed' for component 'output:rsc.triosy:obj' (LIB-3)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 93, Real ops = 18, Vars = 46) (SOL-10)
+# Info: Loop '/conv_fixed/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+Report written to file 'cycle.rpt'
+Global signal 'output:rsc.dat' added to design 'conv_fixed' for component 'output:rsci' (LIB-3)
+
+# Messages from "go dpfsm"
+
+Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 134, Real ops = 34, Vars = 82) (SOL-10)
+# Info: Optimizing partition '/conv_fixed/conv_fixed:core/core': (Total ops = 74, Real ops = 18, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 76, Real ops = 29, Vars = 30) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 78, Real ops = 29, Vars = 30) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 78, Real ops = 31, Vars = 32) (SOL-10)
+# Info: Starting transformation 'dpfsm' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'schedule' on solution 'conv_fixed.v3': elapsed time 0.22 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+
+# Messages from "go extract"
+
+Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Starting transformation 'instance' on solution 'conv_fixed.v3' (SOL-8)
+Reassigned operation acc#9:mgc_add(16,0,16,0,16,3) to mgc_add(16,0,16,0,16,4) (ASG-1)
+# Info: Completed transformation 'dpfsm' on solution 'conv_fixed.v3': elapsed time 0.08 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Reassigned operation acc#10:mgc_add(16,0,16,0,16,3) to mgc_add(16,0,16,0,16,4) (ASG-1)
+Reassigned operation acc#11:mgc_add(16,0,16,0,16,3) to mgc_add(16,0,16,0,16,4) (ASG-1)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 76, Real ops = 29, Vars = 74) (SOL-10)
+Reassigned operation acc#14:mgc_add(16,0,16,0,16,2) to mgc_add(16,0,16,0,16,3) (ASG-1)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 76, Real ops = 29, Vars = 30) (SOL-10)
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Report written to file 'rtl.rpt'
+# Info: Starting transformation 'extract' on solution 'conv_fixed.v3' (SOL-8)
+# Info: Completed transformation 'instance' on solution 'conv_fixed.v3': elapsed time 0.13 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 76, Real ops = 29, Vars = 30) (SOL-10)
+# Info: Optimizing partition '/conv_fixed': (Total ops = 76, Real ops = 29, Vars = 74) (SOL-10)
+generate concat
+Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+order file name is: rtl.vhdl_order.txt
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab_project/Catapult_1/conv_fixed.v3/concat_sim_rtl.vhdl
+Generating scverify_top.cpp ()
+Add dependent file: ./rtl.vhdl
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Generating SCVerify testbench files
+Netlist written to file 'rtl.vhdl' (NET-4)
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab_project/Catapult_1/conv_fixed.v3/concat_sim_rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+order file name is: rtl.vhdl_order_sim.txt
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+Finished writing concatenated file: /home/gel8580/CE459/Lab_project/Catapult_1/conv_fixed.v3/concat_rtl.vhdl
+Add dependent file: ./rtl.vhdl
+Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+order file name is: rtl.v_order.txt
+generate concat
+Netlist written to file 'rtl.v' (NET-4)
+order file name is: rtl.v_order_sim.txt
+Finished writing concatenated file: /home/gel8580/CE459/Lab_project/Catapult_1/conv_fixed.v3/concat_rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+# Info: Completed transformation 'extract' on solution 'conv_fixed.v3': elapsed time 1.72 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)

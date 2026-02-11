@@ -1,0 +1,183 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+directive set -MUXPATH true
+/TIMING_CHECKS true
+directive set -REALLOC true
+/MUXPATH true
+directive set -ASSIGN_OVERHEAD 0
+/REGISTER_SHARING_LIMIT 0
+directive set -TIMING_CHECKS true
+/ASSIGN_OVERHEAD 0
+directive set -CHAN_IO_PROTOCOL standard
+/IO_MODE super
+directive set -ARRAY_SIZE 1024
+/CHAN_IO_PROTOCOL standard
+directive set -UNROLL no
+/REALLOC true
+directive set -IO_MODE super
+/UNROLL no
+directive set -STALL_FLAG false
+/IDLE_SIGNAL {}
+directive set -TRANSACTION_DONE_SIGNAL true
+/STALL_FLAG false
+directive set -REGISTER_IDLE_SIGNAL false
+/ARRAY_SIZE 1024
+directive set -IDLE_SIGNAL {}
+/REGISTER_IDLE_SIGNAL false
+directive set -START_FLAG {}
+/READY_FLAG {}
+directive set -BLOCK_SYNC none
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+/START_FLAG {}
+Front End called with arguments: -- /home/gel8580/CE459/Lab3/conditional_acc/test_orig.cpp (CIN-69)
+directive set -DONE_FLAG {}
+/TRANSACTION_DONE_SIGNAL true
+directive set -READY_FLAG {}
+/DONE_FLAG {}
+directive set -RESET_CLEARS_ALL_REGS true
+/DATA_SYNC none
+/RESET_CLEARS_ALL_REGS yes
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+directive set -TRANSACTION_SYNC ready
+Source file analysis completed (CIN-68)
+/BLOCK_SYNC none
+Pragma 'hls_design<top>' detected on routine 'test_orig' (CIN-6)
+directive set -DATA_SYNC none
+/TRANSACTION_SYNC ready
+/CHARACTERIZE_ROM false
+directive set -CHARACTERIZE_ROM false
+/PROTOTYPE_ROM true
+directive set -PROTOTYPE_ROM true
+/CLOCK_OVERHEAD 20.000000
+directive set -CLOCK_OVERHEAD 20.000000
+/OPT_CONST_MULTS use_library
+directive set -OPT_CONST_MULTS use_library
+true
+/CLUSTER_OPT_CONSTANT_INPUTS true
+solution options set /Flows/SCVerify/USE_CCS_BLOCK true
+directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+solution file add ./test_orig.cpp -type C++
+directive set -CLUSTER_RTL_SYN false
+solution options defaults
+/ROM_THRESHOLD 64
+solution.v2
+directive set -ROM_THRESHOLD 64
+false
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+solution options set /Output/GenerateCycleNetlist false
+directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+/COMPGRADE fast
+solution file add ./tb.cpp -type C++ -exclude true
+directive set -COMPGRADE fast
+directive set -DESIGN_GOAL area
+/PIPELINE_RAMP_UP true
+/INPUTFILES/3
+directive set -PIPELINE_RAMP_UP true
+solution file add ./test.cpp -type C++ -exclude true
+/CLUSTER_FAST_MODE false
+/INPUTFILES/1
+directive set -CLUSTER_FAST_MODE false
+/INPUTFILES/2
+/CLUSTER_TYPE combinational
+directive set -CLUSTER_TYPE combinational
+directive set -REGISTER_THRESHOLD 256
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+/MERGEABLE true
+go analyze
+directive set -MEM_MAP_THRESHOLD 32
+/REGISTER_THRESHOLD 256
+directive set -SPECULATE true
+directive set -DESIGN_HIERARCHY test_orig
+/DESIGN_GOAL area
+go new
+directive set -MERGEABLE true
+/DESIGN_HIERARCHY test_orig
+/SPECULATE true
+solution design add test_orig -type top -unlocked (HC-1)
+directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+/FSM_ENCODING none
+directive set -REG_MAX_FANOUT 0
+/FSM_BINARY_ENCODING_THRESHOLD 64
+directive set -LOGIC_OPT false
+/MEM_MAP_THRESHOLD 32
+Moving session transcript to file "/home/gel8580/CE459/Lab3/conditional_acc/catapult.log"
+directive set -FSM_ENCODING none
+/LOGIC_OPT false
+directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+/SAFE_FSM false
+directive set -REGISTER_SHARING_LIMIT 0
+/REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+directive set -NO_X_ASSIGNMENTS true
+/REG_MAX_FANOUT 0
+directive set -SAFE_FSM false
+/NO_X_ASSIGNMENTS true
+
+# Messages from "go compile"
+
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+go libraries
+# Info: Optimizing partition '/test_orig/core': (Total ops = 28, Real ops = 5, Vars = 18) (SOL-10)
+Found top design routine 'test_orig' specified by directive (CIN-52)
+# Info: Splitting object 'pref:pref.pref.pref#1' into 2 segments (OPT-19)
+Generating synthesis internal form... (CIN-3)
+# Info: Optimizing partition '/test_orig': (Total ops = 30, Real ops = 5, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 30, Real ops = 5, Vars = 13) (SOL-10)
+# Info: Splitting object 'pref:pref.pref' into 2 segments (OPT-19)
+solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig': (Total ops = 21, Real ops = 3, Vars = 9) (SOL-10)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 0.63 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 21, Real ops = 3, Vars = 5) (SOL-10)
+INOUT port 'valid_in.data' is only used as an input. (OPT-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 20, Real ops = 3, Vars = 6) (SOL-10)
+INOUT port 'b_in' is only used as an input. (OPT-10)
+# Info: Splitting object 'MAC:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig': (Total ops = 30, Real ops = 5, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 22, Real ops = 5, Vars = 9) (SOL-10)
+INOUT port 'result' is only used as an output. (OPT-11)
+Inlining routine 'test_orig' (CIN-14)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 22, Real ops = 5, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 25, Real ops = 5, Vars = 5) (SOL-10)
+Synthesizing routine 'test_orig' (CIN-13)
+Loop '/test_orig/core/MAC' iterated at most 16 times. (LOOP-2)
+INOUT port 'a_in' is only used as an input. (OPT-10)
+Optimizing block '/test_orig' ... (CIN-4)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Optimizing partition '/test_orig': (Total ops = 20, Real ops = 3, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 20, Real ops = 3, Vars = 5) (SOL-10)
+Design 'test_orig' was read (SOL-1)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/conditional_acc/Catapult/test_orig.v1/CDesignChecker/design_checker.sh'
+# Info: Splitting object 'pref:pref.pref#1' into 2 segments (OPT-19)
+
+# Messages from "go libraries"
+
+Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+# Info: Starting transformation 'libraries' on solution 'test_orig.v1' (SOL-8)
+# Info: Completed transformation 'compile' on solution 'test_orig.v1': elapsed time 0.46 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+Reading component library '$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib' [nangate-45nm_beh]... (LIB-49)
+
+# Messages from "go assembly"
+
+# Info: Optimizing partition '/test_orig/core': (Total ops = 21, Real ops = 4, Vars = 5) (SOL-10)
+directive set -CLOCKS {clk {-CLOCK_PERIOD 1.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 0.5 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Completed transformation 'libraries' on solution 'test_orig.v1': elapsed time 0.21 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+go assembly
+/CLOCKS {clk {-CLOCK_PERIOD 1.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 0.5 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/test_orig': (Total ops = 21, Real ops = 4, Vars = 11) (SOL-10)
+# Info: Starting transformation 'assembly' on solution 'test_orig.v1' (SOL-8)
+# Info: Completed transformation 'assembly' on solution 'test_orig.v1': elapsed time 0.03 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)

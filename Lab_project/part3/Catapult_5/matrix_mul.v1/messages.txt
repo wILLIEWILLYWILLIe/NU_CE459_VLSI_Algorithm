@@ -1,0 +1,221 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+true
+flow package option set /SCVerify/USE_CCS_BLOCK true
+true
+flow package option set /SCVerify/USE_NCSIM true
+solution options defaults
+solution.v2
+10.4
+flow package require /SCVerify
+solution file add ./matmul.cpp -type C++
+directive set -DESIGN_GOAL area
+/INPUTFILES/1
+true
+flow package option set /SCVerify/USE_VCS true
+false
+solution options set /Output/GenerateCycleNetlist false
+directive set -REGISTER_THRESHOLD 4096
+/MERGEABLE true
+directive set -MEM_MAP_THRESHOLD 4096
+/REGISTER_THRESHOLD 4096
+directive set -SPECULATE true
+/DESIGN_GOAL area
+directive set -MERGEABLE true
+/SPECULATE true
+directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+/FSM_ENCODING none
+directive set -REG_MAX_FANOUT 0
+/FSM_BINARY_ENCODING_THRESHOLD 64
+directive set -LOGIC_OPT false
+/MEM_MAP_THRESHOLD 4096
+directive set -FSM_ENCODING none
+/LOGIC_OPT false
+directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+/SAFE_FSM false
+directive set -REGISTER_SHARING_LIMIT 0
+/REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+directive set -NO_X_ASSIGNMENTS true
+/REG_MAX_FANOUT 0
+directive set -SAFE_FSM false
+/NO_X_ASSIGNMENTS true
+directive set -MUXPATH true
+/TIMING_CHECKS true
+directive set -REALLOC true
+/MUXPATH true
+directive set -ASSIGN_OVERHEAD 0
+/REGISTER_SHARING_LIMIT 0
+directive set -TIMING_CHECKS true
+/ASSIGN_OVERHEAD 0
+directive set -CHAN_IO_PROTOCOL standard
+/IO_MODE super
+directive set -ARRAY_SIZE 1024
+/CHAN_IO_PROTOCOL standard
+directive set -UNROLL no
+/REALLOC true
+directive set -IO_MODE super
+/UNROLL no
+directive set -STALL_FLAG false
+/IDLE_SIGNAL {}
+directive set -TRANSACTION_DONE_SIGNAL true
+/STALL_FLAG false
+directive set -REGISTER_IDLE_SIGNAL false
+/ARRAY_SIZE 1024
+directive set -IDLE_SIGNAL {}
+/REGISTER_IDLE_SIGNAL false
+directive set -START_FLAG {}
+/READY_FLAG {}
+directive set -BLOCK_SYNC none
+/START_FLAG {}
+directive set -DONE_FLAG {}
+/TRANSACTION_DONE_SIGNAL true
+directive set -READY_FLAG {}
+/DONE_FLAG {}
+directive set -RESET_CLEARS_ALL_REGS true
+/DATA_SYNC none
+/RESET_CLEARS_ALL_REGS yes
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+directive set -TRANSACTION_SYNC ready
+/BLOCK_SYNC none
+directive set -DATA_SYNC none
+/TRANSACTION_SYNC ready
+/CHARACTERIZE_ROM false
+directive set -CHARACTERIZE_ROM false
+/PROTOTYPE_ROM true
+directive set -PROTOTYPE_ROM true
+/CLOCK_OVERHEAD 20.000000
+directive set -CLOCK_OVERHEAD 20.000000
+/OPT_CONST_MULTS use_library
+directive set -OPT_CONST_MULTS use_library
+/CLUSTER_OPT_CONSTANT_INPUTS true
+directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+directive set -CLUSTER_RTL_SYN false
+/ROM_THRESHOLD 64
+directive set -ROM_THRESHOLD 64
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+/COMPGRADE fast
+directive set -COMPGRADE fast
+/PIPELINE_RAMP_UP true
+directive set -PIPELINE_RAMP_UP true
+/CLUSTER_FAST_MODE false
+directive set -CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+directive set -CLUSTER_TYPE combinational
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+go compile
+directive set -DESIGN_HIERARCHY matrix_mul
+go new
+/DESIGN_HIERARCHY matrix_mul
+solution design add matrix_mul -type top -unlocked (HC-1)
+Moving session transcript to file "/home/gel8580/CE459/Lab_project/part3/catapult.log"
+Front End called with arguments: -- /home/gel8580/CE459/Lab_project/part3/matmul.cpp (CIN-69)
+Pragma 'hls_design<top>' detected on routine 'matrix_mul' (CIN-6)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Source file analysis completed (CIN-68)
+
+# Messages from "go compile"
+
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 0.68 seconds, memory usage 1293964kB, peak memory usage 1293964kB (SOL-9)
+Found top design routine 'matrix_mul' specified by directive (CIN-52)
+Generating synthesis internal form... (CIN-3)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 66, Real ops = 20, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 66, Real ops = 20, Vars = 16) (SOL-10)
+# Info: Splitting object 'pref:pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+INOUT port 'C' is only used as an output. (OPT-11)
+INOUT port 'B' is only used as an input. (OPT-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 76, Real ops = 20, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 46, Real ops = 8, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 76, Real ops = 20, Vars = 26) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 46, Real ops = 8, Vars = 9) (SOL-10)
+# Info: Splitting object 'for:for:for:acc.tdx#1' into 2 segments (OPT-19)
+Design 'matrix_mul' was read (SOL-1)
+# Info: Splitting object 'for:for:for:acc.tdx' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 46, Real ops = 8, Vars = 9) (SOL-10)
+# Info: Splitting object 'for:for:acc.tdx' into 2 segments (OPT-19)
+# Info: Splitting object 'for:i' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:for:acc.rndc' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 49, Real ops = 8, Vars = 9) (SOL-10)
+# Info: Splitting object 'pref:pref.pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:for:k' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:j' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref.pref#1' into 2 segments (OPT-19)
+Loop '/matrix_mul/core/for' iterated at most 32 times. (LOOP-2)
+Loop '/matrix_mul/core/for:for' iterated at most 32 times. (LOOP-2)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab_project/part3/Catapult_5/matrix_mul.v1/CDesignChecker/design_checker.sh'
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 49, Real ops = 8, Vars = 6) (SOL-10)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 64, Real ops = 17, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 58, Real ops = 17, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 64, Real ops = 17, Vars = 27) (SOL-10)
+Loop '/matrix_mul/core/for:for:for' iterated at most 32 times. (LOOP-2)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 58, Real ops = 17, Vars = 9) (SOL-10)
+Inlining routine 'matrix_mul' (CIN-14)
+Synthesizing routine 'matrix_mul' (CIN-13)
+INOUT port 'A' is only used as an input. (OPT-10)
+Optimizing block '/matrix_mul' ... (CIN-4)
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+
+# Messages from "go libraries"
+
+# Info: Starting transformation 'libraries' on solution 'matrix_mul.v1' (SOL-8)
+go libraries
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# Info: Completed transformation 'compile' on solution 'matrix_mul.v1': elapsed time 0.64 seconds, memory usage 1293964kB, peak memory usage 1293964kB (SOL-9)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+Reading component library '$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib' [nangate-45nm_beh]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+
+# Messages from "go assembly"
+
+directive set -CLOCKS {clk {-CLOCK_PERIOD 5.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 2.5 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/matrix_mul': (Total ops = 47, Real ops = 9, Vars = 11) (SOL-10)
+# Info: Completed transformation 'libraries' on solution 'matrix_mul.v1': elapsed time 0.21 seconds, memory usage 1293964kB, peak memory usage 1293964kB (SOL-9)
+# Info: Starting transformation 'assembly' on solution 'matrix_mul.v1' (SOL-8)
+go assembly
+/CLOCKS {clk {-CLOCK_PERIOD 5.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 2.5 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 47, Real ops = 9, Vars = 6) (SOL-10)
+
+# Messages from "go architect"
+
+/matrix_mul/core/main/PIPELINE_INIT_INTERVAL 0
+Loop '/matrix_mul/core/for:for' is left rolled. (LOOP-4)
+Loop '/matrix_mul/core/for:for:for' is left rolled. (LOOP-4)
+Loop '/matrix_mul/core/main' is left rolled. (LOOP-4)
+Loop '/matrix_mul/core/for' is left rolled. (LOOP-4)
+directive set /matrix_mul/B:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+/matrix_mul/A:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+directive set /matrix_mul/C:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+/matrix_mul/B:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+directive set -REGISTER_THRESHOLD 256
+# Info: Completed transformation 'assembly' on solution 'matrix_mul.v1': elapsed time 0.04 seconds, memory usage 1293964kB, peak memory usage 1293964kB (SOL-9)
+directive set /matrix_mul/A:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+/REGISTER_THRESHOLD 256
+go extract
+/matrix_mul/core/for:for:for/UNROLL no
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 53, Real ops = 9, Vars = 6) (SOL-10)
+# Info: Starting transformation 'loops' on solution 'matrix_mul.v1' (SOL-8)
+directive set /matrix_mul/core/main -PIPELINE_INIT_INTERVAL 0
+/matrix_mul/C:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+directive set /matrix_mul/core/for:for:for -UNROLL no
+# Info: Starting transformation 'memories' on solution 'matrix_mul.v1' (SOL-8)
+# Info: Completed transformation 'loops' on solution 'matrix_mul.v1': elapsed time 0.01 seconds, memory usage 1293964kB, peak memory usage 1293964kB (SOL-9)
+# Error: Invalid component selection 'ccs_sample_mem.ccs_ram_sync_singleport' for Resource '/matrix_mul/C:rsc' (ALOC-3)
+# Error: Invalid component selection 'ccs_sample_mem.ccs_ram_sync_singleport' for Resource '/matrix_mul/B:rsc' (ALOC-3)
+# Error: Invalid component selection 'ccs_sample_mem.ccs_ram_sync_singleport' for Resource '/matrix_mul/A:rsc' (ALOC-3)

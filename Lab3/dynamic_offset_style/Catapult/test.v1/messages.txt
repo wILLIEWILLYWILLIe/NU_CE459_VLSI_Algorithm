@@ -1,0 +1,329 @@
+
+# Messages from "go new"
+
+
+# Messages from "go analyze"
+
+Front End called with arguments: -- /home/gel8580/CE459/Lab3/dynamic_offset_style/test.cpp (CIN-69)
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+Pragma 'hls_design<top>' detected on routine 'test_wrapper' (CIN-6)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Source file analysis completed (CIN-68)
+go analyze
+solution file set {$PROJECT_HOME/test_orig.cpp} -exclude true
+# Info: Branching solution 'solution.v1' at state 'new' (PRJ-2)
+solution design add test_orig_wrapper -type top -unlocked (HC-1)
+Pragma 'hls_design<top>' detected on routine 'test_orig_wrapper' (CIN-6)
+solution file add ./test.cpp -exclude true
+Source file analysis completed (CIN-68)
+go analyze
+/INPUTFILES/3
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+Front End called with arguments: -- /home/gel8580/CE459/Lab3/dynamic_offset_style/test_orig.cpp (CIN-69)
+solution file add ./tb.cpp -exclude true
+/INPUTFILES/1
+/INPUTFILES/2
+dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/directives.tcl
+dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/directives.tcl
+solution file add ./test_orig.cpp
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+Moving session transcript to file "/home/gel8580/CE459/Lab3/dynamic_offset_style/catapult.log"
+
+# Messages from "go compile"
+
+# Info: Splitting object 'for#1:acc.tdx' into 2 segments (OPT-19)
+Pragma 'hls_unroll<yes>' detected on '/test/core/for#1' (CIN-203)
+# Info: Splitting object 'for:for:if:acc.tdx' into 2 segments (OPT-19)
+Synthesizing routine 'test' (CIN-13)
+# Info: Optimizing partition '/test/core': (Total ops = 64, Real ops = 15, Vars = 5) (SOL-10)
+Found top design routine 'test' specified by directive (CIN-52)
+# Info: Optimizing partition '/test/core': (Total ops = 40, Real ops = 15, Vars = 18) (SOL-10)
+Pragma 'hls_unroll<yes>' detected on '/test/core/for' (CIN-203)
+# Info: Splitting object 'for#1:i' into 2 segments (OPT-19)
+Inlining routine 'test' (CIN-14)
+# Info: Splitting object 'for:for:j' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 40, Real ops = 14, Vars = 8) (SOL-10)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/CDesignChecker/design_checker.sh'
+# Info: Optimizing partition '/test/core': (Total ops = 45, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Splitting object 'for:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 45, Real ops = 14, Vars = 8) (SOL-10)
+Design 'test' was read (SOL-1)
+# Info: Optimizing partition '/test': (Total ops = 37, Real ops = 14, Vars = 8) (SOL-10)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Optimizing partition '/test': (Total ops = 41, Real ops = 17, Vars = 17) (SOL-10)
+go assembly
+# Info: Optimizing partition '/test/core': (Total ops = 41, Real ops = 17, Vars = 14) (SOL-10)
+# Info: Splitting object 'pref:dout.ptr.idx.pref' into 2 segments (OPT-19)
+/DESIGN_HIERARCHY test
+Generating synthesis internal form... (CIN-3)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+# Info: Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+INOUT port 'dout' is only used as an output. (OPT-11)
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 0.54 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+INOUT port 'din' is only used as an input. (OPT-10)
+solution design add test_orig_wrapper -type top -unlocked (HC-1)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 17, Vars = 20) (SOL-10)
+solution design add test -type top -unlocked (HC-1)
+# Info: Optimizing partition '/test': (Total ops = 49, Real ops = 17, Vars = 23) (SOL-10)
+Loop '/test/core/for:for' iterated at most 40 times. (LOOP-2)
+directive set -DESIGN_HIERARCHY test
+# Info: Optimizing partition '/test': (Total ops = 64, Real ops = 15, Vars = 8) (SOL-10)
+Inlining routine 'operator==<6, false>' (CIN-14)
+Loop '/test/core/for#1' iterated at most 40 times. (LOOP-2)
+Pragma 'hls_unroll<yes>' detected on '/test/core/for:for' (CIN-203)
+Loop '/test/core/for' iterated at most 40 times. (LOOP-2)
+Optimizing block '/test' ... (CIN-4)
+
+# Messages from "go libraries"
+
+# Info: Starting transformation 'libraries' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'compile' on solution 'test.v1': elapsed time 0.49 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+
+# Messages from "go assembly"
+
+# Info: Starting transformation 'assembly' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'libraries' on solution 'test.v1': elapsed time 0.15 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Optimizing partition '/test/core': (Total ops = 38, Real ops = 15, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 38, Real ops = 15, Vars = 10) (SOL-10)
+
+# Messages from "go architect"
+
+# Info: Merged 'for:for-32:sel#1' at $PROJECT_HOME/test.cpp(12) to 'for:for-31:sel#1' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-36:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-34:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+Loop '/test/core/for' is being fully unrolled (40 times). (LOOP-7)
+# Info: Merged 'for:for-36:sel#1' at $PROJECT_HOME/test.cpp(12) to 'for:for-35:sel#1' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Optimizing partition '/test': (Total ops = 1728, Real ops = 1, Vars = 9) (SOL-10)
+# Info: Merged 'for:for-15:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-14:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-13:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-12:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-19:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-18:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-17:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-16:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-5:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-4:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Optimizing partition '/test/core': (Total ops = 776, Real ops = 163, Vars = 10) (SOL-10)
+# Info: Merged 'for:for-11:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-10:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-9:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-8:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-31:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-30:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-29:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-28:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-32:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-30:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-35:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-34:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-23:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-22:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-21:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-20:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-27:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-26:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-25:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-24:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+directive set /test/core/main -PIPELINE_INIT_INTERVAL 1
+# Info: Completed transformation 'assembly' on solution 'test.v1': elapsed time 0.04 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+go extract
+/test/core/main/PIPELINE_INIT_INTERVAL 1
+# Info: Optimizing partition '/test/core': (Total ops = 1097, Real ops = 444, Vars = 5) (SOL-10)
+Loop '/test/core/for#1' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 941, Real ops = 198, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 877, Real ops = 203, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 44, Real ops = 15, Vars = 5) (SOL-10)
+# Info: Starting transformation 'loops' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 746, Real ops = 327, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1729, Real ops = 1, Vars = 2) (SOL-10)
+Loop '/test/core/for:for' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 27530, Real ops = 6481, Vars = 10) (SOL-10)
+Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 40) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 948, Real ops = 1, Vars = 87) (SOL-10)
+# Info: Splitting object 'regs' into 40 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#814.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#810.cse' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 78) (SOL-10)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#817.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#544.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#520.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#589.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#567.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#442.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#414.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#495.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#469.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#700.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#684.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#729.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#715.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#630.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#610.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#667.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#649.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#40.cse' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 1690, Real ops = 1, Vars = 48) (SOL-10)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#117.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#79.cse' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 2629, Real ops = 1, Vars = 49) (SOL-10)
+I/O-Port Resource '/test/dout:rsc' (from var: dout) mapped to 'ccs_ioport.ccs_out' (size: 1280). (MEM-2)
+# Info: Optimizing partition '/test/core': (Total ops = 1690, Real ops = 1, Vars = 40) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 2629, Real ops = 1, Vars = 41) (SOL-10)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#324.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#292.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#385.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#355.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#190.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#154.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#259.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#225.cse' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 948, Real ops = 1, Vars = 79) (SOL-10)
+# Info: Starting transformation 'memories' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'loops' on solution 'test.v1': elapsed time 1.59 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+I/O-Port Resource '/test/offset:rsc' (from var: offset) mapped to 'ccs_ioport.ccs_in' (size: 6). (MEM-2)
+I/O-Port Resource '/test/din:rsc' (from var: din) mapped to 'ccs_ioport.ccs_in' (size: 1280). (MEM-2)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#792.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#784.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#805.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#799.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#754.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#742.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#775.cse' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:if:io_read(din:rsc.@)#765.cse' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 1728, Real ops = 1, Vars = 48) (SOL-10)
+# Info: Starting transformation 'cluster' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'memories' on solution 'test.v1': elapsed time 0.54 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Optimizing partition '/test/core': (Total ops = 1746, Real ops = 239, Vars = 162) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 2561, Real ops = 161, Vars = 1336) (SOL-10)
+Design 'test' contains '239' real operations. (SOL-11)
+# Info: Starting transformation 'architect' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v1': elapsed time 0.07 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+
+# Messages from "go allocate"
+
+Prescheduled LOOP '/test/core/main' (2 c-steps) (SCHD-7)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+Prescheduled SEQUENTIAL '/test/core' (total length 2 c-steps) (SCHD-8)
+Prescheduled LOOP '/test/core/core:rlp' (0 c-steps) (SCHD-7)
+# Info: Starting transformation 'allocate' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'architect' on solution 'test.v1': elapsed time 0.46 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+Resource allocation and scheduling done. (CRAAS-2)
+# Info: Final schedule of SEQUENTIAL '/test/core': Latency = 1, Area (Datapath, Register, Total) = 23797.19, 8160.00, 31957.19 (CRAAS-12)
+Netlist written to file 'schedule.gnt' (NET-4)
+At least one feasible schedule exists. (CRAAS-9)
+# Info: Initial schedule of SEQUENTIAL '/test/core': Latency = 1, Area (Datapath, Register, Total) = 31169.18, 8160.00, 39329.18 (CRAAS-11)
+# Info: Optimized LOOP '/test/core/main': Latency = 1, Area (Datapath, Register, Total) = 23797.19, 8160.00, 31957.19 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 1, Area (Datapath, Register, Total) = 30007.68, 8160.00, 38167.68 (CRAAS-10)
+
+# Messages from "go schedule"
+
+# Info: Optimizing partition '/test': (Total ops = 1815, Real ops = 239, Vars = 193) (SOL-10)
+# Info: Loop '/test/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+Global signal 'offset:rsc.dat' added to design 'test' for component 'offset:rsci' (LIB-3)
+Global signal 'din:rsc.dat' added to design 'test' for component 'din:rsci' (LIB-3)
+Global signal 'din:rsc.triosy.lz' added to design 'test' for component 'din:rsc.triosy:obj' (LIB-3)
+Global signal 'dout:rsc.dat' added to design 'test' for component 'dout:rsci' (LIB-3)
+# Info: Starting transformation 'schedule' on solution 'test.v1' (SOL-8)
+Report written to file 'cycle.rpt'
+# Info: Completed transformation 'allocate' on solution 'test.v1': elapsed time 1.07 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1833, Real ops = 239, Vars = 171) (SOL-10)
+# Info: Splitting object 'dout:rsci.idat' into 40 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 1450, Real ops = 159, Vars = 223) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1429, Real ops = 159, Vars = 162) (SOL-10)
+Global signal 'dout:rsc.triosy.lz' added to design 'test' for component 'dout:rsc.triosy:obj' (LIB-3)
+Global signal 'offset:rsc.triosy.lz' added to design 'test' for component 'offset:rsc.triosy:obj' (LIB-3)
+
+# Messages from "go dpfsm"
+
+# Info: Optimizing partition '/test': (Total ops = 542, Real ops = 239, Vars = 139) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1321, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Starting transformation 'dpfsm' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 2938, Real ops = 201, Vars = 2392) (SOL-10)
+# Info: Completed transformation 'schedule' on solution 'test.v1': elapsed time 1.68 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1634, Real ops = 159, Vars = 162) (SOL-10)
+Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test': (Total ops = 1324, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1362, Real ops = 278, Vars = 142) (SOL-10)
+
+# Messages from "go extract"
+
+Reassigned operation for:for:mux1h#24:mgc_mux1hot(32,26,4) to mgc_mux1hot(32,25,4) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 1277) (SOL-10)
+Reassigned operation for:for:mux1h#23:mgc_mux1hot(32,25,4) to mgc_mux1hot(32,24,4) (ASG-1)
+Reassigned operation for:for:mux1h#39:mgc_mux1hot(32,41,4) to mgc_mux1hot(32,40,4) (ASG-1)
+Reassigned operation for:for:mux1h#26:mgc_mux1hot(32,28,4) to mgc_mux1hot(32,27,4) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 99) (SOL-10)
+Reassigned operation for:for:mux1h#25:mgc_mux1hot(32,27,4) to mgc_mux1hot(32,26,4) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 139) (SOL-10)
+Reassigned operation for:for:mux1h#20:mgc_mux1hot(32,22,4) to mgc_mux1hot(32,21,4) (ASG-1)
+Reassigned operation for:for:mux1h#36:mgc_mux1hot(32,38,4) to mgc_mux1hot(32,37,4) (ASG-1)
+Reassigned operation for:for:mux1h#19:mgc_mux1hot(32,21,4) to mgc_mux1hot(32,20,4) (ASG-1)
+Reassigned operation for:for:mux1h#35:mgc_mux1hot(32,37,4) to mgc_mux1hot(32,36,4) (ASG-1)
+Reassigned operation for:for:mux1h#22:mgc_mux1hot(32,24,4) to mgc_mux1hot(32,23,4) (ASG-1)
+Reassigned operation for:for:mux1h#38:mgc_mux1hot(32,40,4) to mgc_mux1hot(32,39,4) (ASG-1)
+Reassigned operation for:for:mux1h#21:mgc_mux1hot(32,23,4) to mgc_mux1hot(32,22,4) (ASG-1)
+Reassigned operation for:for:mux1h#37:mgc_mux1hot(32,39,4) to mgc_mux1hot(32,38,4) (ASG-1)
+Reassigned operation for:for:mux1h#32:mgc_mux1hot(32,34,4) to mgc_mux1hot(32,33,4) (ASG-1)
+Reassigned operation for:for:mux1h#31:mgc_mux1hot(32,33,4) to mgc_mux1hot(32,32,4) (ASG-1)
+Netlist written to file 'schematic.nlv' (NET-4)
+Reassigned operation for:for:mux1h#34:mgc_mux1hot(32,36,4) to mgc_mux1hot(32,35,4) (ASG-1)
+Reassigned operation for:for:mux1h#33:mgc_mux1hot(32,35,4) to mgc_mux1hot(32,34,4) (ASG-1)
+Reassigned operation for:for:mux1h#28:mgc_mux1hot(32,30,4) to mgc_mux1hot(32,29,4) (ASG-1)
+Reassigned operation for:for:mux1h#27:mgc_mux1hot(32,29,4) to mgc_mux1hot(32,28,4) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+Reassigned operation for:for:mux1h#30:mgc_mux1hot(32,32,4) to mgc_mux1hot(32,31,4) (ASG-1)
+Reassigned operation for:for:mux1h#29:mgc_mux1hot(32,31,4) to mgc_mux1hot(32,30,4) (ASG-1)
+Reassigned operation for:for:mux1h#8:mgc_mux1hot(32,10,4) to mgc_mux1hot(32,9,4) (ASG-1)
+Reassigned operation for:for:mux1h#7:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+Reassigned operation for:for:mux1h#10:mgc_mux1hot(32,12,4) to mgc_mux1hot(32,11,4) (ASG-1)
+Reassigned operation for:for:mux1h#9:mgc_mux1hot(32,11,4) to mgc_mux1hot(32,10,4) (ASG-1)
+Reassigned operation for:for:mux1h#4:mgc_mux1hot(32,6,4) to mgc_mux1hot(32,5,4) (ASG-1)
+Reassigned operation for:for:mux1h#3:mgc_mux1hot(32,5,4) to mgc_mux1hot(32,4,4) (ASG-1)
+Reassigned operation for:for:mux1h#6:mgc_mux1hot(32,8,4) to mgc_mux1hot(32,7,4) (ASG-1)
+Reassigned operation for:for:mux1h#5:mgc_mux1hot(32,7,4) to mgc_mux1hot(32,6,4) (ASG-1)
+# Info: Starting transformation 'instance' on solution 'test.v1' (SOL-8)
+Reassigned operation for:for:mux1h#16:mgc_mux1hot(32,18,4) to mgc_mux1hot(32,17,4) (ASG-1)
+# Info: Completed transformation 'dpfsm' on solution 'test.v1': elapsed time 2.34 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+Reassigned operation for:for:mux1h#15:mgc_mux1hot(32,17,4) to mgc_mux1hot(32,16,4) (ASG-1)
+Reassigned operation for:for:mux1h#2:mgc_mux1hot(32,4,4) to mgc_mux1hot(32,3,4) (ASG-1)
+Reassigned operation for:for:mux1h#18:mgc_mux1hot(32,20,4) to mgc_mux1hot(32,19,4) (ASG-1)
+Reassigned operation for:for:mux1h#17:mgc_mux1hot(32,19,4) to mgc_mux1hot(32,18,4) (ASG-1)
+Reassigned operation for:for:mux1h#12:mgc_mux1hot(32,14,4) to mgc_mux1hot(32,13,4) (ASG-1)
+Reassigned operation for:for:mux1h#11:mgc_mux1hot(32,13,4) to mgc_mux1hot(32,12,4) (ASG-1)
+Reassigned operation for:for:mux1h#14:mgc_mux1hot(32,16,4) to mgc_mux1hot(32,15,4) (ASG-1)
+Reassigned operation for:for:mux1h#13:mgc_mux1hot(32,15,4) to mgc_mux1hot(32,14,4) (ASG-1)
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+order file name is: rtl.vhdl_order_sim.txt
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 99) (SOL-10)
+Report written to file 'rtl.rpt'
+# Info: Starting transformation 'extract' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'instance' on solution 'test.v1': elapsed time 1.32 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 139) (SOL-10)
+Generating scverify_top.cpp ()
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 1277) (SOL-10)
+order file name is: rtl.v_order.txt
+generate concat
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+Netlist written to file 'rtl.v' (NET-4)
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_sim_rtl.v
+Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+order file name is: rtl.v_order_sim.txt
+Finished writing concatenated file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+order file name is: rtl.vhdl_order.txt
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+Netlist written to file 'rtl.vhdl' (NET-4)
+generate concat
+Generating SCVerify testbench files
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_sim_rtl.vhdl
+Add dependent file: ./rtl.vhdl
+Finished writing concatenated file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_rtl.vhdl
+Add dependent file: ./rtl.vhdl
+# Info: Completed transformation 'extract' on solution 'test.v1': elapsed time 3.16 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)

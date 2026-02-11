@@ -1,0 +1,6 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v3' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'matrix_mul.v5' at state 'new' (PRJ-2)

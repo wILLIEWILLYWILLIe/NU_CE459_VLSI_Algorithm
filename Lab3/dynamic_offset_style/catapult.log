@@ -1,0 +1,796 @@
+//  Catapult Ultra Synthesis 10.4a/835166 (Production Release) Thu Sep  5 21:35:46 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux gel8580@finagle.wot.ece.northwestern.edu 4.18.0-553.78.1.el8_10.x86_64 x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_1.0, HLS_PKGS v23.4_1.0, 
+//                       SIF_TOOLKITS v23.4_1.0, SIF_XILINX v23.4_1.0, 
+//                       SIF_ALTERA v23.4_1.0, CCS_LIBS v23.4_1.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4a, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Thu Nov  6 11:33:37 2025
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log1437878283fe786.0"
+dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/directives.tcl
+dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/directives.tcl
+# > solution file add ./test_orig.cpp
+# /INPUTFILES/1
+# > solution file add ./tb.cpp -exclude true
+# /INPUTFILES/2
+# > solution file add ./test.cpp -exclude true
+# /INPUTFILES/3
+# > go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Moving session transcript to file "/home/gel8580/CE459/Lab3/dynamic_offset_style/catapult.log"
+# Front End called with arguments: -- /home/gel8580/CE459/Lab3/dynamic_offset_style/test_orig.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# $PROJECT_HOME/test_orig.cpp(22): Pragma 'hls_design<top>' detected on routine 'test_orig_wrapper' (CIN-6)
+# solution design add test_orig_wrapper -type top -unlocked (HC-1)
+# Source file analysis completed (CIN-68)
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 0.55 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > go compile
+# Info: Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# $PROJECT_HOME/test_orig.cpp(23): Found top design routine 'test_orig_wrapper' specified by directive (CIN-52)
+# $PROJECT_HOME/test_orig.cpp(23): Found top design routine 'test_orig_wrapper' specified by directive (CIN-52)
+# $PROJECT_HOME/test_orig.cpp(23): Synthesizing routine 'test_orig_wrapper' (CIN-13)
+# $PROJECT_HOME/test_orig.cpp(23): Inlining routine 'test_orig_wrapper' (CIN-14)
+# $PROJECT_HOME/test_orig.cpp(27): Pragma 'hls_unroll<yes>' detected on '/test_orig_wrapper/core/for' (CIN-203)
+# $PROJECT_HOME/test_orig.cpp(3): Inlining routine 'test_orig' (CIN-14)
+# $PROJECT_HOME/test_orig.cpp(9): Pragma 'hls_unroll<yes>' detected on '/test_orig_wrapper/core/test_orig:for' (CIN-203)
+# $MGC_HOME/shared/include/ac_int.h(2744): Inlining routine 'operator+<6, false>' (CIN-14)
+# $MGC_HOME/shared/include/ac_int.h(2744): Inlining routine 'operator<<33, true>' (CIN-14)
+# $MGC_HOME/shared/include/ac_int.h(2744): Inlining routine 'operator+<6, false>' (CIN-14)
+# $PROJECT_HOME/test_orig.cpp(15): Pragma 'hls_unroll<yes>' detected on '/test_orig_wrapper/core/test_orig:for#1' (CIN-203)
+# $PROJECT_HOME/test_orig.cpp(23): Optimizing block '/test_orig_wrapper' ... (CIN-4)
+# $PROJECT_HOME/test_orig.cpp(23): INOUT port 'din_in' is only used as an input. (OPT-10)
+# $PROJECT_HOME/test_orig.cpp(24): INOUT port 'dout' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 66, Real ops = 16, Vars = 39) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 66, Real ops = 16, Vars = 36) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 50, Real ops = 16, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 50, Real ops = 16, Vars = 26) (SOL-10)
+# Info: $PROJECT_HOME/test_orig.cpp(29): Splitting object 'pref' into 2 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(2744): Splitting object 'operator+<6,false>:return#1' into 2 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(2744): Splitting object 'operator+<6,false>:i_op#1' into 2 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(2641): Splitting object 'operator+<6,false>#1:ac_int:cctor' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(4): Splitting object 'pref:test_orig:dout.idx.pref' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(29): Splitting object 'for:acc.tdx' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for:if:acc.tdx' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(17): Splitting object 'test_orig:for#1:acc.tdx' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 44, Real ops = 13, Vars = 32) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 38, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 38, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test_orig.cpp(28): Loop '/test_orig_wrapper/core/for' iterated at most 40 times. (LOOP-2)
+# $PROJECT_HOME/test_orig.cpp(10): Loop '/test_orig_wrapper/core/test_orig:for' iterated at most 40 times. (LOOP-2)
+# $PROJECT_HOME/test_orig.cpp(16): Loop '/test_orig_wrapper/core/test_orig:for#1' iterated at most 40 times. (LOOP-2)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 49, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 45, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 45, Real ops = 12, Vars = 9) (SOL-10)
+# Info: $PROJECT_HOME/test_orig.cpp(28): Splitting object 'for:i' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(10): Splitting object 'test_orig:for:i' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(16): Splitting object 'test_orig:for#1:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 41, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 38, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 38, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 38, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 38, Real ops = 12, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 38, Real ops = 12, Vars = 6) (SOL-10)
+# Design 'test_orig_wrapper' was read (SOL-1)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test_orig_wrapper.v1/CDesignChecker/design_checker.sh'
+# Info: Completed transformation 'compile' on solution 'test_orig_wrapper.v1': elapsed time 0.49 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > solution library add nangate-45nm_beh -- -rtlsyntool OasysRTL -vendor Nangate -technology 045nm
+# > go libraries
+# Info: Starting transformation 'libraries' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib' [nangate-45nm_beh]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Info: Completed transformation 'libraries' on solution 'test_orig_wrapper.v1': elapsed time 0.22 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > directive set -CLOCKS {clk {-CLOCK_PERIOD 2 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 1 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# /CLOCKS {clk {-CLOCK_PERIOD 2 -CLOCK_EDGE rising -CLOCK_HIGH_TIME 1 -CLOCK_OFFSET 0.000000 -CLOCK_UNCERTAINTY 0.0 -RESET_KIND sync -RESET_SYNC_NAME rst -RESET_SYNC_ACTIVE high -RESET_ASYNC_NAME arst_n -RESET_ASYNC_ACTIVE low -ENABLE_NAME {} -ENABLE_ACTIVE high}}
+# > go assembly
+# Info: Starting transformation 'assembly' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 39, Real ops = 13, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 39, Real ops = 13, Vars = 6) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'test_orig_wrapper.v1': elapsed time 0.04 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# > directive set /test_orig_wrapper/core/main -PIPELINE_INIT_INTERVAL 1
+# /test_orig_wrapper/core/main/PIPELINE_INIT_INTERVAL 1
+# > go allocate
+# Info: Starting transformation 'loops' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 45, Real ops = 13, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test_orig.cpp(28): Loop '/test_orig_wrapper/core/for' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 45, Real ops = 13, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 396, Real ops = 130, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test_orig.cpp(10): Loop '/test_orig_wrapper/core/test_orig:for' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 396, Real ops = 130, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 942, Real ops = 364, Vars = 6) (SOL-10)
+# $PROJECT_HOME/test_orig.cpp(16): Loop '/test_orig_wrapper/core/test_orig:for#1' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 942, Real ops = 364, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 1293, Real ops = 481, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 1293, Real ops = 481, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 590, Real ops = 120, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 627, Real ops = 116, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 627, Real ops = 116, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 458, Real ops = 83, Vars = 48) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 458, Real ops = 83, Vars = 48) (SOL-10)
+# $PROJECT_HOME/test_orig.cpp(23): Loop '/test_orig_wrapper/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 458, Real ops = 83, Vars = 56) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 458, Real ops = 83, Vars = 48) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 458, Real ops = 83, Vars = 56) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test_orig_wrapper.v1': elapsed time 0.25 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test_orig_wrapper.v1' (SOL-8)
+# $PROJECT_HOME/test_orig.cpp(23): I/O-Port Resource '/test_orig_wrapper/din_in:rsc' (from var: din_in) mapped to 'ccs_ioport.ccs_in' (size: 1280). (MEM-2)
+# $PROJECT_HOME/test_orig.cpp(23): I/O-Port Resource '/test_orig_wrapper/offset:rsc' (from var: offset) mapped to 'ccs_ioport.ccs_in' (size: 6). (MEM-2)
+# $PROJECT_HOME/test_orig.cpp(24): I/O-Port Resource '/test_orig_wrapper/dout:rsc' (from var: dout) mapped to 'ccs_ioport.ccs_out' (size: 1280). (MEM-2)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 579, Real ops = 83, Vars = 96) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 579, Real ops = 83, Vars = 88) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 380, Real ops = 83, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 380, Real ops = 83, Vars = 18) (SOL-10)
+# Info: $PROJECT_HOME/test_orig.cpp(26): Splitting object 'din' into 40 segments (OPT-19)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 40 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 32 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 31 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 30 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 29 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 28 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 27 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 26 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 25 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 24 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 23 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 22 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 21 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 20 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 19 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 18 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Warning: $PROJECT_HOME/test_orig.cpp(12): Writing to register bank 'test_orig:regs' with 17 registers using a dynamic index can cause excessive runtime and undesired hardware.  Please inspect coding style. (MEM-74)
+# Info: $PROJECT_HOME/test_orig.cpp(6): Splitting object 'test_orig:regs' into 40 segments (OPT-19)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 7079, Real ops = 3991, Vars = 1216) (SOL-10)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-3:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-5:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-7:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-9:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-11:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-13:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-15:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-17:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-19:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-21:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-23:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-25:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-27:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-29:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for-31:operator+<6,false>#1:operator+<6,false>#1:conc.decb' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test_orig.cpp(12): Splitting object 'test_orig:for:if:conc.decb' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6987, Real ops = 3991, Vars = 1240) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6554, Real ops = 3543, Vars = 761) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6474, Real ops = 3514, Vars = 736) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6467, Real ops = 3510, Vars = 733) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6459, Real ops = 3505, Vars = 730) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6452, Real ops = 3501, Vars = 727) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6446, Real ops = 3498, Vars = 725) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6440, Real ops = 3495, Vars = 723) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6437, Real ops = 3494, Vars = 721) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6435, Real ops = 3493, Vars = 720) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6432, Real ops = 3491, Vars = 719) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6430, Real ops = 3490, Vars = 718) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6427, Real ops = 3488, Vars = 717) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6425, Real ops = 3487, Vars = 716) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6423, Real ops = 3486, Vars = 715) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6421, Real ops = 3485, Vars = 714) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6419, Real ops = 3484, Vars = 713) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6417, Real ops = 3483, Vars = 712) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6414, Real ops = 3481, Vars = 711) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6412, Real ops = 3480, Vars = 710) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6409, Real ops = 3478, Vars = 709) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6407, Real ops = 3477, Vars = 708) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6405, Real ops = 3476, Vars = 707) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6403, Real ops = 3475, Vars = 706) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6401, Real ops = 3474, Vars = 705) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6392, Real ops = 3469, Vars = 704) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6392, Real ops = 3469, Vars = 712) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 6392, Real ops = 3469, Vars = 704) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6392, Real ops = 3469, Vars = 712) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test_orig_wrapper.v1': elapsed time 13.99 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test_orig_wrapper.v1': elapsed time 0.23 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 15275, Real ops = 5019, Vars = 5965) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/core': (Total ops = 8097, Real ops = 4621, Vars = 2034) (SOL-10)
+# Design 'test_orig_wrapper' contains '4628' real operations. (SOL-11)
+# Warning: Extrapolation detected. Script '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test_orig_wrapper.v1/adjust_char_library.tcl' generated. (LIB-142)
+# Info: Completed transformation 'architect' on solution 'test_orig_wrapper.v1': elapsed time 15.27 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test_orig_wrapper/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test_orig.cpp(23): Prescheduled LOOP '/test_orig_wrapper/core/main' (2 c-steps) (SCHD-7)
+# $PROJECT_HOME/test_orig.cpp(23): Prescheduled LOOP '/test_orig_wrapper/core/core:rlp' (0 c-steps) (SCHD-7)
+# $PROJECT_HOME/test_orig.cpp(23): Prescheduled SEQUENTIAL '/test_orig_wrapper/core' (total length 2 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test_orig.cpp(23): Initial schedule of SEQUENTIAL '/test_orig_wrapper/core': Latency = 1, Area (Datapath, Register, Total) = 33560.90, 8160.00, 41720.90 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 33539.24, 8160.00, 41699.24 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 33449.21, 8160.00, 41609.21 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 33436.11, 8160.00, 41596.11 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 33405.17, 8160.00, 41565.17 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 33404.83, 8160.00, 41564.83 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 32217.63, 8160.00, 40377.63 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 32209.43, 8160.00, 40369.43 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 32118.72, 8160.00, 40278.72 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 32118.27, 8160.00, 40278.27 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 32090.29, 8160.00, 40250.29 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 25589.85, 8160.00, 33749.85 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 25582.02, 8160.00, 33742.02 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 25554.56, 8160.00, 33714.56 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig_wrapper/core/main': Latency = 1, Area (Datapath, Register, Total) = 25540.56, 8160.00, 33700.56 (CRAAS-10)
+# Info: $PROJECT_HOME/test_orig.cpp(23): Final schedule of SEQUENTIAL '/test_orig_wrapper/core': Latency = 1, Area (Datapath, Register, Total) = 25540.56, 8160.00, 33700.56 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test_orig_wrapper.v1': elapsed time 8.81 seconds, memory usage 1294492kB, peak memory usage 1294492kB (SOL-9)
+# > go extract
+# Info: Starting transformation 'schedule' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test_orig_wrapper/core' (CRAAS-1)
+# Global signal 'din_in:rsc.dat' added to design 'test_orig_wrapper' for component 'din_in:rsci' (LIB-3)
+# Global signal 'offset:rsc.dat' added to design 'test_orig_wrapper' for component 'offset:rsci' (LIB-3)
+# Global signal 'dout:rsc.dat' added to design 'test_orig_wrapper' for component 'dout:rsci' (LIB-3)
+# Global signal 'din_in:rsc.triosy.lz' added to design 'test_orig_wrapper' for component 'din_in:rsc.triosy:obj' (LIB-3)
+# Global signal 'offset:rsc.triosy.lz' added to design 'test_orig_wrapper' for component 'offset:rsc.triosy:obj' (LIB-3)
+# Global signal 'dout:rsc.triosy.lz' added to design 'test_orig_wrapper' for component 'dout:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/test_orig.cpp(23): Loop '/test_orig_wrapper/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 8235, Real ops = 4628, Vars = 2100) (SOL-10)
+# Info: $PROJECT_HOME/test_orig.cpp(24): Splitting object 'dout:rsci.idat' into 40 segments (OPT-19)
+# Info: Optimizing partition '/test_orig_wrapper/test_orig_wrapper:core/core': (Total ops = 8253, Real ops = 4628, Vars = 2078) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/test_orig_wrapper:core/core': (Total ops = 8050, Real ops = 4525, Vars = 2029) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/test_orig_wrapper:core/core': (Total ops = 8013, Real ops = 4521, Vars = 1995) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 8034, Real ops = 4521, Vars = 2056) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper/test_orig_wrapper:core/core': (Total ops = 8013, Real ops = 4521, Vars = 1995) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 8034, Real ops = 4521, Vars = 2056) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'test_orig_wrapper.v1': elapsed time 20.11 seconds, memory usage 1293024kB, peak memory usage 1294492kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test_orig_wrapper/test_orig_wrapper:core/core': (Total ops = 10051, Real ops = 4521, Vars = 1995) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5502, Real ops = 3470, Vars = 9757) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6517, Real ops = 4028, Vars = 2485) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6425, Real ops = 3984, Vars = 2390) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6422, Real ops = 3984, Vars = 2390) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6422, Real ops = 3984, Vars = 2390) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6422, Real ops = 3984, Vars = 2390) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5611, Real ops = 3984, Vars = 2429) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 6422, Real ops = 3984, Vars = 2390) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5814, Real ops = 3052, Vars = 2222) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'test_orig_wrapper.v1': elapsed time 18.95 seconds, memory usage 1293464kB, peak memory usage 1294492kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Reassigned operation test_orig:for:test_orig:for:mux1h:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#395:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#396:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#397:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#398:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#399:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#400:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#401:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#124:mgc_mux1hot(32,10,4) to mgc_mux1hot(32,9,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#414:mgc_mux1hot(32,11,4) to mgc_mux1hot(32,10,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#156:mgc_mux1hot(32,12,4) to mgc_mux1hot(32,11,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#402:mgc_mux1hot(32,13,4) to mgc_mux1hot(32,12,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#186:mgc_mux1hot(32,14,4) to mgc_mux1hot(32,13,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#410:mgc_mux1hot(32,15,4) to mgc_mux1hot(32,14,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#214:mgc_mux1hot(32,16,4) to mgc_mux1hot(32,15,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#403:mgc_mux1hot(32,17,4) to mgc_mux1hot(32,16,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#240:mgc_mux1hot(32,18,4) to mgc_mux1hot(32,17,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#416:mgc_mux1hot(32,19,4) to mgc_mux1hot(32,18,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#264:mgc_mux1hot(32,20,4) to mgc_mux1hot(32,19,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#404:mgc_mux1hot(32,21,4) to mgc_mux1hot(32,20,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#286:mgc_mux1hot(32,22,4) to mgc_mux1hot(32,21,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#411:mgc_mux1hot(32,23,4) to mgc_mux1hot(32,22,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#306:mgc_mux1hot(32,24,4) to mgc_mux1hot(32,23,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#405:mgc_mux1hot(32,25,4) to mgc_mux1hot(32,24,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#324:mgc_mux1hot(32,26,4) to mgc_mux1hot(32,25,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#415:mgc_mux1hot(32,27,4) to mgc_mux1hot(32,26,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#340:mgc_mux1hot(32,28,4) to mgc_mux1hot(32,27,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#406:mgc_mux1hot(32,29,4) to mgc_mux1hot(32,28,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#354:mgc_mux1hot(32,30,4) to mgc_mux1hot(32,29,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#412:mgc_mux1hot(32,31,4) to mgc_mux1hot(32,30,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#366:mgc_mux1hot(32,32,4) to mgc_mux1hot(32,31,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#407:mgc_mux1hot(32,33,4) to mgc_mux1hot(32,32,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#392:mgc_mux1hot(32,38,4) to mgc_mux1hot(32,35,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#2:mgc_mux1hot(32,37,4) to mgc_mux1hot(32,35,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#408:mgc_mux1hot(32,37,4) to mgc_mux1hot(32,35,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#409:mgc_mux1hot(32,37,4) to mgc_mux1hot(32,36,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#389:mgc_mux1hot(32,38,4) to mgc_mux1hot(32,37,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#413:mgc_mux1hot(32,39,4) to mgc_mux1hot(32,38,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#393:mgc_mux1hot(32,40,4) to mgc_mux1hot(32,39,4) (ASG-1)
+# Reassigned operation test_orig:for:test_orig:for:mux1h#394:mgc_mux1hot(32,41,4) to mgc_mux1hot(32,40,4) (ASG-1)
+# Reassigned operation operator+<6,false>#1:acc:mgc_add(5,0,2,1,5,4) to mgc_add(5,0,1,0,5,4) (ASG-1)
+# Reassigned operation operator+<6,false>#1:acc#1:mgc_add(4,0,2,1,4,4) to mgc_add(4,0,1,0,4,4) (ASG-1)
+# Reassigned operation operator+<6,false>#1:acc#2:mgc_add(5,0,3,1,5,4) to mgc_add(5,0,2,0,5,4) (ASG-1)
+# Reassigned operation operator+<6,false>#1:acc#4:mgc_add(4,0,4,0,4,4) to mgc_add(4,0,3,0,4,4) (ASG-1)
+# Reassigned operation operator+<6,false>#1:acc#6:mgc_add(4,0,4,0,4,4) to mgc_add(4,0,3,0,4,4) (ASG-1)
+# Reassigned operation operator+<6,false>#1:acc#5:mgc_add(3,0,3,0,3,4) to mgc_add(3,0,2,0,3,4) (ASG-1)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5814, Real ops = 3052, Vars = 5812) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5554, Real ops = 3052, Vars = 1966) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5530, Real ops = 3052, Vars = 1898) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 1898) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 1898) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 1898) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 1898) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'test_orig_wrapper.v1': elapsed time 3.77 seconds, memory usage 1293464kB, peak memory usage 1294492kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'test_orig_wrapper.v1' (SOL-8)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 5488) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5554, Real ops = 3052, Vars = 1966) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5530, Real ops = 3052, Vars = 1898) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 1898) (SOL-10)
+# Info: Optimizing partition '/test_orig_wrapper': (Total ops = 5490, Real ops = 3052, Vars = 1898) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test_orig_wrapper.v1/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test_orig_wrapper.v1/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test_orig_wrapper.v1/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test_orig_wrapper.v1/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Info: Completed transformation 'extract' on solution 'test_orig_wrapper.v1': elapsed time 7.95 seconds, memory usage 1359000kB, peak memory usage 1359000kB (SOL-9)
+# > end dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/directives.tcl
+flow run /DesignAnalyzer/launch
+dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/coding_style.tcl
+dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/coding_style.tcl
+# > go new
+# > solution file set {$PROJECT_HOME/test.cpp} -exclude false
+# Info: Branching solution 'solution.v1' at state 'new' (PRJ-2)
+# > solution file set {$PROJECT_HOME/test_orig.cpp} -exclude true
+# > go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /home/gel8580/CE459/Lab3/dynamic_offset_style/test.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# $PROJECT_HOME/test.cpp(25): Pragma 'hls_design<top>' detected on routine 'test_wrapper' (CIN-6)
+# Source file analysis completed (CIN-68)
+# solution design add test_orig_wrapper -type top -unlocked (HC-1)
+# Info: Completed transformation 'analyze' on solution 'solution.v1': elapsed time 0.54 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# > directive set -DESIGN_HIERARCHY test
+# solution design add test -type top -unlocked (HC-1)
+# /DESIGN_HIERARCHY test
+# > go assembly
+# Info: Starting transformation 'compile' on solution 'solution.v1' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# $PROJECT_HOME/test.cpp(3): Found top design routine 'test' specified by directive (CIN-52)
+# $PROJECT_HOME/test.cpp(3): Found top design routine 'test' specified by directive (CIN-52)
+# $PROJECT_HOME/test.cpp(3): Synthesizing routine 'test' (CIN-13)
+# $PROJECT_HOME/test.cpp(3): Inlining routine 'test' (CIN-14)
+# $PROJECT_HOME/test.cpp(8): Pragma 'hls_unroll<yes>' detected on '/test/core/for' (CIN-203)
+# $PROJECT_HOME/test.cpp(10): Pragma 'hls_unroll<yes>' detected on '/test/core/for:for' (CIN-203)
+# $MGC_HOME/shared/include/ac_int.h(2744): Inlining routine 'operator==<6, false>' (CIN-14)
+# $PROJECT_HOME/test.cpp(19): Pragma 'hls_unroll<yes>' detected on '/test/core/for#1' (CIN-203)
+# $PROJECT_HOME/test.cpp(3): Optimizing block '/test' ... (CIN-4)
+# $PROJECT_HOME/test.cpp(3): INOUT port 'din' is only used as an input. (OPT-10)
+# $PROJECT_HOME/test.cpp(4): INOUT port 'dout' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/test': (Total ops = 49, Real ops = 17, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 17, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 41, Real ops = 17, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 41, Real ops = 17, Vars = 17) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'pref' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'pref:dout.ptr.idx.pref' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:acc.tdx' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(21): Splitting object 'for#1:acc.tdx' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 40, Real ops = 15, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 64, Real ops = 15, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 64, Real ops = 15, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 64, Real ops = 15, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 64, Real ops = 15, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 64, Real ops = 15, Vars = 5) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/for:for' iterated at most 40 times. (LOOP-2)
+# $PROJECT_HOME/test.cpp(9): Loop '/test/core/for' iterated at most 40 times. (LOOP-2)
+# $PROJECT_HOME/test.cpp(20): Loop '/test/core/for#1' iterated at most 40 times. (LOOP-2)
+# Info: Optimizing partition '/test/core': (Total ops = 49, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 45, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 45, Real ops = 14, Vars = 8) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(9): Splitting object 'for:i' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(11): Splitting object 'for:for:j' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(20): Splitting object 'for#1:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 40, Real ops = 14, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 37, Real ops = 14, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 37, Real ops = 14, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 37, Real ops = 14, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 14, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 37, Real ops = 14, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 37, Real ops = 14, Vars = 5) (SOL-10)
+# Design 'test' was read (SOL-1)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/CDesignChecker/design_checker.sh'
+# Info: Completed transformation 'compile' on solution 'test.v1': elapsed time 0.49 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'libraries' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'libraries' on solution 'test.v1': elapsed time 0.15 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'assembly' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 38, Real ops = 15, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 38, Real ops = 15, Vars = 5) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'test.v1': elapsed time 0.04 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# > directive set /test/core/main -PIPELINE_INIT_INTERVAL 1
+# /test/core/main/PIPELINE_INIT_INTERVAL 1
+# > go extract
+# Info: Starting transformation 'loops' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 44, Real ops = 15, Vars = 5) (SOL-10)
+# $PROJECT_HOME/test.cpp(11): Loop '/test/core/for:for' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 44, Real ops = 15, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 746, Real ops = 327, Vars = 5) (SOL-10)
+# $PROJECT_HOME/test.cpp(20): Loop '/test/core/for#1' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 746, Real ops = 327, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1097, Real ops = 444, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1097, Real ops = 444, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 877, Real ops = 203, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 941, Real ops = 198, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 941, Real ops = 198, Vars = 3) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 776, Real ops = 163, Vars = 10) (SOL-10)
+# Info: Merged 'for:for-5:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-4:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-9:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-8:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-11:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-10:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-13:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-12:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-15:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-14:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-17:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-16:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-19:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-18:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-21:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-20:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-23:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-22:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-25:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-24:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-27:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-26:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-29:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-28:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-31:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-30:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-35:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-34:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Optimizing partition '/test/core': (Total ops = 776, Real ops = 163, Vars = 10) (SOL-10)
+# Info: Merged 'for:for-32:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-30:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-36:sel' at $PROJECT_HOME/test.cpp(12) to 'for:for-34:sel' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Optimizing partition '/test/core': (Total ops = 776, Real ops = 163, Vars = 10) (SOL-10)
+# Info: Merged 'for:for-32:sel#1' at $PROJECT_HOME/test.cpp(12) to 'for:for-31:sel#1' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Merged 'for:for-36:sel#1' at $PROJECT_HOME/test.cpp(12) to 'for:for-35:sel#1' at $PROJECT_HOME/test.cpp(12). (OPT-16)
+# Info: Optimizing partition '/test/core': (Total ops = 776, Real ops = 163, Vars = 10) (SOL-10)
+# $PROJECT_HOME/test.cpp(9): Loop '/test/core/for' is being fully unrolled (40 times). (LOOP-7)
+# Info: Optimizing partition '/test/core': (Total ops = 776, Real ops = 163, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27530, Real ops = 6481, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 27530, Real ops = 6481, Vars = 10) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1729, Real ops = 1, Vars = 2) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1729, Real ops = 1, Vars = 2) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 1) (SOL-10)
+# $PROJECT_HOME/test.cpp(3): Loop '/test/core/main' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test': (Total ops = 1728, Real ops = 1, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1728, Real ops = 1, Vars = 9) (SOL-10)
+# Info: Completed transformation 'loops' on solution 'test.v1': elapsed time 1.59 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'test.v1' (SOL-8)
+# $PROJECT_HOME/test.cpp(3): I/O-Port Resource '/test/din:rsc' (from var: din) mapped to 'ccs_ioport.ccs_in' (size: 1280). (MEM-2)
+# $PROJECT_HOME/test.cpp(3): I/O-Port Resource '/test/offset:rsc' (from var: offset) mapped to 'ccs_ioport.ccs_in' (size: 6). (MEM-2)
+# $PROJECT_HOME/test.cpp(4): I/O-Port Resource '/test/dout:rsc' (from var: dout) mapped to 'ccs_ioport.ccs_out' (size: 1280). (MEM-2)
+# Info: Optimizing partition '/test': (Total ops = 2629, Real ops = 1, Vars = 49) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 2629, Real ops = 1, Vars = 41) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1690, Real ops = 1, Vars = 40) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1690, Real ops = 1, Vars = 48) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#40.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#79.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#117.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#154.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#190.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#225.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#259.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#292.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#324.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#355.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#385.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#414.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#442.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#469.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#495.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#520.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#544.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#567.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#589.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#610.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#630.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#649.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#667.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#684.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#700.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#715.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#729.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#742.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#754.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#765.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#775.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#784.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#792.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#799.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#805.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#810.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#814.cse' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/test.cpp(13): Splitting object 'for:for:if:io_read(din:rsc.@)#817.cse' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 78) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 40) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1728, Real ops = 1, Vars = 48) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1728, Real ops = 1, Vars = 40) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1728, Real ops = 1, Vars = 48) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(6): Splitting object 'regs' into 40 segments (OPT-19)
+# Info: Optimizing partition '/test': (Total ops = 948, Real ops = 1, Vars = 87) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 948, Real ops = 1, Vars = 79) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 948, Real ops = 1, Vars = 79) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 948, Real ops = 1, Vars = 87) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'test.v1': elapsed time 0.54 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'test.v1' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test.v1': elapsed time 0.07 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test/core': (Total ops = 2561, Real ops = 161, Vars = 1336) (SOL-10)
+# Info: Optimizing partition '/test/core': (Total ops = 1746, Real ops = 239, Vars = 162) (SOL-10)
+# Design 'test' contains '239' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'test.v1': elapsed time 0.46 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'allocate' on solution 'test.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/test.cpp(3): Prescheduled LOOP '/test/core/main' (2 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(3): Prescheduled LOOP '/test/core/core:rlp' (0 c-steps) (SCHD-7)
+# $PROJECT_HOME/test.cpp(3): Prescheduled SEQUENTIAL '/test/core' (total length 2 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/test.cpp(3): Initial schedule of SEQUENTIAL '/test/core': Latency = 1, Area (Datapath, Register, Total) = 31169.18, 8160.00, 39329.18 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/test/core/main': Latency = 1, Area (Datapath, Register, Total) = 30007.68, 8160.00, 38167.68 (CRAAS-10)
+# Info: Optimized LOOP '/test/core/main': Latency = 1, Area (Datapath, Register, Total) = 23797.19, 8160.00, 31957.19 (CRAAS-10)
+# Info: $PROJECT_HOME/test.cpp(3): Final schedule of SEQUENTIAL '/test/core': Latency = 1, Area (Datapath, Register, Total) = 23797.19, 8160.00, 31957.19 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'test.v1': elapsed time 1.07 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'test.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/test/core' (CRAAS-1)
+# Global signal 'din:rsc.dat' added to design 'test' for component 'din:rsci' (LIB-3)
+# Global signal 'offset:rsc.dat' added to design 'test' for component 'offset:rsci' (LIB-3)
+# Global signal 'dout:rsc.dat' added to design 'test' for component 'dout:rsci' (LIB-3)
+# Global signal 'din:rsc.triosy.lz' added to design 'test' for component 'din:rsc.triosy:obj' (LIB-3)
+# Global signal 'offset:rsc.triosy.lz' added to design 'test' for component 'offset:rsc.triosy:obj' (LIB-3)
+# Global signal 'dout:rsc.triosy.lz' added to design 'test' for component 'dout:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/test.cpp(3): Loop '/test/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test': (Total ops = 1815, Real ops = 239, Vars = 193) (SOL-10)
+# Info: $PROJECT_HOME/test.cpp(4): Splitting object 'dout:rsci.idat' into 40 segments (OPT-19)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1833, Real ops = 239, Vars = 171) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1429, Real ops = 159, Vars = 162) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1450, Real ops = 159, Vars = 223) (SOL-10)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1429, Real ops = 159, Vars = 162) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1450, Real ops = 159, Vars = 223) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'test.v1': elapsed time 1.68 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'test.v1' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test/test:core/core': (Total ops = 1634, Real ops = 159, Vars = 162) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 2938, Real ops = 201, Vars = 2392) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1362, Real ops = 278, Vars = 142) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1324, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1321, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1321, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1321, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 542, Real ops = 239, Vars = 139) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1321, Real ops = 239, Vars = 100) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'test.v1': elapsed time 2.34 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'test.v1' (SOL-8)
+# Reassigned operation for:for:mux1h#2:mgc_mux1hot(32,4,4) to mgc_mux1hot(32,3,4) (ASG-1)
+# Reassigned operation for:for:mux1h#3:mgc_mux1hot(32,5,4) to mgc_mux1hot(32,4,4) (ASG-1)
+# Reassigned operation for:for:mux1h#4:mgc_mux1hot(32,6,4) to mgc_mux1hot(32,5,4) (ASG-1)
+# Reassigned operation for:for:mux1h#5:mgc_mux1hot(32,7,4) to mgc_mux1hot(32,6,4) (ASG-1)
+# Reassigned operation for:for:mux1h#6:mgc_mux1hot(32,8,4) to mgc_mux1hot(32,7,4) (ASG-1)
+# Reassigned operation for:for:mux1h#7:mgc_mux1hot(32,9,4) to mgc_mux1hot(32,8,4) (ASG-1)
+# Reassigned operation for:for:mux1h#8:mgc_mux1hot(32,10,4) to mgc_mux1hot(32,9,4) (ASG-1)
+# Reassigned operation for:for:mux1h#9:mgc_mux1hot(32,11,4) to mgc_mux1hot(32,10,4) (ASG-1)
+# Reassigned operation for:for:mux1h#10:mgc_mux1hot(32,12,4) to mgc_mux1hot(32,11,4) (ASG-1)
+# Reassigned operation for:for:mux1h#11:mgc_mux1hot(32,13,4) to mgc_mux1hot(32,12,4) (ASG-1)
+# Reassigned operation for:for:mux1h#12:mgc_mux1hot(32,14,4) to mgc_mux1hot(32,13,4) (ASG-1)
+# Reassigned operation for:for:mux1h#13:mgc_mux1hot(32,15,4) to mgc_mux1hot(32,14,4) (ASG-1)
+# Reassigned operation for:for:mux1h#14:mgc_mux1hot(32,16,4) to mgc_mux1hot(32,15,4) (ASG-1)
+# Reassigned operation for:for:mux1h#15:mgc_mux1hot(32,17,4) to mgc_mux1hot(32,16,4) (ASG-1)
+# Reassigned operation for:for:mux1h#16:mgc_mux1hot(32,18,4) to mgc_mux1hot(32,17,4) (ASG-1)
+# Reassigned operation for:for:mux1h#17:mgc_mux1hot(32,19,4) to mgc_mux1hot(32,18,4) (ASG-1)
+# Reassigned operation for:for:mux1h#18:mgc_mux1hot(32,20,4) to mgc_mux1hot(32,19,4) (ASG-1)
+# Reassigned operation for:for:mux1h#19:mgc_mux1hot(32,21,4) to mgc_mux1hot(32,20,4) (ASG-1)
+# Reassigned operation for:for:mux1h#20:mgc_mux1hot(32,22,4) to mgc_mux1hot(32,21,4) (ASG-1)
+# Reassigned operation for:for:mux1h#21:mgc_mux1hot(32,23,4) to mgc_mux1hot(32,22,4) (ASG-1)
+# Reassigned operation for:for:mux1h#22:mgc_mux1hot(32,24,4) to mgc_mux1hot(32,23,4) (ASG-1)
+# Reassigned operation for:for:mux1h#23:mgc_mux1hot(32,25,4) to mgc_mux1hot(32,24,4) (ASG-1)
+# Reassigned operation for:for:mux1h#24:mgc_mux1hot(32,26,4) to mgc_mux1hot(32,25,4) (ASG-1)
+# Reassigned operation for:for:mux1h#25:mgc_mux1hot(32,27,4) to mgc_mux1hot(32,26,4) (ASG-1)
+# Reassigned operation for:for:mux1h#26:mgc_mux1hot(32,28,4) to mgc_mux1hot(32,27,4) (ASG-1)
+# Reassigned operation for:for:mux1h#27:mgc_mux1hot(32,29,4) to mgc_mux1hot(32,28,4) (ASG-1)
+# Reassigned operation for:for:mux1h#28:mgc_mux1hot(32,30,4) to mgc_mux1hot(32,29,4) (ASG-1)
+# Reassigned operation for:for:mux1h#29:mgc_mux1hot(32,31,4) to mgc_mux1hot(32,30,4) (ASG-1)
+# Reassigned operation for:for:mux1h#30:mgc_mux1hot(32,32,4) to mgc_mux1hot(32,31,4) (ASG-1)
+# Reassigned operation for:for:mux1h#31:mgc_mux1hot(32,33,4) to mgc_mux1hot(32,32,4) (ASG-1)
+# Reassigned operation for:for:mux1h#32:mgc_mux1hot(32,34,4) to mgc_mux1hot(32,33,4) (ASG-1)
+# Reassigned operation for:for:mux1h#33:mgc_mux1hot(32,35,4) to mgc_mux1hot(32,34,4) (ASG-1)
+# Reassigned operation for:for:mux1h#34:mgc_mux1hot(32,36,4) to mgc_mux1hot(32,35,4) (ASG-1)
+# Reassigned operation for:for:mux1h#35:mgc_mux1hot(32,37,4) to mgc_mux1hot(32,36,4) (ASG-1)
+# Reassigned operation for:for:mux1h#36:mgc_mux1hot(32,38,4) to mgc_mux1hot(32,37,4) (ASG-1)
+# Reassigned operation for:for:mux1h#37:mgc_mux1hot(32,39,4) to mgc_mux1hot(32,38,4) (ASG-1)
+# Reassigned operation for:for:mux1h#38:mgc_mux1hot(32,40,4) to mgc_mux1hot(32,39,4) (ASG-1)
+# Reassigned operation for:for:mux1h#39:mgc_mux1hot(32,41,4) to mgc_mux1hot(32,40,4) (ASG-1)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 1277) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 139) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'test.v1': elapsed time 1.32 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'test.v1' (SOL-8)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 1277) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 139) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1319, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Info: Optimizing partition '/test': (Total ops = 1279, Real ops = 198, Vars = 99) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Info: Completed transformation 'extract' on solution 'test.v1': elapsed time 3.16 seconds, memory usage 1424536kB, peak memory usage 1424536kB (SOL-9)
+# > end dofile /home/gel8580/CE459/Lab3/dynamic_offset_style/coding_style.tcl
+# Info: No objects are associated with this element
+# Info: No objects are associated with this element
+flow run /SCVerify/launch_make ./scverify/Verify_orig_cxx_osci.mk {} SIMTOOL=osci sim
+# Making './scverify/Verify_orig_cxx_osci.mk SIMTOOL=osci sim'
+# Make utility invoked from '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1'
+#     /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/make -f ./scverify/Verify_orig_cxx_osci.mk SIMTOOL=osci build < "/dev/null" (BASIC-15)
+# ============================================
+# Creating simulation directory 'scverify/orig_cxx_osci'
+# mkdir -p scverify/orig_cxx_osci
+# ============================================
+# Compiling C++ file: ../../test_orig.cpp
+# /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/g++ -DCCS_DUT_SYSC -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DCCS_MISMATCHED_OUTPUTS_ONLY -DDEADLOCK_DETECTION -Wall -Wno-unknown-pragmas -Wno-unused-label -g -I. -I../.. -I. -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/hls_pkgs/src -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DSC_USE_STD_STRING  -c ../../test_orig.cpp -o scverify/orig_cxx_osci/test_orig.cpp.cxxts.o
+# ============================================
+# Compiling C++ file: ../../tb.cpp
+# /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/g++ -DCCS_DUT_SYSC -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DCCS_MISMATCHED_OUTPUTS_ONLY -DDEADLOCK_DETECTION -Wall -Wno-unknown-pragmas -Wno-unused-label -g -I. -I../.. -I. -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/hls_pkgs/src -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DSC_USE_STD_STRING  -c ../../tb.cpp -o scverify/orig_cxx_osci/tb.cpp.cxxts.o
+# In file included from ../../tb.cpp:3:0:
+# /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include/mc_scverify.h:150:29: warning: second argument of ‘int main(int, char*)’ should be ‘char **’ [-Wmain]
+#    #define CCS_MAIN(a,b) int main(a,b)
+#                              ^
+# ../../tb.cpp:5:1: note: in expansion of macro ‘CCS_MAIN’
+#  CCS_MAIN(int argv, char *argc)
+#  ^
+# ============================================
+# Compiling C++ file: ../../test.cpp
+# /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/g++ -DCCS_DUT_SYSC -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DCCS_MISMATCHED_OUTPUTS_ONLY -DDEADLOCK_DETECTION -Wall -Wno-unknown-pragmas -Wno-unused-label -g -I. -I../.. -I. -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/include -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/hls_pkgs/src -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs -I/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DSC_USE_STD_STRING  -c ../../test.cpp -o scverify/orig_cxx_osci/test.cpp.cxxts.o
+# ============================================
+# Linking executable
+# /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/g++  -L/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/lib/Linux/gcc -L/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/lib -L/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/shared/lib/Linux/gcc scverify/orig_cxx_osci/test_orig.cpp.cxxts.o scverify/orig_cxx_osci/tb.cpp.cxxts.o scverify/orig_cxx_osci/test.cpp.cxxts.o -lpthread -lsystemc -o scverify/orig_cxx_osci/scverify_top
+#     /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/make -f ./scverify/Verify_orig_cxx_osci.mk SIMTOOL=osci sim (BASIC-14)
+# ============================================
+# Simulating design
+# cd ../..; ./Catapult/test.v1/scverify/orig_cxx_osci/scverify_top 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+flow run /SCVerify/launch_make ./scverify/Verify_orig_cxx_osci.mk {} SIMTOOL=osci sim
+# Making './scverify/Verify_orig_cxx_osci.mk SIMTOOL=osci sim'
+# Make utility invoked from '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult/test.v1'
+#     /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/make -f ./scverify/Verify_orig_cxx_osci.mk SIMTOOL=osci build < "/dev/null" (BASIC-15)
+# make: Nothing to be done for `build'.
+#     /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/bin/make -f ./scverify/Verify_orig_cxx_osci.mk SIMTOOL=osci sim (BASIC-14)
+# ============================================
+# Simulating design
+# cd ../..; ./Catapult/test.v1/scverify/orig_cxx_osci/scverify_top 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+# 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 
+quit
+# Saving project file '/home/gel8580/CE459/Lab3/dynamic_offset_style/Catapult.ccs'. (PRJ-5)
+// Finish time Thu Nov  6 11:48:40 2025, time elapsed 15:03, peak memory 1.36GB, exit status 0

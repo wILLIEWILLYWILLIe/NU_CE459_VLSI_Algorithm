@@ -1,0 +1,23 @@
+//  Catapult Ultra Synthesis 10.4a/835166 (Production Release) Thu Sep  5 21:35:46 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux gel8580@finagle.wot.ece.northwestern.edu 4.18.0-553.77.1.el8_10.x86_64 x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_1.0, HLS_PKGS v23.4_1.0, 
+//                       SIF_TOOLKITS v23.4_1.0, SIF_XILINX v23.4_1.0, 
+//                       SIF_ALTERA v23.4_1.0, CCS_LIBS v23.4_1.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4a, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Sat Oct  4 13:07:10 2025
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log6043861c203be2.0"
+quit
+# Moving session transcript to file "/home/gel8580/CE459_VLSI_Algorithm/catapult.log"
+# Saving project file '/home/gel8580/CE459_VLSI_Algorithm/Catapult.ccs'. (PRJ-5)
+// Finish time Sat Oct  4 13:14:21 2025, time elapsed 7:11, peak memory 1.10GB, exit status 0

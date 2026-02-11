@@ -1,0 +1,381 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+directive set -DESIGN_HIERARCHY test_orig
+go new
+/DESIGN_HIERARCHY test_orig
+solution design add test_orig -type top -unlocked (HC-1)
+/COMPGRADE fast
+directive set -COMPGRADE fast
+/PIPELINE_RAMP_UP true
+directive set -PIPELINE_RAMP_UP true
+Moving session transcript to file "/home/gel8580/CE459/Lab3/conditional_acc/catapult.log"
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+go analyze
+solution options defaults
+solution.v2
+false
+solution options set /Output/GenerateCycleNetlist false
+directive set -LOGIC_OPT false
+/MEM_MAP_THRESHOLD 32
+directive set -FSM_ENCODING none
+/LOGIC_OPT false
+directive set -REGISTER_THRESHOLD 256
+/MERGEABLE true
+directive set -MEM_MAP_THRESHOLD 32
+/REGISTER_THRESHOLD 256
+directive set -NO_X_ASSIGNMENTS true
+/REG_MAX_FANOUT 0
+directive set -SAFE_FSM false
+/NO_X_ASSIGNMENTS true
+directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+/FSM_ENCODING none
+directive set -REG_MAX_FANOUT 0
+/FSM_BINARY_ENCODING_THRESHOLD 64
+solution file add ./test.cpp -type C++ -exclude true
+/INPUTFILES/1
+/INPUTFILES/2
+true
+solution options set /Flows/SCVerify/USE_CCS_BLOCK true
+solution file add ./test_orig.cpp -type C++
+directive set -SPECULATE true
+/DESIGN_GOAL area
+directive set -MERGEABLE true
+/SPECULATE true
+solution file add ./tb.cpp -type C++ -exclude true
+directive set -DESIGN_GOAL area
+/INPUTFILES/3
+directive set -REGISTER_IDLE_SIGNAL false
+/ARRAY_SIZE 1024
+directive set -IDLE_SIGNAL {}
+/REGISTER_IDLE_SIGNAL false
+directive set -CHAN_IO_PROTOCOL standard
+/IO_MODE super
+directive set -ARRAY_SIZE 1024
+/CHAN_IO_PROTOCOL standard
+directive set -DONE_FLAG {}
+/TRANSACTION_DONE_SIGNAL true
+directive set -READY_FLAG {}
+/DONE_FLAG {}
+directive set -STALL_FLAG false
+/IDLE_SIGNAL {}
+directive set -TRANSACTION_DONE_SIGNAL true
+/STALL_FLAG false
+directive set -ASSIGN_OVERHEAD 0
+/REGISTER_SHARING_LIMIT 0
+directive set -TIMING_CHECKS true
+/ASSIGN_OVERHEAD 0
+directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+/SAFE_FSM false
+directive set -REGISTER_SHARING_LIMIT 0
+/REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+directive set -UNROLL no
+/REALLOC true
+directive set -IO_MODE super
+/UNROLL no
+directive set -MUXPATH true
+/TIMING_CHECKS true
+directive set -REALLOC true
+/MUXPATH true
+/ROM_THRESHOLD 64
+directive set -ROM_THRESHOLD 64
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+/CHARACTERIZE_ROM false
+directive set -CHARACTERIZE_ROM false
+/PROTOTYPE_ROM true
+directive set -PROTOTYPE_ROM true
+/CLUSTER_FAST_MODE false
+directive set -CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+directive set -CLUSTER_TYPE combinational
+/CLUSTER_OPT_CONSTANT_INPUTS true
+directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+directive set -CLUSTER_RTL_SYN false
+directive set -TRANSACTION_SYNC ready
+Source file analysis completed (CIN-68)
+/BLOCK_SYNC none
+Pragma 'hls_design<top>' detected on routine 'test_orig' (CIN-6)
+directive set -DATA_SYNC none
+/TRANSACTION_SYNC ready
+directive set -START_FLAG {}
+/READY_FLAG {}
+directive set -BLOCK_SYNC none
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+/START_FLAG {}
+Front End called with arguments: -- /home/gel8580/CE459/Lab3/conditional_acc/test_orig.cpp (CIN-69)
+/CLOCK_OVERHEAD 20.000000
+directive set -CLOCK_OVERHEAD 20.000000
+/OPT_CONST_MULTS use_library
+directive set -OPT_CONST_MULTS use_library
+directive set -RESET_CLEARS_ALL_REGS true
+/DATA_SYNC none
+/RESET_CLEARS_ALL_REGS yes
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+
+# Messages from "go compile"
+
+# Info: Optimizing partition '/test_orig/core': (Total ops = 20, Real ops = 3, Vars = 6) (SOL-10)
+# Info: Splitting object 'MAC:i' into 2 segments (OPT-19)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v1/CDesignChecker/design_checker.sh'
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Optimizing partition '/test_orig': (Total ops = 30, Real ops = 5, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 30, Real ops = 5, Vars = 13) (SOL-10)
+# Info: Splitting object 'pref:pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+INOUT port 'valid_in.data' is only used as an input. (OPT-10)
+INOUT port 'b_in' is only used as an input. (OPT-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 30, Real ops = 5, Vars = 19) (SOL-10)
+INOUT port 'result' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/test_orig': (Total ops = 22, Real ops = 5, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 22, Real ops = 5, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 25, Real ops = 5, Vars = 5) (SOL-10)
+Loop '/test_orig/core/MAC' iterated at most 16 times. (LOOP-2)
+# Info: Splitting object 'pref:pref.pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 28, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Splitting object 'pref:pref.pref.pref#1' into 2 segments (OPT-19)
+solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 0.62 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+Inlining routine 'test_orig' (CIN-14)
+Synthesizing routine 'test_orig' (CIN-13)
+INOUT port 'a_in' is only used as an input. (OPT-10)
+Optimizing block '/test_orig' ... (CIN-4)
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+go libraries
+Found top design routine 'test_orig' specified by directive (CIN-52)
+# Info: Optimizing partition '/test_orig': (Total ops = 20, Real ops = 3, Vars = 9) (SOL-10)
+Generating synthesis internal form... (CIN-3)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 20, Real ops = 3, Vars = 5) (SOL-10)
+Design 'test_orig' was read (SOL-1)
+# Info: Optimizing partition '/test_orig': (Total ops = 21, Real ops = 3, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 21, Real ops = 3, Vars = 5) (SOL-10)
+
+# Messages from "go libraries"
+
+Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+# Info: Starting transformation 'libraries' on solution 'test_orig.v1' (SOL-8)
+# Info: Completed transformation 'compile' on solution 'test_orig.v1': elapsed time 0.46 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+Reading component library '$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib' [nangate-45nm_beh]... (LIB-49)
+
+# Messages from "go assembly"
+
+# Info: Starting transformation 'assembly' on solution 'test_orig.v1' (SOL-8)
+go assembly
+/CLOCKS {clk {-CLOCK_PERIOD 1.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 0.5 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/test_orig/core': (Total ops = 21, Real ops = 4, Vars = 5) (SOL-10)
+directive set -CLOCKS {clk {-CLOCK_PERIOD 1.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 0.5 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/test_orig': (Total ops = 21, Real ops = 4, Vars = 11) (SOL-10)
+# Info: Completed transformation 'libraries' on solution 'test_orig.v1': elapsed time 0.21 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+
+# Messages from "go architect"
+
+go extract
+# Info: Branching solution 'test_orig.v3' at state 'assembly' (PRJ-2)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+Loop '/test_orig/core/MAC' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 23, Real ops = 4, Vars = 5) (SOL-10)
+Loop '/test_orig/core/main' is left rolled. (LOOP-4)
+/test_orig/core/main/PIPELINE_INIT_INTERVAL 1
+# Info: Starting transformation 'loops' on solution 'test_orig.v3' (SOL-8)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v3/CDesignChecker/design_checker.sh'
+Loop '/test_orig/core/main' is left rolled. (LOOP-4)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v2/CDesignChecker/design_checker.sh'
+/test_orig/core/MAC/PIPELINE_INIT_INTERVAL 1
+Loop '/test_orig/core/MAC' is left rolled. (LOOP-4)
+# Info: Starting transformation 'loops' on solution 'test_orig.v2' (SOL-8)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 23, Real ops = 4, Vars = 5) (SOL-10)
+go extract
+# Info: Branching solution 'test_orig.v2' at state 'assembly' (PRJ-2)
+> end dofile /home/gel8580/CE459/Lab3/conditional_acc/directives.tcl
+# Info: Completed transformation 'assembly' on solution 'test_orig.v1': elapsed time 0.03 seconds, memory usage 1293952kB, peak memory usage 1293952kB (SOL-9)
+# Info: Starting transformation 'loops' on solution 'test_orig.v1' (SOL-8)
+go allocate
+Loop '/test_orig/core/MAC' is left rolled. (LOOP-4)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 23, Real ops = 4, Vars = 5) (SOL-10)
+Loop '/test_orig/core/main' is left rolled. (LOOP-4)
+# Info: Completed transformation 'loops' on solution 'test_orig.v3': elapsed time 0.01 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 23, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 24, Real ops = 4, Vars = 12) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 24, Real ops = 4, Vars = 5) (SOL-10)
+I/O-Port Resource '/test_orig/valid_in.data:rsc' (from var: valid_in.data) mapped to 'ccs_ioport.ccs_in' (size: 16). (MEM-2)
+# Info: Optimizing partition '/test_orig': (Total ops = 23, Real ops = 4, Vars = 12) (SOL-10)
+# Info: Starting transformation 'memories' on solution 'test_orig.v3' (SOL-8)
+# Info: Starting transformation 'cluster' on solution 'test_orig.v3' (SOL-8)
+# Info: Completed transformation 'memories' on solution 'test_orig.v3': elapsed time 0.05 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 47, Real ops = 12, Vars = 18) (SOL-10)
+# Info: Starting transformation 'architect' on solution 'test_orig.v3' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'test_orig.v3': elapsed time 0.01 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 31, Real ops = 6, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 32, Real ops = 5, Vars = 8) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 96, Real ops = 15, Vars = 49) (SOL-10)
+# Info: Optimizing partition '/test_orig/core': (Total ops = 27, Real ops = 4, Vars = 6) (SOL-10)
+Design 'test_orig' contains '15' real operations. (SOL-11)
+
+# Messages from "go allocate"
+
+Performing concurrent resource allocation and scheduling on '/test_orig/core' (CRAAS-1)
+Resource allocation and scheduling done. (CRAAS-2)
+At least one feasible schedule exists. (CRAAS-9)
+# Info: Initial schedule of SEQUENTIAL '/test_orig/core': Latency = 17, Area (Datapath, Register, Total) = 1676.82, 2008.12, 3684.95 (CRAAS-11)
+Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Optimized LOOP '/test_orig/core/main': Latency = 17, Area (Datapath, Register, Total) = 1526.36, 2008.12, 3534.48 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig/core/main': Latency = 17, Area (Datapath, Register, Total) = 1515.20, 2008.12, 3523.32 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig/core/main': Latency = 17, Area (Datapath, Register, Total) = 1587.52, 2008.12, 3595.64 (CRAAS-10)
+# Info: Optimized LOOP '/test_orig/core/main': Latency = 17, Area (Datapath, Register, Total) = 1519.02, 2008.12, 3527.14 (CRAAS-10)
+Prescheduled LOOP '/test_orig/core/main' (3 c-steps) (SCHD-7)
+# Info: Final schedule of SEQUENTIAL '/test_orig/core': Latency = 17, Area (Datapath, Register, Total) = 1510.02, 2008.12, 3518.14 (CRAAS-12)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# Info: Optimized LOOP '/test_orig/core/main': Latency = 17, Area (Datapath, Register, Total) = 1510.02, 2008.12, 3518.14 (CRAAS-10)
+Prescheduled SEQUENTIAL '/test_orig/core' (total length 4 c-steps) (SCHD-8)
+Prescheduled LOOP '/test_orig/core/core:rlp' (1 c-steps) (SCHD-7)
+# Info: Starting transformation 'allocate' on solution 'test_orig.v3' (SOL-8)
+# Info: Completed transformation 'architect' on solution 'test_orig.v3': elapsed time 0.10 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+
+# Messages from "go schedule"
+
+Global signal 'b_in:rsc.vld' added to design 'test_orig' for component 'b_in:rsci' (LIB-3)
+Global signal 'b_in:rsc.rdy' added to design 'test_orig' for component 'b_in:rsci' (LIB-3)
+# Info: Creating buffer for wait controller for component 'b_in:rsc' (SCHD-46)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/core': (Total ops = 124, Real ops = 12, Vars = 19) (SOL-10)
+Global signal 'b_in:rsc.dat' added to design 'test_orig' for component 'b_in:rsci' (LIB-3)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/core': (Total ops = 128, Real ops = 12, Vars = 20) (SOL-10)
+# Info: Splitting object 'MAC:i(4:0).lpi#1' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 298, Real ops = 51, Vars = 189) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 417, Real ops = 78, Vars = 267) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 311, Real ops = 51, Vars = 202) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/core': (Total ops = 158, Real ops = 15, Vars = 35) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 304, Real ops = 51, Vars = 192) (SOL-10)
+# Info: Splitting object 'MAC:i(4:0).lpi#1.dfm' into 2 segments (OPT-19)
+# Info: Optimizing partition '/test_orig': (Total ops = 317, Real ops = 51, Vars = 205) (SOL-10)
+Global signal 'valid_in.data:rsc.triosy.lz' added to design 'test_orig' for component 'valid_in.data:rsc.triosy:obj' (LIB-3)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 302, Real ops = 51, Vars = 190) (SOL-10)
+Global signal 'result:rsc.dat' added to design 'test_orig' for component 'result:rsci' (LIB-3)
+# Info: Optimizing partition '/test_orig': (Total ops = 315, Real ops = 51, Vars = 203) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 432, Real ops = 78, Vars = 282) (SOL-10)
+# Info: Loop '/test_orig/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 324, Real ops = 53, Vars = 211) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 337, Real ops = 53, Vars = 224) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 310, Real ops = 51, Vars = 196) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 323, Real ops = 51, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/core': (Total ops = 128, Real ops = 12, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/core': (Total ops = 135, Real ops = 15, Vars = 22) (SOL-10)
+Report written to file 'cycle.rpt'
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 349, Real ops = 53, Vars = 230) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 364, Real ops = 53, Vars = 243) (SOL-10)
+Global signal 'a_in:rsc.vld' added to design 'test_orig' for component 'a_in:rsci' (LIB-3)
+Global signal 'a_in:rsc.rdy' added to design 'test_orig' for component 'a_in:rsci' (LIB-3)
+# Info: Creating buffer for wait controller for component 'a_in:rsc' (SCHD-46)
+Global signal 'a_in:rsc.dat' added to design 'test_orig' for component 'a_in:rsci' (LIB-3)
+# Info: Starting transformation 'schedule' on solution 'test_orig.v3' (SOL-8)
+# Info: Completed transformation 'allocate' on solution 'test_orig.v3': elapsed time 0.06 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+Performing concurrent resource allocation and scheduling on '/test_orig/core' (CRAAS-1)
+# Info: Creating buffer for wait controller for component 'valid_in.data:rsc' (SCHD-46)
+Global signal 'valid_in.data:rsc.dat' added to design 'test_orig' for component 'valid_in.data:rsci' (LIB-3)
+Global signal 'result:rsc.vld' added to design 'test_orig' for component 'result:rsci' (LIB-3)
+Global signal 'result:rsc.rdy' added to design 'test_orig' for component 'result:rsci' (LIB-3)
+
+# Messages from "go dpfsm"
+
+# Info: Optimizing partition '/test_orig': (Total ops = 324, Real ops = 97, Vars = 210) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/test_orig:core_core:fsm/test_orig:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 300, Real ops = 84, Vars = 185) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 311, Real ops = 97, Vars = 197) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 473, Real ops = 103, Vars = 351) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/core': (Total ops = 155, Real ops = 12, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/test_orig:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Starting transformation 'dpfsm' on solution 'test_orig.v3' (SOL-8)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 460, Real ops = 103, Vars = 338) (SOL-10)
+# Info: Completed transformation 'schedule' on solution 'test_orig.v3': elapsed time 0.57 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/test_orig': (Total ops = 296, Real ops = 84, Vars = 185) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 287, Real ops = 84, Vars = 172) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 295, Real ops = 80, Vars = 184) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 283, Real ops = 84, Vars = 172) (SOL-10)
+
+# Messages from "go extract"
+
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/test_orig:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 289, Real ops = 85, Vars = 283) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 290, Real ops = 84, Vars = 185) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/test_orig:core_core:fsm/test_orig:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+Reassigned operation MAC:MAC:mux:mgc_mux(20,1,2,4) to mgc_mux(20,1,2,1) (ASG-1)
+Reassigned operation MAC:if:acc:mgc_add(20,0,16,1,20,1) to mgc_add(20,0,16,1,20,2) (ASG-1)
+# Info: Optimizing partition '/test_orig': (Total ops = 302, Real ops = 85, Vars = 296) (SOL-10)
+Reassigned operation MAC:mux#1:mgc_mux(20,1,2,4) to mgc_mux(20,1,2,1) (ASG-1)
+Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Optimizing partition '/test_orig': (Total ops = 292, Real ops = 86, Vars = 185) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 287, Real ops = 92, Vars = 190) (SOL-10)
+# Info: Starting transformation 'instance' on solution 'test_orig.v3' (SOL-8)
+# Info: Optimizing partition '/test_orig': (Total ops = 286, Real ops = 82, Vars = 186) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'test_orig.v3': elapsed time 0.23 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 279, Real ops = 86, Vars = 172) (SOL-10)
+Reassigned operation MAC:acc#1:mgc_add(4,0,2,1,5,4) to mgc_add(4,0,1,0,5,4) (ASG-1)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 273, Real ops = 82, Vars = 173) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 283, Real ops = 79, Vars = 186) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 277, Real ops = 84, Vars = 172) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 300, Real ops = 92, Vars = 203) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 270, Real ops = 79, Vars = 173) (SOL-10)
+Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+order file name is: rtl.vhdl_order.txt
+generate concat
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+Netlist written to file 'rtl.vhdl' (NET-4)
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Generating scverify_top.cpp ()
+# Info: Starting transformation 'extract' on solution 'test_orig.v3' (SOL-8)
+# Info: Completed transformation 'instance' on solution 'test_orig.v3': elapsed time 0.41 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)
+order file name is: rtl.v_order.txt
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 273, Real ops = 82, Vars = 267) (SOL-10)
+generate concat
+# Info: Optimizing partition '/test_orig': (Total ops = 286, Real ops = 82, Vars = 280) (SOL-10)
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+Finished writing concatenated file: /home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v3/concat_rtl.v
+Report written to file 'rtl.rpt'
+Add dependent file: ./rtl.v
+Netlist written to file 'rtl.v' (NET-4)
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+order file name is: rtl.v_order_sim.txt
+Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/test_orig:core_core:fsm/test_orig:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct/test_orig:core/test_orig:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/test_orig/test_orig.struct': (Total ops = 273, Real ops = 82, Vars = 173) (SOL-10)
+# Info: Optimizing partition '/test_orig': (Total ops = 286, Real ops = 82, Vars = 186) (SOL-10)
+Finished writing concatenated file: /home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v3/concat_rtl.vhdl
+Add dependent file: ./rtl.vhdl
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+order file name is: rtl.vhdl_order_sim.txt
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Generating SCVerify testbench files
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v3/concat_sim_rtl.vhdl
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+Add dependent file: ./rtl.vhdl
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab3/conditional_acc/Catapult_1/test_orig.v3/concat_sim_rtl.v
+Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Info: Completed transformation 'extract' on solution 'test_orig.v3': elapsed time 2.36 seconds, memory usage 1292808kB, peak memory usage 1294492kB (SOL-9)

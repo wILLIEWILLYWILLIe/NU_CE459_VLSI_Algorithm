@@ -1,0 +1,378 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+/REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+directive set -UNROLL no
+/REALLOC true
+directive set -IO_MODE super
+/UNROLL no
+directive set -MUXPATH true
+/TIMING_CHECKS true
+directive set -REALLOC true
+/MUXPATH true
+directive set -LOGIC_OPT false
+/MEM_MAP_THRESHOLD 4096
+directive set -FSM_ENCODING none
+/LOGIC_OPT false
+directive set -REGISTER_THRESHOLD 4096
+/MERGEABLE true
+directive set -MEM_MAP_THRESHOLD 4096
+/REGISTER_THRESHOLD 4096
+directive set -NO_X_ASSIGNMENTS true
+/REG_MAX_FANOUT 0
+directive set -SAFE_FSM false
+/NO_X_ASSIGNMENTS true
+directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+/FSM_ENCODING none
+directive set -REG_MAX_FANOUT 0
+/FSM_BINARY_ENCODING_THRESHOLD 64
+directive set -TRANSACTION_SYNC ready
+/BLOCK_SYNC none
+directive set -DATA_SYNC none
+/TRANSACTION_SYNC ready
+directive set -START_FLAG {}
+/READY_FLAG {}
+directive set -BLOCK_SYNC none
+/START_FLAG {}
+true
+/CLOCK_OVERHEAD 20.000000
+flow package option set /SCVerify/USE_VCS true
+directive set -CLOCK_OVERHEAD 20.000000
+false
+/OPT_CONST_MULTS use_library
+solution options set /Output/GenerateCycleNetlist false
+directive set -OPT_CONST_MULTS use_library
+true
+directive set -RESET_CLEARS_ALL_REGS true
+flow package option set /SCVerify/USE_CCS_BLOCK true
+/DATA_SYNC none
+true
+/RESET_CLEARS_ALL_REGS yes
+flow package option set /SCVerify/USE_NCSIM true
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+directive set -SPECULATE true
+directive set -REGISTER_IDLE_SIGNAL false
+/DESIGN_GOAL area
+/ARRAY_SIZE 1024
+directive set -MERGEABLE true
+directive set -IDLE_SIGNAL {}
+/SPECULATE true
+/REGISTER_IDLE_SIGNAL false
+directive set -CHAN_IO_PROTOCOL standard
+solution file add ./matmul.cpp -type C++
+/IO_MODE super
+directive set -DESIGN_GOAL area
+directive set -ARRAY_SIZE 1024
+/INPUTFILES/1
+/CHAN_IO_PROTOCOL standard
+directive set -DONE_FLAG {}
+/TRANSACTION_DONE_SIGNAL true
+directive set -READY_FLAG {}
+/DONE_FLAG {}
+directive set -STALL_FLAG false
+/IDLE_SIGNAL {}
+directive set -TRANSACTION_DONE_SIGNAL true
+/STALL_FLAG false
+solution options defaults
+solution.v2
+10.4
+flow package require /SCVerify
+directive set -DESIGN_HIERARCHY matrix_mul
+go new
+/DESIGN_HIERARCHY matrix_mul
+solution design add matrix_mul -type top -unlocked (HC-1)
+/COMPGRADE fast
+directive set -COMPGRADE fast
+/PIPELINE_RAMP_UP true
+directive set -PIPELINE_RAMP_UP true
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+/ROM_THRESHOLD 64
+directive set -ROM_THRESHOLD 64
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+/CHARACTERIZE_ROM false
+directive set -CHARACTERIZE_ROM false
+Front End called with arguments: -- /home/gel8580/CE459/Lab_project/part3/matmul.cpp (CIN-69)
+/PROTOTYPE_ROM true
+directive set -PROTOTYPE_ROM true
+/CLUSTER_FAST_MODE false
+directive set -CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+directive set -CLUSTER_TYPE combinational
+/CLUSTER_OPT_CONSTANT_INPUTS true
+directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+directive set -CLUSTER_RTL_SYN false
+Pragma 'hls_design<top>' detected on routine 'matrix_mul' (CIN-6)
+directive set -ASSIGN_OVERHEAD 0
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+/REGISTER_SHARING_LIMIT 0
+directive set -TIMING_CHECKS true
+Source file analysis completed (CIN-68)
+/ASSIGN_OVERHEAD 0
+directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+/SAFE_FSM false
+directive set -REGISTER_SHARING_LIMIT 0
+
+# Messages from "go compile"
+
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 66, Real ops = 20, Vars = 16) (SOL-10)
+# Info: Splitting object 'pref:pref.pref' into 2 segments (OPT-19)
+# Info: Splitting object 'pref' into 2 segments (OPT-19)
+INOUT port 'C' is only used as an output. (OPT-11)
+INOUT port 'B' is only used as an input. (OPT-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 76, Real ops = 20, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 76, Real ops = 20, Vars = 26) (SOL-10)
+# Info: Splitting object 'for:for:for:acc.tdx#1' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:for:acc.tdx' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:acc.tdx' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:for:acc.rndc' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: Splitting object 'pref:pref.pref.pref#1' into 2 segments (OPT-19)
+Loop '/matrix_mul/core/for' iterated at most 32 times. (LOOP-2)
+Loop '/matrix_mul/core/for:for' iterated at most 32 times. (LOOP-2)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 49, Real ops = 8, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 64, Real ops = 17, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 58, Real ops = 17, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 64, Real ops = 17, Vars = 27) (SOL-10)
+Loop '/matrix_mul/core/for:for:for' iterated at most 32 times. (LOOP-2)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 58, Real ops = 17, Vars = 9) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 46, Real ops = 8, Vars = 6) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 46, Real ops = 8, Vars = 9) (SOL-10)
+Design 'matrix_mul' was read (SOL-1)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 46, Real ops = 8, Vars = 9) (SOL-10)
+# Info: Splitting object 'for:i' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 49, Real ops = 8, Vars = 9) (SOL-10)
+# Info: Splitting object 'for:for:for:k' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:j' into 2 segments (OPT-19)
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab_project/part3/Catapult_4/matrix_mul.v7/CDesignChecker/design_checker.sh'
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+Inlining routine 'matrix_mul' (CIN-14)
+Synthesizing routine 'matrix_mul' (CIN-13)
+INOUT port 'A' is only used as an input. (OPT-10)
+Optimizing block '/matrix_mul' ... (CIN-4)
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 0.62 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Found top design routine 'matrix_mul' specified by directive (CIN-52)
+Generating synthesis internal form... (CIN-3)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 66, Real ops = 20, Vars = 19) (SOL-10)
+
+# Messages from "go libraries"
+
+solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# Info: Completed transformation 'compile' on solution 'matrix_mul.v7': elapsed time 0.63 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+go libraries
+solution library add ccs_sample_mem -file {$MGC_HOME/pkgs/siflibs/ccs_sample_mem.lib}
+# Info: Starting transformation 'libraries' on solution 'matrix_mul.v7' (SOL-8)
+
+# Messages from "go assembly"
+
+/CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 47, Real ops = 9, Vars = 6) (SOL-10)
+directive set -CLOCKS {clk {-CLOCK_PERIOD 10.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 5.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# Info: Optimizing partition '/matrix_mul': (Total ops = 47, Real ops = 9, Vars = 11) (SOL-10)
+# Info: Completed transformation 'libraries' on solution 'matrix_mul.v7': elapsed time 0.14 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Starting transformation 'assembly' on solution 'matrix_mul.v7' (SOL-8)
+go assembly
+
+# Messages from "go architect"
+
+# Info: Completed transformation 'assembly' on solution 'matrix_mul.v7': elapsed time 0.05 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+directive set /matrix_mul/A:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+/REGISTER_THRESHOLD 256
+go extract
+/matrix_mul/core/for:for:for/UNROLL no
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 53, Real ops = 9, Vars = 6) (SOL-10)
+# Info: Starting transformation 'loops' on solution 'matrix_mul.v7' (SOL-8)
+directive set /matrix_mul/core/main -PIPELINE_INIT_INTERVAL 1
+/matrix_mul/C:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+directive set /matrix_mul/core/for:for:for -UNROLL no
+/matrix_mul/core/main/PIPELINE_INIT_INTERVAL 1
+Loop '/matrix_mul/core/for:for' is left rolled. (LOOP-4)
+Loop '/matrix_mul/core/for:for:for' is left rolled. (LOOP-4)
+Loop '/matrix_mul/core/main' is left rolled. (LOOP-4)
+Loop '/matrix_mul/core/for' is left rolled. (LOOP-4)
+directive set /matrix_mul/B:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+/matrix_mul/A:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+directive set /matrix_mul/C:rsc -MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+/matrix_mul/B:rsc/MAP_TO_MODULE ccs_sample_mem.ccs_ram_sync_singleport
+directive set -REGISTER_THRESHOLD 256
+# Info: Optimizing partition '/matrix_mul': (Total ops = 53, Real ops = 9, Vars = 14) (SOL-10)
+Memory Resource '/matrix_mul/C:rsc' (from var: C) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 1024 x 32). (MEM-4)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 53, Real ops = 9, Vars = 6) (SOL-10)
+# Info: Starting transformation 'memories' on solution 'matrix_mul.v7' (SOL-8)
+# Info: Completed transformation 'loops' on solution 'matrix_mul.v7': elapsed time 0.02 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Memory Resource '/matrix_mul/B:rsc' (from var: B) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 1024 x 32). (MEM-4)
+Memory Resource '/matrix_mul/A:rsc' (from var: A) mapped to 'ccs_sample_mem.ccs_ram_sync_singleport' (size: 1024 x 32). (MEM-4)
+# Info: Starting transformation 'cluster' on solution 'matrix_mul.v7' (SOL-8)
+# Info: Completed transformation 'memories' on solution 'matrix_mul.v7': elapsed time 0.05 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 71, Real ops = 11, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 72, Real ops = 11, Vars = 11) (SOL-10)
+Design 'matrix_mul' contains '29' real operations. (SOL-11)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 100, Real ops = 29, Vars = 28) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 231, Real ops = 41, Vars = 111) (SOL-10)
+# Info: Starting transformation 'architect' on solution 'matrix_mul.v7' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'matrix_mul.v7': elapsed time 0.02 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 92, Real ops = 17, Vars = 17) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/core': (Total ops = 85, Real ops = 14, Vars = 15) (SOL-10)
+
+# Messages from "go allocate"
+
+Resource allocation and scheduling done. (CRAAS-2)
+# Info: Final schedule of SEQUENTIAL '/matrix_mul/core': Latency = 32768, Area (Datapath, Register, Total) = 4808.47, 414.38, 5222.84 (CRAAS-12)
+Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Starting transformation 'allocate' on solution 'matrix_mul.v7' (SOL-8)
+# Info: Completed transformation 'architect' on solution 'matrix_mul.v7': elapsed time 0.14 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+Performing concurrent resource allocation and scheduling on '/matrix_mul/core' (CRAAS-1)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 5688.37, 414.38, 6102.74 (CRAAS-10)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 5739.95, 414.38, 6154.32 (CRAAS-10)
+At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 4808.47, 414.38, 5222.84 (CRAAS-10)
+# Info: Initial schedule of SEQUENTIAL '/matrix_mul/core': Latency = 32768, Area (Datapath, Register, Total) = 7560.10, 414.38, 7974.47 (CRAAS-11)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 4902.95, 414.38, 5317.32 (CRAAS-10)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 7522.43, 414.38, 7936.80 (CRAAS-10)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 5957.53, 414.38, 6371.90 (CRAAS-10)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 7528.16, 414.38, 7942.54 (CRAAS-10)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 6075.01, 414.38, 6489.38 (CRAAS-10)
+Prescheduled LOOP '/matrix_mul/core/main' (3 c-steps) (SCHD-7)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 5925.36, 414.38, 6339.74 (CRAAS-10)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# Info: Optimized LOOP '/matrix_mul/core/main': Latency = 32768, Area (Datapath, Register, Total) = 5949.88, 414.38, 6364.26 (CRAAS-10)
+Prescheduled SEQUENTIAL '/matrix_mul/core' (total length 4 c-steps) (SCHD-8)
+Prescheduled LOOP '/matrix_mul/core/core:rlp' (1 c-steps) (SCHD-7)
+
+# Messages from "go schedule"
+
+# Info: Loop '/matrix_mul/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+Performing concurrent resource allocation and scheduling on '/matrix_mul/core' (CRAAS-1)
+Global signal 'C:rsc.triosy.lz' added to design 'matrix_mul' for component 'C:rsc.triosy:obj' (LIB-3)
+# Info: Splitting object 'for:for:for:k(5:0).lpi#1.dfm#2' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:j(5:0).lpi#1.dfm#1' into 2 segments (OPT-19)
+# Info: Splitting object 'for:i(5:0).lpi#1.dfm#1' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:j(5:0).lpi#1.dfm#2' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:j(5:0).lpi#1.dfm' into 2 segments (OPT-19)
+# Info: Splitting object 'for:i(5:0).lpi#1.dfm' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:for:k(5:0).lpi#1.dfm#1' into 2 segments (OPT-19)
+# Info: Splitting object 'for:for:for:k(5:0).lpi#1.dfm' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/core': (Total ops = 121, Real ops = 22, Vars = 31) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 205, Real ops = 25, Vars = 89) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 205, Real ops = 25, Vars = 77) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/core': (Total ops = 176, Real ops = 29, Vars = 60) (SOL-10)
+# Info: Splitting object 'for:for:j(5:0).lpi#1.dfm#3' into 2 segments (OPT-19)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/core': (Total ops = 142, Real ops = 22, Vars = 31) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/core': (Total ops = 148, Real ops = 24, Vars = 32) (SOL-10)
+Report written to file 'cycle.rpt'
+Global signal 'C:rsc.we' added to design 'matrix_mul' for component 'C:rsci' (LIB-3)
+Global signal 'C:rsc.q' added to design 'matrix_mul' for component 'C:rsci' (LIB-3)
+Global signal 'C:rsc.adr' added to design 'matrix_mul' for component 'C:rsci' (LIB-3)
+Global signal 'C:rsc.d' added to design 'matrix_mul' for component 'C:rsci' (LIB-3)
+Global signal 'B:rsc.we' added to design 'matrix_mul' for component 'B:rsci' (LIB-3)
+Global signal 'B:rsc.q' added to design 'matrix_mul' for component 'B:rsci' (LIB-3)
+Global signal 'B:rsc.adr' added to design 'matrix_mul' for component 'B:rsci' (LIB-3)
+Global signal 'B:rsc.d' added to design 'matrix_mul' for component 'B:rsci' (LIB-3)
+# Info: Splitting object 'for:i(5:0).lpi#1' into 2 segments (OPT-19)
+Global signal 'A:rsc.we' added to design 'matrix_mul' for component 'A:rsci' (LIB-3)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 277, Real ops = 32, Vars = 117) (SOL-10)
+Global signal 'A:rsc.q' added to design 'matrix_mul' for component 'A:rsci' (LIB-3)
+# Info: Splitting object 'for:for:for:k(5:0).lpi#1' into 2 segments (OPT-19)
+Global signal 'A:rsc.adr' added to design 'matrix_mul' for component 'A:rsci' (LIB-3)
+# Info: Splitting object 'for:for:j(5:0).lpi#1' into 2 segments (OPT-19)
+Global signal 'A:rsc.d' added to design 'matrix_mul' for component 'A:rsci' (LIB-3)
+Global signal 'B:rsc.triosy.lz' added to design 'matrix_mul' for component 'B:rsc.triosy:obj' (LIB-3)
+# Info: Starting transformation 'schedule' on solution 'matrix_mul.v7' (SOL-8)
+Global signal 'A:rsc.triosy.lz' added to design 'matrix_mul' for component 'A:rsc.triosy:obj' (LIB-3)
+# Info: Completed transformation 'allocate' on solution 'matrix_mul.v7': elapsed time 0.06 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+
+# Messages from "go dpfsm"
+
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/matrix_mul:core_core:fsm/matrix_mul:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Starting transformation 'dpfsm' on solution 'matrix_mul.v7' (SOL-8)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/matrix_mul:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Completed transformation 'schedule' on solution 'matrix_mul.v7': elapsed time 0.45 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 215, Real ops = 63, Vars = 76) (SOL-10)
+Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 217, Real ops = 67, Vars = 86) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 214, Real ops = 62, Vars = 76) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 234, Real ops = 60, Vars = 101) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 217, Real ops = 65, Vars = 82) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 210, Real ops = 58, Vars = 76) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 220, Real ops = 58, Vars = 84) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 221, Real ops = 65, Vars = 87) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 227, Real ops = 75, Vars = 93) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 219, Real ops = 65, Vars = 82) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 219, Real ops = 65, Vars = 86) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 337, Real ops = 90, Vars = 249) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/core': (Total ops = 163, Real ops = 22, Vars = 31) (SOL-10)
+
+# Messages from "go extract"
+
+Reassigned operation for:for:for:acc#4:mgc_add(5,0,2,1,6,4) to mgc_add(5,0,1,0,6,4) (ASG-1)
+Reassigned operation for:for:acc#2:mgc_add(5,0,2,1,6,4) to mgc_add(5,0,1,0,6,4) (ASG-1)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/matrix_mul:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 218, Real ops = 62, Vars = 166) (SOL-10)
+# Info: Starting transformation 'instance' on solution 'matrix_mul.v7' (SOL-8)
+# Info: Completed transformation 'dpfsm' on solution 'matrix_mul.v7': elapsed time 0.24 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Reassigned operation for:acc#1:mgc_add(5,0,2,1,6,4) to mgc_add(5,0,1,0,6,4) (ASG-1)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 207, Real ops = 61, Vars = 74) (SOL-10)
+Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 206, Real ops = 62, Vars = 75) (SOL-10)
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/matrix_mul:core_core:fsm/matrix_mul:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 213, Real ops = 65, Vars = 75) (SOL-10)
+# Info: Optimizing partition '/matrix_mul': (Total ops = 225, Real ops = 75, Vars = 91) (SOL-10)
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+order file name is: rtl.vhdl_order.txt
+# Error: Top function does not appear to have the CCS_BLOCK macro wrapping the function name
+generate concat
+Add dependent file: ./rtl.vhdl
+Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_ncsim.mk'
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_ncsim.mk'
+Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_vcs.mk'
+Generating SCVerify testbench files
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab_project/part3/Catapult_4/matrix_mul.v7/concat_sim_rtl.vhdl
+Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_ncsim.mk'
+Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_vcs.mk'
+# Info: Optimizing partition '/matrix_mul': (Total ops = 207, Real ops = 61, Vars = 74) (SOL-10)
+Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_vcs.mk'
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/matrix_mul:core_core:fsm/matrix_mul:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+Report written to file 'rtl.rpt'
+# Info: Starting transformation 'extract' on solution 'matrix_mul.v7' (SOL-8)
+Netlist written to file 'rtl.vhdl' (NET-4)
+# Info: Completed transformation 'instance' on solution 'matrix_mul.v7': elapsed time 0.20 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)
+Generating scverify_top.cpp ()
+# Info: Optimizing partition '/matrix_mul/matrix_mul:core/matrix_mul:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_ncsim.mk'
+# Info: Optimizing partition '/matrix_mul': (Total ops = 207, Real ops = 61, Vars = 155) (SOL-10)
+Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+order file name is: rtl.v_order.txt
+generate concat
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+Netlist written to file 'rtl.v' (NET-4)
+Finished writing concatenated simulation file: /home/gel8580/CE459/Lab_project/part3/Catapult_4/matrix_mul.v7/concat_sim_rtl.v
+order file name is: rtl.v_order_sim.txt
+Finished writing concatenated file: /home/gel8580/CE459/Lab_project/part3/Catapult_4/matrix_mul.v7/concat_rtl.v
+Add dependent file: ./rtl.v
+Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+order file name is: rtl.vhdl_order_sim.txt
+Finished writing concatenated file: /home/gel8580/CE459/Lab_project/part3/Catapult_4/matrix_mul.v7/concat_rtl.vhdl
+Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_vcs.mk'
+Add dependent file: ./rtl.vhdl
+# Info: Completed transformation 'extract' on solution 'matrix_mul.v7': elapsed time 2.54 seconds, memory usage 1490572kB, peak memory usage 1490572kB (SOL-9)

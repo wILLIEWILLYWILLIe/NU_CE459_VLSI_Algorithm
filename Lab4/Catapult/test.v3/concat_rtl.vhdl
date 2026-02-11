@@ -1,0 +1,1914 @@
+
+--------> /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd 
+--------------------------------------------------------------------------------
+-- Catapult Synthesis - Sample I/O Port Library
+--
+-- Copyright (c) 2003-2017 Mentor Graphics Corp.
+--       All Rights Reserved
+--
+-- This document may be used and distributed without restriction provided that
+-- this copyright statement is not removed from the file and that any derivative
+-- work contains this copyright notice.
+--
+-- The design information contained in this file is intended to be an example
+-- of the functionality which the end user may study in preparation for creating
+-- their own custom interfaces. This design does not necessarily present a 
+-- complete implementation of the named protocol or standard.
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+PACKAGE ccs_in_wait_pkg_v1 IS
+
+COMPONENT ccs_in_wait_v1
+  GENERIC (
+    rscid    : INTEGER;
+    width    : INTEGER
+  );
+  PORT (
+    idat   : OUT std_logic_vector(width-1 DOWNTO 0);
+    rdy    : OUT std_logic;
+    ivld   : OUT std_logic;
+    dat    : IN  std_logic_vector(width-1 DOWNTO 0);
+    irdy   : IN  std_logic;
+    vld    : IN  std_logic
+   );
+END COMPONENT;
+
+END ccs_in_wait_pkg_v1;
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all; -- Prevent STARC 2.1.1.2 violation
+
+ENTITY ccs_in_wait_v1 IS
+  GENERIC (
+    rscid : INTEGER;
+    width : INTEGER
+  );
+  PORT (
+    idat  : OUT std_logic_vector(width-1 DOWNTO 0);
+    rdy   : OUT std_logic;
+    ivld  : OUT std_logic;
+    dat   : IN  std_logic_vector(width-1 DOWNTO 0);
+    irdy  : IN  std_logic;
+    vld   : IN  std_logic
+  );
+END ccs_in_wait_v1;
+
+ARCHITECTURE beh OF ccs_in_wait_v1 IS
+BEGIN
+
+  idat <= dat;
+  rdy  <= irdy;
+  ivld <= vld;
+
+END beh;
+
+
+--------> /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd 
+--------------------------------------------------------------------------------
+-- Catapult Synthesis - Sample I/O Port Library
+--
+-- Copyright (c) 2003-2017 Mentor Graphics Corp.
+--       All Rights Reserved
+--
+-- This document may be used and distributed without restriction provided that
+-- this copyright statement is not removed from the file and that any derivative
+-- work contains this copyright notice.
+--
+-- The design information contained in this file is intended to be an example
+-- of the functionality which the end user may study in preparation for creating
+-- their own custom interfaces. This design does not necessarily present a 
+-- complete implementation of the named protocol or standard.
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+PACKAGE ccs_out_wait_pkg_v1 IS
+
+COMPONENT ccs_out_wait_v1
+  GENERIC (
+    rscid    : INTEGER;
+    width    : INTEGER
+  );
+  PORT (
+    dat    : OUT std_logic_vector(width-1 DOWNTO 0);
+    irdy   : OUT std_logic;
+    vld    : OUT std_logic;
+    idat   : IN  std_logic_vector(width-1 DOWNTO 0);
+    rdy    : IN  std_logic;
+    ivld   : IN  std_logic
+  );
+END COMPONENT;
+
+END ccs_out_wait_pkg_v1;
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all; -- Prevent STARC 2.1.1.2 violation
+
+ENTITY ccs_out_wait_v1 IS
+  GENERIC (
+    rscid : INTEGER;
+    width : INTEGER
+  );
+  PORT (
+    dat   : OUT std_logic_vector(width-1 DOWNTO 0);
+    irdy  : OUT std_logic;
+    vld   : OUT std_logic;
+    idat  : IN  std_logic_vector(width-1 DOWNTO 0);
+    rdy   : IN  std_logic;
+    ivld  : IN  std_logic
+  );
+END ccs_out_wait_v1;
+
+ARCHITECTURE beh OF ccs_out_wait_v1 IS
+BEGIN
+
+  dat  <= idat;
+  irdy <= rdy;
+  vld  <= ivld;
+
+END beh;
+
+
+--------> /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd 
+--------------------------------------------------------------------------------
+-- Catapult Synthesis - Sample I/O Port Library
+--
+-- Copyright (c) 2003-2017 Mentor Graphics Corp.
+--       All Rights Reserved
+--
+-- This document may be used and distributed without restriction provided that
+-- this copyright statement is not removed from the file and that any derivative
+-- work contains this copyright notice.
+--
+-- The design information contained in this file is intended to be an example
+-- of the functionality which the end user may study in preparation for creating
+-- their own custom interfaces. This design does not necessarily present a 
+-- complete implementation of the named protocol or standard.
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+PACKAGE mgc_io_sync_pkg_v2 IS
+
+COMPONENT mgc_io_sync_v2
+  GENERIC (
+    valid    : INTEGER RANGE 0 TO 1
+  );
+  PORT (
+    ld       : IN    std_logic;
+    lz       : OUT   std_logic
+  );
+END COMPONENT;
+
+END mgc_io_sync_pkg_v2;
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all; -- Prevent STARC 2.1.1.2 violation
+
+ENTITY mgc_io_sync_v2 IS
+  GENERIC (
+    valid    : INTEGER RANGE 0 TO 1
+  );
+  PORT (
+    ld       : IN    std_logic;
+    lz       : OUT   std_logic
+  );
+END mgc_io_sync_v2;
+
+ARCHITECTURE beh OF mgc_io_sync_v2 IS
+BEGIN
+
+  lz <= ld;
+
+END beh;
+
+
+--------> ./rtl.vhdl 
+-- ----------------------------------------------------------------------
+--  HLS HDL:        VHDL Netlister
+--  HLS Version:    10.4a/835166 Production Release
+--  HLS Date:       Thu Sep  5 21:35:46 PDT 2019
+-- 
+--  Generated by:   gel8580@finagle.wot.ece.northwestern.edu
+--  Generated date: Thu Nov  6 19:30:53 2025
+-- ----------------------------------------------------------------------
+
+-- 
+-- ------------------------------------------------------------------
+--  Design Unit:    test_ccs_sample_mem_ccs_ram_sync_singleport_rwport_2_7_7_128_128_7_5_gen
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_ccs_sample_mem_ccs_ram_sync_singleport_rwport_2_7_7_128_128_7_5_gen IS
+  PORT(
+    q : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    we : OUT STD_LOGIC;
+    d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    adr : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    adr_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    d_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    we_d : IN STD_LOGIC;
+    q_d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    port_0_rw_ram_ir_internal_RMASK_B_d : IN STD_LOGIC;
+    port_0_rw_ram_ir_internal_WMASK_B_d : IN STD_LOGIC
+  );
+END test_ccs_sample_mem_ccs_ram_sync_singleport_rwport_2_7_7_128_128_7_5_gen;
+
+ARCHITECTURE v3 OF test_ccs_sample_mem_ccs_ram_sync_singleport_rwport_2_7_7_128_128_7_5_gen
+    IS
+  -- Default Constants
+
+BEGIN
+  q_d <= q;
+  we <= (port_0_rw_ram_ir_internal_WMASK_B_d);
+  d <= (d_d);
+  adr <= (adr_d);
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_core_fsm
+--  FSM Module
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_core_fsm IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    core_wen : IN STD_LOGIC;
+    fsm_output : OUT STD_LOGIC_VECTOR (1 DOWNTO 0)
+  );
+END test_core_core_fsm;
+
+ARCHITECTURE v3 OF test_core_core_fsm IS
+  -- Default Constants
+
+  -- FSM State Type Declaration for test_core_core_fsm_1
+  TYPE test_core_core_fsm_1_ST IS (core_rlp_C_0, main_C_0);
+
+  SIGNAL state_var : test_core_core_fsm_1_ST;
+  SIGNAL state_var_NS : test_core_core_fsm_1_ST;
+
+BEGIN
+  test_core_core_fsm_1 : PROCESS (state_var)
+  BEGIN
+    CASE state_var IS
+      WHEN main_C_0 =>
+        fsm_output <= STD_LOGIC_VECTOR'( "10");
+        state_var_NS <= main_C_0;
+      -- core_rlp_C_0
+      WHEN OTHERS =>
+        fsm_output <= STD_LOGIC_VECTOR'( "01");
+        state_var_NS <= main_C_0;
+    END CASE;
+  END PROCESS test_core_core_fsm_1;
+
+  test_core_core_fsm_1_REG : PROCESS (clk)
+  BEGIN
+    IF clk'event AND ( clk = '1' ) THEN
+      IF ( rst = '1' ) THEN
+        state_var <= core_rlp_C_0;
+      ELSE
+        IF ( core_wen = '1' ) THEN
+          state_var <= state_var_NS;
+        END IF;
+      END IF;
+    END IF;
+  END PROCESS test_core_core_fsm_1_REG;
+
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_staller
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_staller IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    core_wen : OUT STD_LOGIC;
+    core_wten : OUT STD_LOGIC;
+    data_in_rsci_wen_comp : IN STD_LOGIC;
+    coeff_addr_rsci_wen_comp : IN STD_LOGIC;
+    result_rsci_wen_comp : IN STD_LOGIC
+  );
+END test_core_staller;
+
+ARCHITECTURE v3 OF test_core_staller IS
+  -- Default Constants
+
+  -- Output Reader Declarations
+  SIGNAL core_wen_drv : STD_LOGIC;
+
+  -- Interconnect Declarations
+  SIGNAL core_wten_reg : STD_LOGIC;
+
+BEGIN
+  -- Output Reader Assignments
+  core_wen <= core_wen_drv;
+
+  core_wen_drv <= data_in_rsci_wen_comp AND coeff_addr_rsci_wen_comp AND result_rsci_wen_comp;
+  core_wten <= core_wten_reg;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        core_wten_reg <= '0';
+      ELSE
+        core_wten_reg <= NOT core_wen_drv;
+      END IF;
+    END IF;
+  END PROCESS;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl IS
+  PORT(
+    core_wten : IN STD_LOGIC;
+    coeffs_rsc_triosy_obj_iswt0 : IN STD_LOGIC;
+    coeffs_rsc_triosy_obj_ld_core_sct : OUT STD_LOGIC
+  );
+END test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl;
+
+ARCHITECTURE v3 OF test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl IS
+  -- Default Constants
+
+BEGIN
+  coeffs_rsc_triosy_obj_ld_core_sct <= coeffs_rsc_triosy_obj_iswt0 AND (NOT core_wten);
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_result_rsci_result_wait_dp
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_result_rsci_result_wait_dp IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    result_rsci_oswt : IN STD_LOGIC;
+    result_rsci_wen_comp : OUT STD_LOGIC;
+    result_rsci_biwt : IN STD_LOGIC;
+    result_rsci_bdwt : IN STD_LOGIC;
+    result_rsci_bcwt : OUT STD_LOGIC
+  );
+END test_core_result_rsci_result_wait_dp;
+
+ARCHITECTURE v3 OF test_core_result_rsci_result_wait_dp IS
+  -- Default Constants
+
+  -- Output Reader Declarations
+  SIGNAL result_rsci_bcwt_drv : STD_LOGIC;
+
+BEGIN
+  -- Output Reader Assignments
+  result_rsci_bcwt <= result_rsci_bcwt_drv;
+
+  result_rsci_wen_comp <= (NOT result_rsci_oswt) OR result_rsci_biwt OR result_rsci_bcwt_drv;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        result_rsci_bcwt_drv <= '0';
+      ELSE
+        result_rsci_bcwt_drv <= NOT((NOT(result_rsci_bcwt_drv OR result_rsci_biwt))
+            OR result_rsci_bdwt);
+      END IF;
+    END IF;
+  END PROCESS;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_result_rsci_result_wait_ctrl
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_result_rsci_result_wait_ctrl IS
+  PORT(
+    core_wen : IN STD_LOGIC;
+    result_rsci_oswt : IN STD_LOGIC;
+    result_rsci_irdy : IN STD_LOGIC;
+    result_rsci_biwt : OUT STD_LOGIC;
+    result_rsci_bdwt : OUT STD_LOGIC;
+    result_rsci_bcwt : IN STD_LOGIC;
+    result_rsci_ivld_core_sct : OUT STD_LOGIC
+  );
+END test_core_result_rsci_result_wait_ctrl;
+
+ARCHITECTURE v3 OF test_core_result_rsci_result_wait_ctrl IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL result_rsci_ogwt : STD_LOGIC;
+
+BEGIN
+  result_rsci_bdwt <= result_rsci_oswt AND core_wen;
+  result_rsci_biwt <= result_rsci_ogwt AND result_rsci_irdy;
+  result_rsci_ogwt <= result_rsci_oswt AND (NOT result_rsci_bcwt);
+  result_rsci_ivld_core_sct <= result_rsci_ogwt;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeff_addr_rsci_coeff_addr_wait_dp
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeff_addr_rsci_coeff_addr_wait_dp IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    coeff_addr_rsci_oswt : IN STD_LOGIC;
+    coeff_addr_rsci_wen_comp : OUT STD_LOGIC;
+    coeff_addr_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
+    coeff_addr_rsci_biwt : IN STD_LOGIC;
+    coeff_addr_rsci_bdwt : IN STD_LOGIC;
+    coeff_addr_rsci_bcwt : OUT STD_LOGIC;
+    coeff_addr_rsci_idat : IN STD_LOGIC_VECTOR (4 DOWNTO 0)
+  );
+END test_core_coeff_addr_rsci_coeff_addr_wait_dp;
+
+ARCHITECTURE v3 OF test_core_coeff_addr_rsci_coeff_addr_wait_dp IS
+  -- Default Constants
+
+  -- Output Reader Declarations
+  SIGNAL coeff_addr_rsci_idat_mxwt_drv : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL coeff_addr_rsci_bcwt_drv : STD_LOGIC;
+
+  -- Interconnect Declarations
+  SIGNAL coeff_addr_rsci_idat_bfwt : STD_LOGIC_VECTOR (4 DOWNTO 0);
+
+  FUNCTION MUX_v_5_2_2(input_0 : STD_LOGIC_VECTOR(4 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(4 DOWNTO 0);
+  sel : STD_LOGIC)
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+    BEGIN
+      CASE sel IS
+        WHEN '0' =>
+          result := input_0;
+        WHEN others =>
+          result := input_1;
+      END CASE;
+    RETURN result;
+  END;
+
+BEGIN
+  -- Output Reader Assignments
+  coeff_addr_rsci_idat_mxwt <= coeff_addr_rsci_idat_mxwt_drv;
+  coeff_addr_rsci_bcwt <= coeff_addr_rsci_bcwt_drv;
+
+  coeff_addr_rsci_wen_comp <= (NOT coeff_addr_rsci_oswt) OR coeff_addr_rsci_biwt
+      OR coeff_addr_rsci_bcwt_drv;
+  coeff_addr_rsci_idat_mxwt_drv <= MUX_v_5_2_2(coeff_addr_rsci_idat, coeff_addr_rsci_idat_bfwt,
+      coeff_addr_rsci_bcwt_drv);
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        coeff_addr_rsci_bcwt_drv <= '0';
+      ELSE
+        coeff_addr_rsci_bcwt_drv <= NOT((NOT(coeff_addr_rsci_bcwt_drv OR coeff_addr_rsci_biwt))
+            OR coeff_addr_rsci_bdwt);
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        coeff_addr_rsci_idat_bfwt <= STD_LOGIC_VECTOR'( "00000");
+      ELSIF ( coeff_addr_rsci_bcwt_drv = '0' ) THEN
+        coeff_addr_rsci_idat_bfwt <= coeff_addr_rsci_idat_mxwt_drv;
+      END IF;
+    END IF;
+  END PROCESS;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeff_addr_rsci_coeff_addr_wait_ctrl
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeff_addr_rsci_coeff_addr_wait_ctrl IS
+  PORT(
+    core_wen : IN STD_LOGIC;
+    coeff_addr_rsci_oswt : IN STD_LOGIC;
+    coeff_addr_rsci_biwt : OUT STD_LOGIC;
+    coeff_addr_rsci_bdwt : OUT STD_LOGIC;
+    coeff_addr_rsci_bcwt : IN STD_LOGIC;
+    coeff_addr_rsci_irdy_core_sct : OUT STD_LOGIC;
+    coeff_addr_rsci_ivld : IN STD_LOGIC
+  );
+END test_core_coeff_addr_rsci_coeff_addr_wait_ctrl;
+
+ARCHITECTURE v3 OF test_core_coeff_addr_rsci_coeff_addr_wait_ctrl IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL coeff_addr_rsci_ogwt : STD_LOGIC;
+
+BEGIN
+  coeff_addr_rsci_bdwt <= coeff_addr_rsci_oswt AND core_wen;
+  coeff_addr_rsci_biwt <= coeff_addr_rsci_ogwt AND coeff_addr_rsci_ivld;
+  coeff_addr_rsci_ogwt <= coeff_addr_rsci_oswt AND (NOT coeff_addr_rsci_bcwt);
+  coeff_addr_rsci_irdy_core_sct <= coeff_addr_rsci_ogwt;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeffs_rsci_1_coeffs_rsc_wait_dp
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeffs_rsci_1_coeffs_rsc_wait_dp IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    coeffs_rsci_q_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsci_q_d_mxwt : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsci_biwt : IN STD_LOGIC;
+    coeffs_rsci_bdwt : IN STD_LOGIC
+  );
+END test_core_coeffs_rsci_1_coeffs_rsc_wait_dp;
+
+ARCHITECTURE v3 OF test_core_coeffs_rsci_1_coeffs_rsc_wait_dp IS
+  -- Default Constants
+
+  -- Output Reader Declarations
+  SIGNAL coeffs_rsci_q_d_mxwt_drv : STD_LOGIC_VECTOR (6 DOWNTO 0);
+
+  -- Interconnect Declarations
+  SIGNAL coeffs_rsci_bcwt : STD_LOGIC;
+  SIGNAL coeffs_rsci_q_d_bfwt : STD_LOGIC_VECTOR (6 DOWNTO 0);
+
+  FUNCTION MUX_v_7_2_2(input_0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+  sel : STD_LOGIC)
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(6 DOWNTO 0);
+
+    BEGIN
+      CASE sel IS
+        WHEN '0' =>
+          result := input_0;
+        WHEN others =>
+          result := input_1;
+      END CASE;
+    RETURN result;
+  END;
+
+BEGIN
+  -- Output Reader Assignments
+  coeffs_rsci_q_d_mxwt <= coeffs_rsci_q_d_mxwt_drv;
+
+  coeffs_rsci_q_d_mxwt_drv <= MUX_v_7_2_2(coeffs_rsci_q_d, coeffs_rsci_q_d_bfwt,
+      coeffs_rsci_bcwt);
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        coeffs_rsci_bcwt <= '0';
+      ELSE
+        coeffs_rsci_bcwt <= NOT((NOT(coeffs_rsci_bcwt OR coeffs_rsci_biwt)) OR coeffs_rsci_bdwt);
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        coeffs_rsci_q_d_bfwt <= STD_LOGIC_VECTOR'( "0000000");
+      ELSIF ( coeffs_rsci_bcwt = '0' ) THEN
+        coeffs_rsci_q_d_bfwt <= coeffs_rsci_q_d_mxwt_drv;
+      END IF;
+    END IF;
+  END PROCESS;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl IS
+  PORT(
+    core_wen : IN STD_LOGIC;
+    core_wten : IN STD_LOGIC;
+    coeffs_rsci_oswt : IN STD_LOGIC;
+    coeffs_rsci_biwt : OUT STD_LOGIC;
+    coeffs_rsci_bdwt : OUT STD_LOGIC;
+    coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct : OUT STD_LOGIC;
+    coeffs_rsci_oswt_pff : IN STD_LOGIC
+  );
+END test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl;
+
+ARCHITECTURE v3 OF test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl IS
+  -- Default Constants
+
+BEGIN
+  coeffs_rsci_bdwt <= coeffs_rsci_oswt AND core_wen;
+  coeffs_rsci_biwt <= (NOT core_wten) AND coeffs_rsci_oswt;
+  coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct <= coeffs_rsci_oswt_pff
+      AND core_wen;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_data_in_rsci_data_in_wait_dp
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_data_in_rsci_data_in_wait_dp IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    data_in_rsci_oswt : IN STD_LOGIC;
+    data_in_rsci_wen_comp : OUT STD_LOGIC;
+    data_in_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);
+    data_in_rsci_biwt : IN STD_LOGIC;
+    data_in_rsci_bdwt : IN STD_LOGIC;
+    data_in_rsci_bcwt : OUT STD_LOGIC;
+    data_in_rsci_idat : IN STD_LOGIC_VECTOR (9 DOWNTO 0)
+  );
+END test_core_data_in_rsci_data_in_wait_dp;
+
+ARCHITECTURE v3 OF test_core_data_in_rsci_data_in_wait_dp IS
+  -- Default Constants
+
+  -- Output Reader Declarations
+  SIGNAL data_in_rsci_idat_mxwt_drv : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL data_in_rsci_bcwt_drv : STD_LOGIC;
+
+  -- Interconnect Declarations
+  SIGNAL data_in_rsci_idat_bfwt : STD_LOGIC_VECTOR (9 DOWNTO 0);
+
+  FUNCTION MUX_v_10_2_2(input_0 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  sel : STD_LOGIC)
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(9 DOWNTO 0);
+
+    BEGIN
+      CASE sel IS
+        WHEN '0' =>
+          result := input_0;
+        WHEN others =>
+          result := input_1;
+      END CASE;
+    RETURN result;
+  END;
+
+BEGIN
+  -- Output Reader Assignments
+  data_in_rsci_idat_mxwt <= data_in_rsci_idat_mxwt_drv;
+  data_in_rsci_bcwt <= data_in_rsci_bcwt_drv;
+
+  data_in_rsci_wen_comp <= (NOT data_in_rsci_oswt) OR data_in_rsci_biwt OR data_in_rsci_bcwt_drv;
+  data_in_rsci_idat_mxwt_drv <= MUX_v_10_2_2(data_in_rsci_idat, data_in_rsci_idat_bfwt,
+      data_in_rsci_bcwt_drv);
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        data_in_rsci_bcwt_drv <= '0';
+      ELSE
+        data_in_rsci_bcwt_drv <= NOT((NOT(data_in_rsci_bcwt_drv OR data_in_rsci_biwt))
+            OR data_in_rsci_bdwt);
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        data_in_rsci_idat_bfwt <= STD_LOGIC_VECTOR'( "0000000000");
+      ELSIF ( data_in_rsci_bcwt_drv = '0' ) THEN
+        data_in_rsci_idat_bfwt <= data_in_rsci_idat_mxwt_drv;
+      END IF;
+    END IF;
+  END PROCESS;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_data_in_rsci_data_in_wait_ctrl
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_data_in_rsci_data_in_wait_ctrl IS
+  PORT(
+    core_wen : IN STD_LOGIC;
+    data_in_rsci_oswt : IN STD_LOGIC;
+    data_in_rsci_biwt : OUT STD_LOGIC;
+    data_in_rsci_bdwt : OUT STD_LOGIC;
+    data_in_rsci_bcwt : IN STD_LOGIC;
+    data_in_rsci_irdy_core_sct : OUT STD_LOGIC;
+    data_in_rsci_ivld : IN STD_LOGIC
+  );
+END test_core_data_in_rsci_data_in_wait_ctrl;
+
+ARCHITECTURE v3 OF test_core_data_in_rsci_data_in_wait_ctrl IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL data_in_rsci_ogwt : STD_LOGIC;
+
+BEGIN
+  data_in_rsci_bdwt <= data_in_rsci_oswt AND core_wen;
+  data_in_rsci_biwt <= data_in_rsci_ogwt AND data_in_rsci_ivld;
+  data_in_rsci_ogwt <= data_in_rsci_oswt AND (NOT data_in_rsci_bcwt);
+  data_in_rsci_irdy_core_sct <= data_in_rsci_ogwt;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeffs_rsc_triosy_obj
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeffs_rsc_triosy_obj IS
+  PORT(
+    coeffs_rsc_triosy_lz : OUT STD_LOGIC;
+    core_wten : IN STD_LOGIC;
+    coeffs_rsc_triosy_obj_iswt0 : IN STD_LOGIC
+  );
+END test_core_coeffs_rsc_triosy_obj;
+
+ARCHITECTURE v3 OF test_core_coeffs_rsc_triosy_obj IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL coeffs_rsc_triosy_obj_ld_core_sct : STD_LOGIC;
+
+  COMPONENT test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl
+    PORT(
+      core_wten : IN STD_LOGIC;
+      coeffs_rsc_triosy_obj_iswt0 : IN STD_LOGIC;
+      coeffs_rsc_triosy_obj_ld_core_sct : OUT STD_LOGIC
+    );
+  END COMPONENT;
+BEGIN
+  coeffs_rsc_triosy_obj : work.mgc_io_sync_pkg_v2.mgc_io_sync_v2
+    GENERIC MAP(
+      valid => 0
+      )
+    PORT MAP(
+      ld => coeffs_rsc_triosy_obj_ld_core_sct,
+      lz => coeffs_rsc_triosy_lz
+    );
+  test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl_inst : test_core_coeffs_rsc_triosy_obj_coeffs_rsc_triosy_wait_ctrl
+    PORT MAP(
+      core_wten => core_wten,
+      coeffs_rsc_triosy_obj_iswt0 => coeffs_rsc_triosy_obj_iswt0,
+      coeffs_rsc_triosy_obj_ld_core_sct => coeffs_rsc_triosy_obj_ld_core_sct
+    );
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_result_rsci
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_result_rsci IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    result_rsc_dat : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);
+    result_rsc_vld : OUT STD_LOGIC;
+    result_rsc_rdy : IN STD_LOGIC;
+    core_wen : IN STD_LOGIC;
+    result_rsci_oswt : IN STD_LOGIC;
+    result_rsci_wen_comp : OUT STD_LOGIC;
+    result_rsci_idat : IN STD_LOGIC_VECTOR (18 DOWNTO 0)
+  );
+END test_core_result_rsci;
+
+ARCHITECTURE v3 OF test_core_result_rsci IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL result_rsci_irdy : STD_LOGIC;
+  SIGNAL result_rsci_biwt : STD_LOGIC;
+  SIGNAL result_rsci_bdwt : STD_LOGIC;
+  SIGNAL result_rsci_bcwt : STD_LOGIC;
+  SIGNAL result_rsci_ivld_core_sct : STD_LOGIC;
+
+  SIGNAL result_rsci_idat_1 : STD_LOGIC_VECTOR (18 DOWNTO 0);
+  SIGNAL result_rsci_dat : STD_LOGIC_VECTOR (18 DOWNTO 0);
+
+  COMPONENT test_core_result_rsci_result_wait_ctrl
+    PORT(
+      core_wen : IN STD_LOGIC;
+      result_rsci_oswt : IN STD_LOGIC;
+      result_rsci_irdy : IN STD_LOGIC;
+      result_rsci_biwt : OUT STD_LOGIC;
+      result_rsci_bdwt : OUT STD_LOGIC;
+      result_rsci_bcwt : IN STD_LOGIC;
+      result_rsci_ivld_core_sct : OUT STD_LOGIC
+    );
+  END COMPONENT;
+  COMPONENT test_core_result_rsci_result_wait_dp
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      result_rsci_oswt : IN STD_LOGIC;
+      result_rsci_wen_comp : OUT STD_LOGIC;
+      result_rsci_biwt : IN STD_LOGIC;
+      result_rsci_bdwt : IN STD_LOGIC;
+      result_rsci_bcwt : OUT STD_LOGIC
+    );
+  END COMPONENT;
+BEGIN
+  result_rsci : work.ccs_out_wait_pkg_v1.ccs_out_wait_v1
+    GENERIC MAP(
+      rscid => 4,
+      width => 19
+      )
+    PORT MAP(
+      irdy => result_rsci_irdy,
+      ivld => result_rsci_ivld_core_sct,
+      idat => result_rsci_idat_1,
+      rdy => result_rsc_rdy,
+      vld => result_rsc_vld,
+      dat => result_rsci_dat
+    );
+  result_rsci_idat_1 <= result_rsci_idat;
+  result_rsc_dat <= result_rsci_dat;
+
+  test_core_result_rsci_result_wait_ctrl_inst : test_core_result_rsci_result_wait_ctrl
+    PORT MAP(
+      core_wen => core_wen,
+      result_rsci_oswt => result_rsci_oswt,
+      result_rsci_irdy => result_rsci_irdy,
+      result_rsci_biwt => result_rsci_biwt,
+      result_rsci_bdwt => result_rsci_bdwt,
+      result_rsci_bcwt => result_rsci_bcwt,
+      result_rsci_ivld_core_sct => result_rsci_ivld_core_sct
+    );
+  test_core_result_rsci_result_wait_dp_inst : test_core_result_rsci_result_wait_dp
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      result_rsci_oswt => result_rsci_oswt,
+      result_rsci_wen_comp => result_rsci_wen_comp,
+      result_rsci_biwt => result_rsci_biwt,
+      result_rsci_bdwt => result_rsci_bdwt,
+      result_rsci_bcwt => result_rsci_bcwt
+    );
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeff_addr_rsci
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeff_addr_rsci IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    coeff_addr_rsc_dat : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+    coeff_addr_rsc_vld : IN STD_LOGIC;
+    coeff_addr_rsc_rdy : OUT STD_LOGIC;
+    core_wen : IN STD_LOGIC;
+    coeff_addr_rsci_oswt : IN STD_LOGIC;
+    coeff_addr_rsci_wen_comp : OUT STD_LOGIC;
+    coeff_addr_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (4 DOWNTO 0)
+  );
+END test_core_coeff_addr_rsci;
+
+ARCHITECTURE v3 OF test_core_coeff_addr_rsci IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL coeff_addr_rsci_biwt : STD_LOGIC;
+  SIGNAL coeff_addr_rsci_bdwt : STD_LOGIC;
+  SIGNAL coeff_addr_rsci_bcwt : STD_LOGIC;
+  SIGNAL coeff_addr_rsci_irdy_core_sct : STD_LOGIC;
+  SIGNAL coeff_addr_rsci_ivld : STD_LOGIC;
+  SIGNAL coeff_addr_rsci_idat : STD_LOGIC_VECTOR (4 DOWNTO 0);
+
+  SIGNAL coeff_addr_rsci_dat : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL coeff_addr_rsci_idat_1 : STD_LOGIC_VECTOR (4 DOWNTO 0);
+
+  COMPONENT test_core_coeff_addr_rsci_coeff_addr_wait_ctrl
+    PORT(
+      core_wen : IN STD_LOGIC;
+      coeff_addr_rsci_oswt : IN STD_LOGIC;
+      coeff_addr_rsci_biwt : OUT STD_LOGIC;
+      coeff_addr_rsci_bdwt : OUT STD_LOGIC;
+      coeff_addr_rsci_bcwt : IN STD_LOGIC;
+      coeff_addr_rsci_irdy_core_sct : OUT STD_LOGIC;
+      coeff_addr_rsci_ivld : IN STD_LOGIC
+    );
+  END COMPONENT;
+  COMPONENT test_core_coeff_addr_rsci_coeff_addr_wait_dp
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      coeff_addr_rsci_oswt : IN STD_LOGIC;
+      coeff_addr_rsci_wen_comp : OUT STD_LOGIC;
+      coeff_addr_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
+      coeff_addr_rsci_biwt : IN STD_LOGIC;
+      coeff_addr_rsci_bdwt : IN STD_LOGIC;
+      coeff_addr_rsci_bcwt : OUT STD_LOGIC;
+      coeff_addr_rsci_idat : IN STD_LOGIC_VECTOR (4 DOWNTO 0)
+    );
+  END COMPONENT;
+  SIGNAL test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst_coeff_addr_rsci_idat_mxwt
+      : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst_coeff_addr_rsci_idat :
+      STD_LOGIC_VECTOR (4 DOWNTO 0);
+
+BEGIN
+  coeff_addr_rsci : work.ccs_in_wait_pkg_v1.ccs_in_wait_v1
+    GENERIC MAP(
+      rscid => 3,
+      width => 5
+      )
+    PORT MAP(
+      rdy => coeff_addr_rsc_rdy,
+      vld => coeff_addr_rsc_vld,
+      dat => coeff_addr_rsci_dat,
+      irdy => coeff_addr_rsci_irdy_core_sct,
+      ivld => coeff_addr_rsci_ivld,
+      idat => coeff_addr_rsci_idat_1
+    );
+  coeff_addr_rsci_dat <= coeff_addr_rsc_dat;
+  coeff_addr_rsci_idat <= coeff_addr_rsci_idat_1;
+
+  test_core_coeff_addr_rsci_coeff_addr_wait_ctrl_inst : test_core_coeff_addr_rsci_coeff_addr_wait_ctrl
+    PORT MAP(
+      core_wen => core_wen,
+      coeff_addr_rsci_oswt => coeff_addr_rsci_oswt,
+      coeff_addr_rsci_biwt => coeff_addr_rsci_biwt,
+      coeff_addr_rsci_bdwt => coeff_addr_rsci_bdwt,
+      coeff_addr_rsci_bcwt => coeff_addr_rsci_bcwt,
+      coeff_addr_rsci_irdy_core_sct => coeff_addr_rsci_irdy_core_sct,
+      coeff_addr_rsci_ivld => coeff_addr_rsci_ivld
+    );
+  test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst : test_core_coeff_addr_rsci_coeff_addr_wait_dp
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      coeff_addr_rsci_oswt => coeff_addr_rsci_oswt,
+      coeff_addr_rsci_wen_comp => coeff_addr_rsci_wen_comp,
+      coeff_addr_rsci_idat_mxwt => test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst_coeff_addr_rsci_idat_mxwt,
+      coeff_addr_rsci_biwt => coeff_addr_rsci_biwt,
+      coeff_addr_rsci_bdwt => coeff_addr_rsci_bdwt,
+      coeff_addr_rsci_bcwt => coeff_addr_rsci_bcwt,
+      coeff_addr_rsci_idat => test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst_coeff_addr_rsci_idat
+    );
+  coeff_addr_rsci_idat_mxwt <= test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst_coeff_addr_rsci_idat_mxwt;
+  test_core_coeff_addr_rsci_coeff_addr_wait_dp_inst_coeff_addr_rsci_idat <= coeff_addr_rsci_idat;
+
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_coeffs_rsci_1
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_coeffs_rsci_1 IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    coeffs_rsci_q_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d : OUT STD_LOGIC;
+    core_wen : IN STD_LOGIC;
+    core_wten : IN STD_LOGIC;
+    coeffs_rsci_oswt : IN STD_LOGIC;
+    coeffs_rsci_q_d_mxwt : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsci_oswt_pff : IN STD_LOGIC
+  );
+END test_core_coeffs_rsci_1;
+
+ARCHITECTURE v3 OF test_core_coeffs_rsci_1 IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL coeffs_rsci_biwt : STD_LOGIC;
+  SIGNAL coeffs_rsci_bdwt : STD_LOGIC;
+  SIGNAL coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct : STD_LOGIC;
+
+  COMPONENT test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl
+    PORT(
+      core_wen : IN STD_LOGIC;
+      core_wten : IN STD_LOGIC;
+      coeffs_rsci_oswt : IN STD_LOGIC;
+      coeffs_rsci_biwt : OUT STD_LOGIC;
+      coeffs_rsci_bdwt : OUT STD_LOGIC;
+      coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct : OUT STD_LOGIC;
+      coeffs_rsci_oswt_pff : IN STD_LOGIC
+    );
+  END COMPONENT;
+  COMPONENT test_core_coeffs_rsci_1_coeffs_rsc_wait_dp
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      coeffs_rsci_q_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+      coeffs_rsci_q_d_mxwt : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+      coeffs_rsci_biwt : IN STD_LOGIC;
+      coeffs_rsci_bdwt : IN STD_LOGIC
+    );
+  END COMPONENT;
+  SIGNAL test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst_coeffs_rsci_q_d : STD_LOGIC_VECTOR
+      (6 DOWNTO 0);
+  SIGNAL test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst_coeffs_rsci_q_d_mxwt : STD_LOGIC_VECTOR
+      (6 DOWNTO 0);
+
+BEGIN
+  test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl_inst : test_core_coeffs_rsci_1_coeffs_rsc_wait_ctrl
+    PORT MAP(
+      core_wen => core_wen,
+      core_wten => core_wten,
+      coeffs_rsci_oswt => coeffs_rsci_oswt,
+      coeffs_rsci_biwt => coeffs_rsci_biwt,
+      coeffs_rsci_bdwt => coeffs_rsci_bdwt,
+      coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct => coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct,
+      coeffs_rsci_oswt_pff => coeffs_rsci_oswt_pff
+    );
+  test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst : test_core_coeffs_rsci_1_coeffs_rsc_wait_dp
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      coeffs_rsci_q_d => test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst_coeffs_rsci_q_d,
+      coeffs_rsci_q_d_mxwt => test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst_coeffs_rsci_q_d_mxwt,
+      coeffs_rsci_biwt => coeffs_rsci_biwt,
+      coeffs_rsci_bdwt => coeffs_rsci_bdwt
+    );
+  test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst_coeffs_rsci_q_d <= coeffs_rsci_q_d;
+  coeffs_rsci_q_d_mxwt <= test_core_coeffs_rsci_1_coeffs_rsc_wait_dp_inst_coeffs_rsci_q_d_mxwt;
+
+  coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d <= coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_sct;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core_data_in_rsci
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core_data_in_rsci IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    data_in_rsc_dat : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+    data_in_rsc_vld : IN STD_LOGIC;
+    data_in_rsc_rdy : OUT STD_LOGIC;
+    core_wen : IN STD_LOGIC;
+    data_in_rsci_oswt : IN STD_LOGIC;
+    data_in_rsci_wen_comp : OUT STD_LOGIC;
+    data_in_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
+  );
+END test_core_data_in_rsci;
+
+ARCHITECTURE v3 OF test_core_data_in_rsci IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL data_in_rsci_biwt : STD_LOGIC;
+  SIGNAL data_in_rsci_bdwt : STD_LOGIC;
+  SIGNAL data_in_rsci_bcwt : STD_LOGIC;
+  SIGNAL data_in_rsci_irdy_core_sct : STD_LOGIC;
+  SIGNAL data_in_rsci_ivld : STD_LOGIC;
+  SIGNAL data_in_rsci_idat : STD_LOGIC_VECTOR (9 DOWNTO 0);
+
+  SIGNAL data_in_rsci_dat : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL data_in_rsci_idat_1 : STD_LOGIC_VECTOR (9 DOWNTO 0);
+
+  COMPONENT test_core_data_in_rsci_data_in_wait_ctrl
+    PORT(
+      core_wen : IN STD_LOGIC;
+      data_in_rsci_oswt : IN STD_LOGIC;
+      data_in_rsci_biwt : OUT STD_LOGIC;
+      data_in_rsci_bdwt : OUT STD_LOGIC;
+      data_in_rsci_bcwt : IN STD_LOGIC;
+      data_in_rsci_irdy_core_sct : OUT STD_LOGIC;
+      data_in_rsci_ivld : IN STD_LOGIC
+    );
+  END COMPONENT;
+  COMPONENT test_core_data_in_rsci_data_in_wait_dp
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      data_in_rsci_oswt : IN STD_LOGIC;
+      data_in_rsci_wen_comp : OUT STD_LOGIC;
+      data_in_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);
+      data_in_rsci_biwt : IN STD_LOGIC;
+      data_in_rsci_bdwt : IN STD_LOGIC;
+      data_in_rsci_bcwt : OUT STD_LOGIC;
+      data_in_rsci_idat : IN STD_LOGIC_VECTOR (9 DOWNTO 0)
+    );
+  END COMPONENT;
+  SIGNAL test_core_data_in_rsci_data_in_wait_dp_inst_data_in_rsci_idat_mxwt : STD_LOGIC_VECTOR
+      (9 DOWNTO 0);
+  SIGNAL test_core_data_in_rsci_data_in_wait_dp_inst_data_in_rsci_idat : STD_LOGIC_VECTOR
+      (9 DOWNTO 0);
+
+BEGIN
+  data_in_rsci : work.ccs_in_wait_pkg_v1.ccs_in_wait_v1
+    GENERIC MAP(
+      rscid => 1,
+      width => 10
+      )
+    PORT MAP(
+      rdy => data_in_rsc_rdy,
+      vld => data_in_rsc_vld,
+      dat => data_in_rsci_dat,
+      irdy => data_in_rsci_irdy_core_sct,
+      ivld => data_in_rsci_ivld,
+      idat => data_in_rsci_idat_1
+    );
+  data_in_rsci_dat <= data_in_rsc_dat;
+  data_in_rsci_idat <= data_in_rsci_idat_1;
+
+  test_core_data_in_rsci_data_in_wait_ctrl_inst : test_core_data_in_rsci_data_in_wait_ctrl
+    PORT MAP(
+      core_wen => core_wen,
+      data_in_rsci_oswt => data_in_rsci_oswt,
+      data_in_rsci_biwt => data_in_rsci_biwt,
+      data_in_rsci_bdwt => data_in_rsci_bdwt,
+      data_in_rsci_bcwt => data_in_rsci_bcwt,
+      data_in_rsci_irdy_core_sct => data_in_rsci_irdy_core_sct,
+      data_in_rsci_ivld => data_in_rsci_ivld
+    );
+  test_core_data_in_rsci_data_in_wait_dp_inst : test_core_data_in_rsci_data_in_wait_dp
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      data_in_rsci_oswt => data_in_rsci_oswt,
+      data_in_rsci_wen_comp => data_in_rsci_wen_comp,
+      data_in_rsci_idat_mxwt => test_core_data_in_rsci_data_in_wait_dp_inst_data_in_rsci_idat_mxwt,
+      data_in_rsci_biwt => data_in_rsci_biwt,
+      data_in_rsci_bdwt => data_in_rsci_bdwt,
+      data_in_rsci_bcwt => data_in_rsci_bcwt,
+      data_in_rsci_idat => test_core_data_in_rsci_data_in_wait_dp_inst_data_in_rsci_idat
+    );
+  data_in_rsci_idat_mxwt <= test_core_data_in_rsci_data_in_wait_dp_inst_data_in_rsci_idat_mxwt;
+  test_core_data_in_rsci_data_in_wait_dp_inst_data_in_rsci_idat <= data_in_rsci_idat;
+
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test_core
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test_core IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    data_in_rsc_dat : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+    data_in_rsc_vld : IN STD_LOGIC;
+    data_in_rsc_rdy : OUT STD_LOGIC;
+    coeffs_rsc_triosy_lz : OUT STD_LOGIC;
+    coeff_addr_rsc_dat : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+    coeff_addr_rsc_vld : IN STD_LOGIC;
+    coeff_addr_rsc_rdy : OUT STD_LOGIC;
+    result_rsc_dat : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);
+    result_rsc_vld : OUT STD_LOGIC;
+    result_rsc_rdy : IN STD_LOGIC;
+    coeffs_rsci_adr_d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsci_q_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d : OUT STD_LOGIC
+  );
+END test_core;
+
+ARCHITECTURE v3 OF test_core IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL core_wen : STD_LOGIC;
+  SIGNAL core_wten : STD_LOGIC;
+  SIGNAL data_in_rsci_wen_comp : STD_LOGIC;
+  SIGNAL data_in_rsci_idat_mxwt : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL coeffs_rsci_q_d_mxwt : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeff_addr_rsci_wen_comp : STD_LOGIC;
+  SIGNAL coeff_addr_rsci_idat_mxwt : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL result_rsci_wen_comp : STD_LOGIC;
+  SIGNAL result_rsci_idat : STD_LOGIC_VECTOR (18 DOWNTO 0);
+  SIGNAL fsm_output : STD_LOGIC_VECTOR (1 DOWNTO 0);
+  SIGNAL MAC_acc_3_tmp : STD_LOGIC_VECTOR (2 DOWNTO 0);
+  SIGNAL exitL_exit_MAC_sva : STD_LOGIC;
+  SIGNAL MAC_nor_m1c : STD_LOGIC;
+  SIGNAL MAC_and_m1c : STD_LOGIC;
+  SIGNAL MAC_and_m1c_1 : STD_LOGIC;
+  SIGNAL MAC_and_9_m1c : STD_LOGIC;
+  SIGNAL reg_data_in_rsci_oswt_cse : STD_LOGIC;
+  SIGNAL reg_coeffs_rsc_triosy_obj_ld_core_psct_cse : STD_LOGIC;
+  SIGNAL reg_result_rsci_ivld_core_psct_cse : STD_LOGIC;
+  SIGNAL reg_coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_psct_cse : STD_LOGIC;
+  SIGNAL regs_static_init_else_and_cse : STD_LOGIC;
+  SIGNAL MAC_i_2_0_lpi_1_dfm_1_0_1 : STD_LOGIC_VECTOR (1 DOWNTO 0);
+  SIGNAL coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_reg : STD_LOGIC;
+  SIGNAL addr_lpi_1_dfm : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL regs_1_sva : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL regs_2_sva : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL regs_0_sva : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL regs_3_lpi_1_dfm : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL MAC_MAC_and_itm_1 : STD_LOGIC_VECTOR (18 DOWNTO 0);
+  SIGNAL MAC_mux_itm_1 : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL acc_sva_1_mx0w0 : STD_LOGIC_VECTOR (18 DOWNTO 0);
+  SIGNAL MAC_i_2_0_sva_1_1_0 : STD_LOGIC_VECTOR (1 DOWNTO 0);
+  SIGNAL addr_and_cse : STD_LOGIC;
+
+  SIGNAL MAC_not_9_nl : STD_LOGIC;
+  SIGNAL MAC_or_nl : STD_LOGIC;
+  SIGNAL MAC_and_5_nl : STD_LOGIC;
+  SIGNAL MAC_or_1_nl : STD_LOGIC;
+  SIGNAL MAC_or_2_nl : STD_LOGIC;
+  SIGNAL MAC_and_11_nl : STD_LOGIC;
+  SIGNAL MAC_not_11_nl : STD_LOGIC;
+  SIGNAL MAC_mul_nl : STD_LOGIC_VECTOR (16 DOWNTO 0);
+  SIGNAL addr_mux_nl : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL and_3_nl : STD_LOGIC;
+  COMPONENT test_core_data_in_rsci
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      data_in_rsc_dat : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+      data_in_rsc_vld : IN STD_LOGIC;
+      data_in_rsc_rdy : OUT STD_LOGIC;
+      core_wen : IN STD_LOGIC;
+      data_in_rsci_oswt : IN STD_LOGIC;
+      data_in_rsci_wen_comp : OUT STD_LOGIC;
+      data_in_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
+    );
+  END COMPONENT;
+  SIGNAL test_core_data_in_rsci_inst_data_in_rsc_dat : STD_LOGIC_VECTOR (9 DOWNTO
+      0);
+  SIGNAL test_core_data_in_rsci_inst_data_in_rsci_idat_mxwt : STD_LOGIC_VECTOR (9
+      DOWNTO 0);
+
+  COMPONENT test_core_coeffs_rsci_1
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      coeffs_rsci_q_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+      coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d : OUT STD_LOGIC;
+      core_wen : IN STD_LOGIC;
+      core_wten : IN STD_LOGIC;
+      coeffs_rsci_oswt : IN STD_LOGIC;
+      coeffs_rsci_q_d_mxwt : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+      coeffs_rsci_oswt_pff : IN STD_LOGIC
+    );
+  END COMPONENT;
+  SIGNAL test_core_coeffs_rsci_1_inst_coeffs_rsci_q_d : STD_LOGIC_VECTOR (6 DOWNTO
+      0);
+  SIGNAL test_core_coeffs_rsci_1_inst_coeffs_rsci_q_d_mxwt : STD_LOGIC_VECTOR (6
+      DOWNTO 0);
+  SIGNAL test_core_coeffs_rsci_1_inst_coeffs_rsci_oswt_pff : STD_LOGIC;
+
+  COMPONENT test_core_coeff_addr_rsci
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      coeff_addr_rsc_dat : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+      coeff_addr_rsc_vld : IN STD_LOGIC;
+      coeff_addr_rsc_rdy : OUT STD_LOGIC;
+      core_wen : IN STD_LOGIC;
+      coeff_addr_rsci_oswt : IN STD_LOGIC;
+      coeff_addr_rsci_wen_comp : OUT STD_LOGIC;
+      coeff_addr_rsci_idat_mxwt : OUT STD_LOGIC_VECTOR (4 DOWNTO 0)
+    );
+  END COMPONENT;
+  SIGNAL test_core_coeff_addr_rsci_inst_coeff_addr_rsc_dat : STD_LOGIC_VECTOR (4
+      DOWNTO 0);
+  SIGNAL test_core_coeff_addr_rsci_inst_coeff_addr_rsci_idat_mxwt : STD_LOGIC_VECTOR
+      (4 DOWNTO 0);
+
+  COMPONENT test_core_result_rsci
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      result_rsc_dat : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);
+      result_rsc_vld : OUT STD_LOGIC;
+      result_rsc_rdy : IN STD_LOGIC;
+      core_wen : IN STD_LOGIC;
+      result_rsci_oswt : IN STD_LOGIC;
+      result_rsci_wen_comp : OUT STD_LOGIC;
+      result_rsci_idat : IN STD_LOGIC_VECTOR (18 DOWNTO 0)
+    );
+  END COMPONENT;
+  SIGNAL test_core_result_rsci_inst_result_rsc_dat : STD_LOGIC_VECTOR (18 DOWNTO
+      0);
+  SIGNAL test_core_result_rsci_inst_result_rsci_idat : STD_LOGIC_VECTOR (18 DOWNTO
+      0);
+
+  COMPONENT test_core_coeffs_rsc_triosy_obj
+    PORT(
+      coeffs_rsc_triosy_lz : OUT STD_LOGIC;
+      core_wten : IN STD_LOGIC;
+      coeffs_rsc_triosy_obj_iswt0 : IN STD_LOGIC
+    );
+  END COMPONENT;
+  COMPONENT test_core_staller
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      core_wen : OUT STD_LOGIC;
+      core_wten : OUT STD_LOGIC;
+      data_in_rsci_wen_comp : IN STD_LOGIC;
+      coeff_addr_rsci_wen_comp : IN STD_LOGIC;
+      result_rsci_wen_comp : IN STD_LOGIC
+    );
+  END COMPONENT;
+  COMPONENT test_core_core_fsm
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      core_wen : IN STD_LOGIC;
+      fsm_output : OUT STD_LOGIC_VECTOR (1 DOWNTO 0)
+    );
+  END COMPONENT;
+  SIGNAL test_core_core_fsm_inst_fsm_output : STD_LOGIC_VECTOR (1 DOWNTO 0);
+
+  FUNCTION CONV_SL_1_1(input:BOOLEAN)
+  RETURN STD_LOGIC IS
+  BEGIN
+    IF input THEN RETURN '1';ELSE RETURN '0';END IF;
+  END;
+
+  FUNCTION MUX1HOT_v_10_5_2(input_4 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  input_3 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  input_2 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  input_0 : STD_LOGIC_VECTOR(9 DOWNTO 0);
+  sel : STD_LOGIC_VECTOR(4 DOWNTO 0))
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(9 DOWNTO 0);
+    VARIABLE tmp : STD_LOGIC_VECTOR(9 DOWNTO 0);
+
+    BEGIN
+      tmp := (OTHERS=>sel(0));
+      result := input_0 and tmp;
+      tmp := (OTHERS=>sel( 1));
+      result := result or ( input_1 and tmp);
+      tmp := (OTHERS=>sel( 2));
+      result := result or ( input_2 and tmp);
+      tmp := (OTHERS=>sel( 3));
+      result := result or ( input_3 and tmp);
+      tmp := (OTHERS=>sel( 4));
+      result := result or ( input_4 and tmp);
+    RETURN result;
+  END;
+
+  FUNCTION MUX_v_19_2_2(input_0 : STD_LOGIC_VECTOR(18 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(18 DOWNTO 0);
+  sel : STD_LOGIC)
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(18 DOWNTO 0);
+
+    BEGIN
+      CASE sel IS
+        WHEN '0' =>
+          result := input_0;
+        WHEN others =>
+          result := input_1;
+      END CASE;
+    RETURN result;
+  END;
+
+  FUNCTION MUX_v_2_2_2(input_0 : STD_LOGIC_VECTOR(1 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(1 DOWNTO 0);
+  sel : STD_LOGIC)
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+    BEGIN
+      CASE sel IS
+        WHEN '0' =>
+          result := input_0;
+        WHEN others =>
+          result := input_1;
+      END CASE;
+    RETURN result;
+  END;
+
+  FUNCTION MUX_v_5_2_2(input_0 : STD_LOGIC_VECTOR(4 DOWNTO 0);
+  input_1 : STD_LOGIC_VECTOR(4 DOWNTO 0);
+  sel : STD_LOGIC)
+  RETURN STD_LOGIC_VECTOR IS
+    VARIABLE result : STD_LOGIC_VECTOR(4 DOWNTO 0);
+
+    BEGIN
+      CASE sel IS
+        WHEN '0' =>
+          result := input_0;
+        WHEN others =>
+          result := input_1;
+      END CASE;
+    RETURN result;
+  END;
+
+BEGIN
+  test_core_data_in_rsci_inst : test_core_data_in_rsci
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      data_in_rsc_dat => test_core_data_in_rsci_inst_data_in_rsc_dat,
+      data_in_rsc_vld => data_in_rsc_vld,
+      data_in_rsc_rdy => data_in_rsc_rdy,
+      core_wen => core_wen,
+      data_in_rsci_oswt => reg_data_in_rsci_oswt_cse,
+      data_in_rsci_wen_comp => data_in_rsci_wen_comp,
+      data_in_rsci_idat_mxwt => test_core_data_in_rsci_inst_data_in_rsci_idat_mxwt
+    );
+  test_core_data_in_rsci_inst_data_in_rsc_dat <= data_in_rsc_dat;
+  data_in_rsci_idat_mxwt <= test_core_data_in_rsci_inst_data_in_rsci_idat_mxwt;
+
+  test_core_coeffs_rsci_1_inst : test_core_coeffs_rsci_1
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      coeffs_rsci_q_d => test_core_coeffs_rsci_1_inst_coeffs_rsci_q_d,
+      coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d => coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_reg,
+      core_wen => core_wen,
+      core_wten => core_wten,
+      coeffs_rsci_oswt => reg_coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_psct_cse,
+      coeffs_rsci_q_d_mxwt => test_core_coeffs_rsci_1_inst_coeffs_rsci_q_d_mxwt,
+      coeffs_rsci_oswt_pff => test_core_coeffs_rsci_1_inst_coeffs_rsci_oswt_pff
+    );
+  test_core_coeffs_rsci_1_inst_coeffs_rsci_q_d <= coeffs_rsci_q_d;
+  coeffs_rsci_q_d_mxwt <= test_core_coeffs_rsci_1_inst_coeffs_rsci_q_d_mxwt;
+  test_core_coeffs_rsci_1_inst_coeffs_rsci_oswt_pff <= fsm_output(1);
+
+  test_core_coeff_addr_rsci_inst : test_core_coeff_addr_rsci
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      coeff_addr_rsc_dat => test_core_coeff_addr_rsci_inst_coeff_addr_rsc_dat,
+      coeff_addr_rsc_vld => coeff_addr_rsc_vld,
+      coeff_addr_rsc_rdy => coeff_addr_rsc_rdy,
+      core_wen => core_wen,
+      coeff_addr_rsci_oswt => reg_data_in_rsci_oswt_cse,
+      coeff_addr_rsci_wen_comp => coeff_addr_rsci_wen_comp,
+      coeff_addr_rsci_idat_mxwt => test_core_coeff_addr_rsci_inst_coeff_addr_rsci_idat_mxwt
+    );
+  test_core_coeff_addr_rsci_inst_coeff_addr_rsc_dat <= coeff_addr_rsc_dat;
+  coeff_addr_rsci_idat_mxwt <= test_core_coeff_addr_rsci_inst_coeff_addr_rsci_idat_mxwt;
+
+  test_core_result_rsci_inst : test_core_result_rsci
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      result_rsc_dat => test_core_result_rsci_inst_result_rsc_dat,
+      result_rsc_vld => result_rsc_vld,
+      result_rsc_rdy => result_rsc_rdy,
+      core_wen => core_wen,
+      result_rsci_oswt => reg_result_rsci_ivld_core_psct_cse,
+      result_rsci_wen_comp => result_rsci_wen_comp,
+      result_rsci_idat => test_core_result_rsci_inst_result_rsci_idat
+    );
+  result_rsc_dat <= test_core_result_rsci_inst_result_rsc_dat;
+  test_core_result_rsci_inst_result_rsci_idat <= result_rsci_idat;
+
+  test_core_coeffs_rsc_triosy_obj_inst : test_core_coeffs_rsc_triosy_obj
+    PORT MAP(
+      coeffs_rsc_triosy_lz => coeffs_rsc_triosy_lz,
+      core_wten => core_wten,
+      coeffs_rsc_triosy_obj_iswt0 => reg_coeffs_rsc_triosy_obj_ld_core_psct_cse
+    );
+  test_core_staller_inst : test_core_staller
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      core_wen => core_wen,
+      core_wten => core_wten,
+      data_in_rsci_wen_comp => data_in_rsci_wen_comp,
+      coeff_addr_rsci_wen_comp => coeff_addr_rsci_wen_comp,
+      result_rsci_wen_comp => result_rsci_wen_comp
+    );
+  test_core_core_fsm_inst : test_core_core_fsm
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      core_wen => core_wen,
+      fsm_output => test_core_core_fsm_inst_fsm_output
+    );
+  fsm_output <= test_core_core_fsm_inst_fsm_output;
+
+  MAC_and_9_m1c <= CONV_SL_1_1(MAC_i_2_0_lpi_1_dfm_1_0_1=STD_LOGIC_VECTOR'("11"));
+  addr_and_cse <= core_wen AND (NOT (MAC_acc_3_tmp(2))) AND exitL_exit_MAC_sva;
+  regs_static_init_else_and_cse <= core_wen AND (NOT((NOT exitL_exit_MAC_sva) OR
+      (fsm_output(0))));
+  MAC_not_11_nl <= NOT exitL_exit_MAC_sva;
+  MAC_i_2_0_lpi_1_dfm_1_0_1 <= MUX_v_2_2_2(STD_LOGIC_VECTOR'("00"), MAC_i_2_0_sva_1_1_0,
+      MAC_not_11_nl);
+  MAC_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(MAC_mux_itm_1) * SIGNED(coeffs_rsci_q_d_mxwt)),
+      17));
+  acc_sva_1_mx0w0 <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED(MAC_MAC_and_itm_1) + CONV_SIGNED(SIGNED(MAC_mul_nl),
+      19), 19));
+  MAC_acc_3_tmp <= STD_LOGIC_VECTOR(CONV_SIGNED(CONV_SIGNED(CONV_UNSIGNED(UNSIGNED(MAC_i_2_0_lpi_1_dfm_1_0_1),
+      2), 3) + SIGNED'( "001"), 3));
+  MAC_nor_m1c <= NOT(CONV_SL_1_1(MAC_i_2_0_lpi_1_dfm_1_0_1/=STD_LOGIC_VECTOR'("00")));
+  MAC_and_m1c <= CONV_SL_1_1(MAC_i_2_0_lpi_1_dfm_1_0_1=STD_LOGIC_VECTOR'("01"));
+  MAC_and_m1c_1 <= CONV_SL_1_1(MAC_i_2_0_lpi_1_dfm_1_0_1=STD_LOGIC_VECTOR'("10"));
+  and_3_nl <= exitL_exit_MAC_sva AND (fsm_output(1));
+  addr_mux_nl <= MUX_v_5_2_2(addr_lpi_1_dfm, coeff_addr_rsci_idat_mxwt, and_3_nl);
+  coeffs_rsci_adr_d <= addr_mux_nl & MAC_i_2_0_lpi_1_dfm_1_0_1;
+  coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d <= coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_reg;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        reg_data_in_rsci_oswt_cse <= '0';
+        reg_coeffs_rsc_triosy_obj_ld_core_psct_cse <= '0';
+        reg_result_rsci_ivld_core_psct_cse <= '0';
+        reg_coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_psct_cse <= '0';
+        MAC_MAC_and_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000000");
+        MAC_mux_itm_1 <= STD_LOGIC_VECTOR'( "0000000000");
+        MAC_i_2_0_sva_1_1_0 <= STD_LOGIC_VECTOR'( "00");
+      ELSIF ( core_wen = '1' ) THEN
+        reg_data_in_rsci_oswt_cse <= NOT((NOT (MAC_acc_3_tmp(2))) AND (fsm_output(1)));
+        reg_coeffs_rsc_triosy_obj_ld_core_psct_cse <= (MAC_acc_3_tmp(2)) AND (fsm_output(1));
+        reg_result_rsci_ivld_core_psct_cse <= exitL_exit_MAC_sva AND reg_coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_psct_cse;
+        reg_coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_psct_cse <= fsm_output(1);
+        MAC_MAC_and_itm_1 <= MUX_v_19_2_2(STD_LOGIC_VECTOR'("0000000000000000000"),
+            acc_sva_1_mx0w0, MAC_not_9_nl);
+        MAC_mux_itm_1 <= MUX1HOT_v_10_5_2(regs_0_sva, data_in_rsci_idat_mxwt, regs_1_sva,
+            regs_2_sva, regs_3_lpi_1_dfm, STD_LOGIC_VECTOR'( MAC_or_nl & MAC_and_5_nl
+            & MAC_or_1_nl & MAC_or_2_nl & MAC_and_11_nl));
+        MAC_i_2_0_sva_1_1_0 <= MAC_acc_3_tmp(1 DOWNTO 0);
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        result_rsci_idat <= STD_LOGIC_VECTOR'( "0000000000000000000");
+      ELSIF ( (core_wen AND exitL_exit_MAC_sva AND reg_coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d_core_psct_cse)
+          = '1' ) THEN
+        result_rsci_idat <= acc_sva_1_mx0w0;
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        exitL_exit_MAC_sva <= '1';
+      ELSIF ( (core_wen AND (NOT (fsm_output(0)))) = '1' ) THEN
+        exitL_exit_MAC_sva <= MAC_acc_3_tmp(2);
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        addr_lpi_1_dfm <= STD_LOGIC_VECTOR'( "00000");
+        regs_3_lpi_1_dfm <= STD_LOGIC_VECTOR'( "0000000000");
+      ELSIF ( addr_and_cse = '1' ) THEN
+        addr_lpi_1_dfm <= coeff_addr_rsci_idat_mxwt;
+        regs_3_lpi_1_dfm <= regs_2_sva;
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        regs_2_sva <= STD_LOGIC_VECTOR'( "0000000000");
+        regs_1_sva <= STD_LOGIC_VECTOR'( "0000000000");
+        regs_0_sva <= STD_LOGIC_VECTOR'( "0000000000");
+      ELSIF ( regs_static_init_else_and_cse = '1' ) THEN
+        regs_2_sva <= regs_1_sva;
+        regs_1_sva <= regs_0_sva;
+        regs_0_sva <= data_in_rsci_idat_mxwt;
+      END IF;
+    END IF;
+  END PROCESS;
+  MAC_not_9_nl <= NOT exitL_exit_MAC_sva;
+  MAC_or_nl <= ((NOT exitL_exit_MAC_sva) AND MAC_nor_m1c) OR (exitL_exit_MAC_sva
+      AND MAC_and_m1c);
+  MAC_and_5_nl <= exitL_exit_MAC_sva AND MAC_nor_m1c;
+  MAC_or_1_nl <= ((NOT exitL_exit_MAC_sva) AND MAC_and_m1c) OR (exitL_exit_MAC_sva
+      AND MAC_and_m1c_1);
+  MAC_or_2_nl <= ((NOT exitL_exit_MAC_sva) AND MAC_and_m1c_1) OR (exitL_exit_MAC_sva
+      AND MAC_and_9_m1c);
+  MAC_and_11_nl <= (NOT exitL_exit_MAC_sva) AND MAC_and_9_m1c;
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    test
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_wait_pkg_v1.ALL;
+USE work.ccs_out_wait_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY test IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    data_in_rsc_dat : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+    data_in_rsc_vld : IN STD_LOGIC;
+    data_in_rsc_rdy : OUT STD_LOGIC;
+    coeffs_rsc_adr : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsc_d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsc_we : OUT STD_LOGIC;
+    coeffs_rsc_q : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+    coeffs_rsc_triosy_lz : OUT STD_LOGIC;
+    coeff_addr_rsc_dat : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+    coeff_addr_rsc_vld : IN STD_LOGIC;
+    coeff_addr_rsc_rdy : OUT STD_LOGIC;
+    result_rsc_dat : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);
+    result_rsc_vld : OUT STD_LOGIC;
+    result_rsc_rdy : IN STD_LOGIC
+  );
+END test;
+
+ARCHITECTURE v3 OF test IS
+  -- Default Constants
+  CONSTANT PWR : STD_LOGIC := '1';
+  CONSTANT GND : STD_LOGIC := '0';
+
+  -- Interconnect Declarations
+  SIGNAL coeffs_rsci_adr_d : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_q_d : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d : STD_LOGIC;
+
+  COMPONENT test_ccs_sample_mem_ccs_ram_sync_singleport_rwport_2_7_7_128_128_7_5_gen
+    PORT(
+      q : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+      we : OUT STD_LOGIC;
+      d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+      adr : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+      adr_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+      d_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+      we_d : IN STD_LOGIC;
+      q_d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+      port_0_rw_ram_ir_internal_RMASK_B_d : IN STD_LOGIC;
+      port_0_rw_ram_ir_internal_WMASK_B_d : IN STD_LOGIC
+    );
+  END COMPONENT;
+  SIGNAL coeffs_rsci_q : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_d : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_adr : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_adr_d_1 : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_d_d : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL coeffs_rsci_q_d_1 : STD_LOGIC_VECTOR (6 DOWNTO 0);
+
+  COMPONENT test_core
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      data_in_rsc_dat : IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+      data_in_rsc_vld : IN STD_LOGIC;
+      data_in_rsc_rdy : OUT STD_LOGIC;
+      coeffs_rsc_triosy_lz : OUT STD_LOGIC;
+      coeff_addr_rsc_dat : IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+      coeff_addr_rsc_vld : IN STD_LOGIC;
+      coeff_addr_rsc_rdy : OUT STD_LOGIC;
+      result_rsc_dat : OUT STD_LOGIC_VECTOR (18 DOWNTO 0);
+      result_rsc_vld : OUT STD_LOGIC;
+      result_rsc_rdy : IN STD_LOGIC;
+      coeffs_rsci_adr_d : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+      coeffs_rsci_q_d : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+      coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d : OUT STD_LOGIC
+    );
+  END COMPONENT;
+  SIGNAL test_core_inst_data_in_rsc_dat : STD_LOGIC_VECTOR (9 DOWNTO 0);
+  SIGNAL test_core_inst_coeff_addr_rsc_dat : STD_LOGIC_VECTOR (4 DOWNTO 0);
+  SIGNAL test_core_inst_result_rsc_dat : STD_LOGIC_VECTOR (18 DOWNTO 0);
+  SIGNAL test_core_inst_coeffs_rsci_adr_d : STD_LOGIC_VECTOR (6 DOWNTO 0);
+  SIGNAL test_core_inst_coeffs_rsci_q_d : STD_LOGIC_VECTOR (6 DOWNTO 0);
+
+BEGIN
+  coeffs_rsci : test_ccs_sample_mem_ccs_ram_sync_singleport_rwport_2_7_7_128_128_7_5_gen
+    PORT MAP(
+      q => coeffs_rsci_q,
+      we => coeffs_rsc_we,
+      d => coeffs_rsci_d,
+      adr => coeffs_rsci_adr,
+      adr_d => coeffs_rsci_adr_d_1,
+      d_d => coeffs_rsci_d_d,
+      we_d => '0',
+      q_d => coeffs_rsci_q_d_1,
+      port_0_rw_ram_ir_internal_RMASK_B_d => coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d,
+      port_0_rw_ram_ir_internal_WMASK_B_d => '0'
+    );
+  coeffs_rsci_q <= coeffs_rsc_q;
+  coeffs_rsc_d <= coeffs_rsci_d;
+  coeffs_rsc_adr <= coeffs_rsci_adr;
+  coeffs_rsci_adr_d_1 <= coeffs_rsci_adr_d;
+  coeffs_rsci_d_d <= STD_LOGIC_VECTOR'( "0000000");
+  coeffs_rsci_q_d <= coeffs_rsci_q_d_1;
+
+  test_core_inst : test_core
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      data_in_rsc_dat => test_core_inst_data_in_rsc_dat,
+      data_in_rsc_vld => data_in_rsc_vld,
+      data_in_rsc_rdy => data_in_rsc_rdy,
+      coeffs_rsc_triosy_lz => coeffs_rsc_triosy_lz,
+      coeff_addr_rsc_dat => test_core_inst_coeff_addr_rsc_dat,
+      coeff_addr_rsc_vld => coeff_addr_rsc_vld,
+      coeff_addr_rsc_rdy => coeff_addr_rsc_rdy,
+      result_rsc_dat => test_core_inst_result_rsc_dat,
+      result_rsc_vld => result_rsc_vld,
+      result_rsc_rdy => result_rsc_rdy,
+      coeffs_rsci_adr_d => test_core_inst_coeffs_rsci_adr_d,
+      coeffs_rsci_q_d => test_core_inst_coeffs_rsci_q_d,
+      coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d => coeffs_rsci_port_0_rw_ram_ir_internal_RMASK_B_d
+    );
+  test_core_inst_data_in_rsc_dat <= data_in_rsc_dat;
+  test_core_inst_coeff_addr_rsc_dat <= coeff_addr_rsc_dat;
+  result_rsc_dat <= test_core_inst_result_rsc_dat;
+  coeffs_rsci_adr_d <= test_core_inst_coeffs_rsci_adr_d;
+  test_core_inst_coeffs_rsci_q_d <= coeffs_rsci_q_d;
+
+END v3;
+
+
+

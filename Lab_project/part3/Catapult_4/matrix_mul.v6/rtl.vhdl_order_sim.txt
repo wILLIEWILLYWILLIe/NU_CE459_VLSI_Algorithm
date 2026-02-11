@@ -1,0 +1,2 @@
+/vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+./rtl.vhdl

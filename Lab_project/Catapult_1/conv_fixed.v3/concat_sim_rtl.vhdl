@@ -1,0 +1,448 @@
+
+--------> /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd 
+--------------------------------------------------------------------------------
+-- Catapult Synthesis - Sample I/O Port Library
+--
+-- Copyright (c) 2003-2017 Mentor Graphics Corp.
+--       All Rights Reserved
+--
+-- This document may be used and distributed without restriction provided that
+-- this copyright statement is not removed from the file and that any derivative
+-- work contains this copyright notice.
+--
+-- The design information contained in this file is intended to be an example
+-- of the functionality which the end user may study in preparation for creating
+-- their own custom interfaces. This design does not necessarily present a 
+-- complete implementation of the named protocol or standard.
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+PACKAGE ccs_in_pkg_v1 IS
+
+COMPONENT ccs_in_v1
+  GENERIC (
+    rscid    : INTEGER;
+    width    : INTEGER
+  );
+  PORT (
+    idat   : OUT std_logic_vector(width-1 DOWNTO 0);
+    dat    : IN  std_logic_vector(width-1 DOWNTO 0)
+  );
+END COMPONENT;
+
+END ccs_in_pkg_v1;
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all; -- Prevent STARC 2.1.1.2 violation
+
+ENTITY ccs_in_v1 IS
+  GENERIC (
+    rscid : INTEGER;
+    width : INTEGER
+  );
+  PORT (
+    idat  : OUT std_logic_vector(width-1 DOWNTO 0);
+    dat   : IN  std_logic_vector(width-1 DOWNTO 0)
+  );
+END ccs_in_v1;
+
+ARCHITECTURE beh OF ccs_in_v1 IS
+BEGIN
+
+  idat <= dat;
+
+END beh;
+
+
+--------> /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_v1.vhd 
+--------------------------------------------------------------------------------
+-- Catapult Synthesis - Sample I/O Port Library
+--
+-- Copyright (c) 2003-2017 Mentor Graphics Corp.
+--       All Rights Reserved
+--
+-- This document may be used and distributed without restriction provided that
+-- this copyright statement is not removed from the file and that any derivative
+-- work contains this copyright notice.
+--
+-- The design information contained in this file is intended to be an example
+-- of the functionality which the end user may study in preparation for creating
+-- their own custom interfaces. This design does not necessarily present a 
+-- complete implementation of the named protocol or standard.
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+PACKAGE ccs_out_pkg_v1 IS
+
+COMPONENT ccs_out_v1
+  GENERIC (
+    rscid    : INTEGER;
+    width    : INTEGER
+  );
+  PORT (
+    dat    : OUT std_logic_vector(width-1 DOWNTO 0);
+    idat   : IN  std_logic_vector(width-1 DOWNTO 0)
+  );
+END COMPONENT;
+
+END ccs_out_pkg_v1;
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all; -- Prevent STARC 2.1.1.2 violation
+
+ENTITY ccs_out_v1 IS
+  GENERIC (
+    rscid : INTEGER;
+    width : INTEGER
+  );
+  PORT (
+    dat   : OUT std_logic_vector(width-1 DOWNTO 0);
+    idat  : IN  std_logic_vector(width-1 DOWNTO 0)
+  );
+END ccs_out_v1;
+
+ARCHITECTURE beh OF ccs_out_v1 IS
+BEGIN
+
+  dat <= idat;
+
+END beh;
+
+
+--------> /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd 
+--------------------------------------------------------------------------------
+-- Catapult Synthesis - Sample I/O Port Library
+--
+-- Copyright (c) 2003-2017 Mentor Graphics Corp.
+--       All Rights Reserved
+--
+-- This document may be used and distributed without restriction provided that
+-- this copyright statement is not removed from the file and that any derivative
+-- work contains this copyright notice.
+--
+-- The design information contained in this file is intended to be an example
+-- of the functionality which the end user may study in preparation for creating
+-- their own custom interfaces. This design does not necessarily present a 
+-- complete implementation of the named protocol or standard.
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+PACKAGE mgc_io_sync_pkg_v2 IS
+
+COMPONENT mgc_io_sync_v2
+  GENERIC (
+    valid    : INTEGER RANGE 0 TO 1
+  );
+  PORT (
+    ld       : IN    std_logic;
+    lz       : OUT   std_logic
+  );
+END COMPONENT;
+
+END mgc_io_sync_pkg_v2;
+
+LIBRARY ieee;
+
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all; -- Prevent STARC 2.1.1.2 violation
+
+ENTITY mgc_io_sync_v2 IS
+  GENERIC (
+    valid    : INTEGER RANGE 0 TO 1
+  );
+  PORT (
+    ld       : IN    std_logic;
+    lz       : OUT   std_logic
+  );
+END mgc_io_sync_v2;
+
+ARCHITECTURE beh OF mgc_io_sync_v2 IS
+BEGIN
+
+  lz <= ld;
+
+END beh;
+
+
+--------> ./rtl.vhdl 
+-- ----------------------------------------------------------------------
+--  HLS HDL:        VHDL Netlister
+--  HLS Version:    10.4a/835166 Production Release
+--  HLS Date:       Thu Sep  5 21:35:46 PDT 2019
+-- 
+--  Generated by:   gel8580@finagle.wot.ece.northwestern.edu
+--  Generated date: Mon Dec  1 01:44:57 2025
+-- ----------------------------------------------------------------------
+
+-- 
+-- ------------------------------------------------------------------
+--  Design Unit:    conv_fixed_core
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_pkg_v1.ALL;
+USE work.ccs_out_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY conv_fixed_core IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    input_rsc_dat : IN STD_LOGIC_VECTOR (143 DOWNTO 0);
+    input_rsc_triosy_lz : OUT STD_LOGIC;
+    output_rsc_dat : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+    output_rsc_triosy_lz : OUT STD_LOGIC;
+    filter_rsc_dat : IN STD_LOGIC_VECTOR (143 DOWNTO 0);
+    filter_rsc_triosy_lz : OUT STD_LOGIC
+  );
+END conv_fixed_core;
+
+ARCHITECTURE v3 OF conv_fixed_core IS
+  -- Default Constants
+
+  -- Interconnect Declarations
+  SIGNAL input_rsci_idat : STD_LOGIC_VECTOR (143 DOWNTO 0);
+  SIGNAL output_rsci_idat : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL filter_rsci_idat : STD_LOGIC_VECTOR (143 DOWNTO 0);
+  SIGNAL output_rsc_triosy_obj_ld : STD_LOGIC;
+  SIGNAL reg_filter_rsc_triosy_obj_ld_cse : STD_LOGIC;
+  SIGNAL sum_8_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_9_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_1_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_2_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_3_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_4_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_5_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_6_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL sum_7_slc_23_8_itm_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+
+  SIGNAL sum_8_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_9_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_1_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_2_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_3_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_4_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_5_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_6_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL sum_7_mul_nl : STD_LOGIC_VECTOR (23 DOWNTO 0);
+  SIGNAL input_rsci_dat : STD_LOGIC_VECTOR (143 DOWNTO 0);
+  SIGNAL input_rsci_idat_1 : STD_LOGIC_VECTOR (143 DOWNTO 0);
+
+  SIGNAL output_rsci_idat_1 : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL output_rsci_dat : STD_LOGIC_VECTOR (15 DOWNTO 0);
+
+  SIGNAL filter_rsci_dat : STD_LOGIC_VECTOR (143 DOWNTO 0);
+  SIGNAL filter_rsci_idat_1 : STD_LOGIC_VECTOR (143 DOWNTO 0);
+
+BEGIN
+  input_rsci : work.ccs_in_pkg_v1.ccs_in_v1
+    GENERIC MAP(
+      rscid => 1,
+      width => 144
+      )
+    PORT MAP(
+      dat => input_rsci_dat,
+      idat => input_rsci_idat_1
+    );
+  input_rsci_dat <= input_rsc_dat;
+  input_rsci_idat <= input_rsci_idat_1;
+
+  output_rsci : work.ccs_out_pkg_v1.ccs_out_v1
+    GENERIC MAP(
+      rscid => 2,
+      width => 16
+      )
+    PORT MAP(
+      idat => output_rsci_idat_1,
+      dat => output_rsci_dat
+    );
+  output_rsci_idat_1 <= output_rsci_idat;
+  output_rsc_dat <= output_rsci_dat;
+
+  filter_rsci : work.ccs_in_pkg_v1.ccs_in_v1
+    GENERIC MAP(
+      rscid => 3,
+      width => 144
+      )
+    PORT MAP(
+      dat => filter_rsci_dat,
+      idat => filter_rsci_idat_1
+    );
+  filter_rsci_dat <= filter_rsc_dat;
+  filter_rsci_idat <= filter_rsci_idat_1;
+
+  input_rsc_triosy_obj : work.mgc_io_sync_pkg_v2.mgc_io_sync_v2
+    GENERIC MAP(
+      valid => 0
+      )
+    PORT MAP(
+      ld => reg_filter_rsc_triosy_obj_ld_cse,
+      lz => input_rsc_triosy_lz
+    );
+  output_rsc_triosy_obj : work.mgc_io_sync_pkg_v2.mgc_io_sync_v2
+    GENERIC MAP(
+      valid => 0
+      )
+    PORT MAP(
+      ld => output_rsc_triosy_obj_ld,
+      lz => output_rsc_triosy_lz
+    );
+  filter_rsc_triosy_obj : work.mgc_io_sync_pkg_v2.mgc_io_sync_v2
+    GENERIC MAP(
+      valid => 0
+      )
+    PORT MAP(
+      ld => reg_filter_rsc_triosy_obj_ld_cse,
+      lz => filter_rsc_triosy_lz
+    );
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        output_rsc_triosy_obj_ld <= '0';
+        sum_8_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_9_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_1_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_2_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_3_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_4_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_5_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_6_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        sum_7_slc_23_8_itm_1 <= STD_LOGIC_VECTOR'( "0000000000000000");
+        reg_filter_rsc_triosy_obj_ld_cse <= '0';
+      ELSE
+        output_rsc_triosy_obj_ld <= reg_filter_rsc_triosy_obj_ld_cse;
+        sum_8_slc_23_8_itm_1 <= sum_8_mul_nl(23 DOWNTO 8);
+        sum_9_slc_23_8_itm_1 <= sum_9_mul_nl(23 DOWNTO 8);
+        sum_1_slc_23_8_itm_1 <= sum_1_mul_nl(23 DOWNTO 8);
+        sum_2_slc_23_8_itm_1 <= sum_2_mul_nl(23 DOWNTO 8);
+        sum_3_slc_23_8_itm_1 <= sum_3_mul_nl(23 DOWNTO 8);
+        sum_4_slc_23_8_itm_1 <= sum_4_mul_nl(23 DOWNTO 8);
+        sum_5_slc_23_8_itm_1 <= sum_5_mul_nl(23 DOWNTO 8);
+        sum_6_slc_23_8_itm_1 <= sum_6_mul_nl(23 DOWNTO 8);
+        sum_7_slc_23_8_itm_1 <= sum_7_mul_nl(23 DOWNTO 8);
+        reg_filter_rsc_triosy_obj_ld_cse <= '1';
+      END IF;
+    END IF;
+  END PROCESS;
+  PROCESS (clk)
+  BEGIN
+    IF clk'EVENT AND ( clk = '1' ) THEN
+      IF (rst = '1') THEN
+        output_rsci_idat <= STD_LOGIC_VECTOR'( "0000000000000000");
+      ELSIF ( reg_filter_rsc_triosy_obj_ld_cse = '1' ) THEN
+        output_rsci_idat <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED(sum_4_slc_23_8_itm_1)
+            + SIGNED(sum_5_slc_23_8_itm_1) + SIGNED(sum_1_slc_23_8_itm_1) + SIGNED(sum_8_slc_23_8_itm_1)
+            + SIGNED(sum_9_slc_23_8_itm_1) + SIGNED(sum_2_slc_23_8_itm_1) + SIGNED(sum_3_slc_23_8_itm_1)
+            + SIGNED(sum_6_slc_23_8_itm_1) + SIGNED(sum_7_slc_23_8_itm_1), 16));
+      END IF;
+    END IF;
+  END PROCESS;
+  sum_8_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(127
+      DOWNTO 112)) * SIGNED(input_rsci_idat(127 DOWNTO 112))), 24));
+  sum_9_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(143
+      DOWNTO 128)) * SIGNED(input_rsci_idat(143 DOWNTO 128))), 24));
+  sum_1_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(15
+      DOWNTO 0)) * SIGNED(input_rsci_idat(15 DOWNTO 0))), 24));
+  sum_2_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(31
+      DOWNTO 16)) * SIGNED(input_rsci_idat(31 DOWNTO 16))), 24));
+  sum_3_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(47
+      DOWNTO 32)) * SIGNED(input_rsci_idat(47 DOWNTO 32))), 24));
+  sum_4_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(63
+      DOWNTO 48)) * SIGNED(input_rsci_idat(63 DOWNTO 48))), 24));
+  sum_5_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(79
+      DOWNTO 64)) * SIGNED(input_rsci_idat(79 DOWNTO 64))), 24));
+  sum_6_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(95
+      DOWNTO 80)) * SIGNED(input_rsci_idat(95 DOWNTO 80))), 24));
+  sum_7_mul_nl <= STD_LOGIC_VECTOR(CONV_SIGNED(SIGNED'( SIGNED(filter_rsci_idat(111
+      DOWNTO 96)) * SIGNED(input_rsci_idat(111 DOWNTO 96))), 24));
+END v3;
+
+-- ------------------------------------------------------------------
+--  Design Unit:    conv_fixed
+-- ------------------------------------------------------------------
+
+LIBRARY IEEE;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+USE work.ccs_in_pkg_v1.ALL;
+USE work.ccs_out_pkg_v1.ALL;
+USE work.mgc_io_sync_pkg_v2.ALL;
+
+
+ENTITY conv_fixed IS
+  PORT(
+    clk : IN STD_LOGIC;
+    rst : IN STD_LOGIC;
+    input_rsc_dat : IN STD_LOGIC_VECTOR (143 DOWNTO 0);
+    input_rsc_triosy_lz : OUT STD_LOGIC;
+    output_rsc_dat : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+    output_rsc_triosy_lz : OUT STD_LOGIC;
+    filter_rsc_dat : IN STD_LOGIC_VECTOR (143 DOWNTO 0);
+    filter_rsc_triosy_lz : OUT STD_LOGIC
+  );
+END conv_fixed;
+
+ARCHITECTURE v3 OF conv_fixed IS
+  -- Default Constants
+
+  COMPONENT conv_fixed_core
+    PORT(
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      input_rsc_dat : IN STD_LOGIC_VECTOR (143 DOWNTO 0);
+      input_rsc_triosy_lz : OUT STD_LOGIC;
+      output_rsc_dat : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+      output_rsc_triosy_lz : OUT STD_LOGIC;
+      filter_rsc_dat : IN STD_LOGIC_VECTOR (143 DOWNTO 0);
+      filter_rsc_triosy_lz : OUT STD_LOGIC
+    );
+  END COMPONENT;
+  SIGNAL conv_fixed_core_inst_input_rsc_dat : STD_LOGIC_VECTOR (143 DOWNTO 0);
+  SIGNAL conv_fixed_core_inst_output_rsc_dat : STD_LOGIC_VECTOR (15 DOWNTO 0);
+  SIGNAL conv_fixed_core_inst_filter_rsc_dat : STD_LOGIC_VECTOR (143 DOWNTO 0);
+
+BEGIN
+  conv_fixed_core_inst : conv_fixed_core
+    PORT MAP(
+      clk => clk,
+      rst => rst,
+      input_rsc_dat => conv_fixed_core_inst_input_rsc_dat,
+      input_rsc_triosy_lz => input_rsc_triosy_lz,
+      output_rsc_dat => conv_fixed_core_inst_output_rsc_dat,
+      output_rsc_triosy_lz => output_rsc_triosy_lz,
+      filter_rsc_dat => conv_fixed_core_inst_filter_rsc_dat,
+      filter_rsc_triosy_lz => filter_rsc_triosy_lz
+    );
+  conv_fixed_core_inst_input_rsc_dat <= input_rsc_dat;
+  output_rsc_dat <= conv_fixed_core_inst_output_rsc_dat;
+  conv_fixed_core_inst_filter_rsc_dat <= filter_rsc_dat;
+
+END v3;
+
+
+

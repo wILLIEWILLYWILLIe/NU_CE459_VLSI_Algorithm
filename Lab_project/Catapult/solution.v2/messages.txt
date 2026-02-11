@@ -1,0 +1,20 @@
+
+# Messages from "go new"
+
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+
+# Messages from "go analyze"
+
+# Error: Compilation aborted (CIN-5)
+solution file add ./conv.cpp -type C++
+Moving session transcript to file "/home/gel8580/CE459/Lab_project/catapult.log"
+/INPUTFILES/1
+Front End called with arguments: -- /home/gel8580/CE459/Lab_project/conv.cpp /home/gel8580/CE459/Lab_project/conv.h (CIN-69)
+/INPUTFILES/2
+solution options defaults
+solution.v2
+solution file add ./conv.h -type CHEADER
+# Error: expected a file name (CRD-13)
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+go analyze

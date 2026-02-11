@@ -1,0 +1,418 @@
+//  Catapult Ultra Synthesis 10.4a/835166 (Production Release) Thu Sep  5 21:35:46 PDT 2019
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2019, All Rights Reserved.
+//                        UNPUBLISHED, LICENSED SOFTWARE.
+//             CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//                 PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux gel8580@finagle.wot.ece.northwestern.edu 4.18.0-553.78.1.el8_10.x86_64 x86_64 aol
+//  
+//  Package information: SIFLIBS v23.4_1.0, HLS_PKGS v23.4_1.0, 
+//                       SIF_TOOLKITS v23.4_1.0, SIF_XILINX v23.4_1.0, 
+//                       SIF_ALTERA v23.4_1.0, CCS_LIBS v23.4_1.0, 
+//                       CDS_PPRO v10.3a_3, CDS_DesigChecker v10.4a, 
+//                       CDS_OASYS v19.1_2.4, CDS_PSR v19.1_1.16, 
+//                       DesignPad v2.78_1.0
+//  
+//  Start time Wed Oct 29 20:04:22 2025
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log3247825681b99e1.0"
+dofile /home/gel8580/CE459/Lab2/directives.tcl
+dofile /home/gel8580/CE459/Lab2/directives.tcl
+# > solution new -state initial
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# solution.v2
+# > solution options defaults
+# > solution options set /Input/CppStandard c++11
+# c++11
+# > solution options set /Output/GenerateCycleNetlist false
+# false
+# > flow package require /SCVerify
+# 10.4
+# > solution options set /Flows/SCVerify/USE_CCS_BLOCK true
+# true
+# > flow package option set /SCVerify/USE_NCSIM true
+# true
+# > flow package option set /SCVerify/USE_VCS true
+# true
+# > solution file add ./tb.cpp -type C++ -exclude true
+# /INPUTFILES/1
+# > solution file add ./mult_add_pipeline_ref.cpp -type C++ -exclude true
+# /INPUTFILES/2
+# > solution file add ./mult_add_pipeline.cpp -type C++
+# /INPUTFILES/3
+# > go new
+# > directive set -DESIGN_GOAL area
+# /DESIGN_GOAL area
+# > directive set -SPECULATE true
+# /SPECULATE true
+# > directive set -MERGEABLE true
+# /MERGEABLE true
+# > directive set -REGISTER_THRESHOLD 256
+# /REGISTER_THRESHOLD 256
+# > directive set -MEM_MAP_THRESHOLD 32
+# /MEM_MAP_THRESHOLD 32
+# > directive set -LOGIC_OPT false
+# /LOGIC_OPT false
+# > directive set -FSM_ENCODING none
+# /FSM_ENCODING none
+# > directive set -FSM_BINARY_ENCODING_THRESHOLD 64
+# /FSM_BINARY_ENCODING_THRESHOLD 64
+# > directive set -REG_MAX_FANOUT 0
+# /REG_MAX_FANOUT 0
+# > directive set -NO_X_ASSIGNMENTS true
+# /NO_X_ASSIGNMENTS true
+# > directive set -SAFE_FSM false
+# /SAFE_FSM false
+# > directive set -REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+# /REGISTER_SHARING_MAX_WIDTH_DIFFERENCE 8
+# > directive set -REGISTER_SHARING_LIMIT 0
+# /REGISTER_SHARING_LIMIT 0
+# > directive set -ASSIGN_OVERHEAD 0
+# /ASSIGN_OVERHEAD 0
+# > directive set -TIMING_CHECKS true
+# /TIMING_CHECKS true
+# > directive set -MUXPATH true
+# /MUXPATH true
+# > directive set -REALLOC true
+# /REALLOC true
+# > directive set -UNROLL no
+# /UNROLL no
+# > directive set -IO_MODE super
+# /IO_MODE super
+# > directive set -CHAN_IO_PROTOCOL standard
+# /CHAN_IO_PROTOCOL standard
+# > directive set -ARRAY_SIZE 1024
+# /ARRAY_SIZE 1024
+# > directive set -REGISTER_IDLE_SIGNAL false
+# /REGISTER_IDLE_SIGNAL false
+# > directive set -IDLE_SIGNAL {}
+# /IDLE_SIGNAL {}
+# > directive set -STALL_FLAG false
+# /STALL_FLAG false
+# > directive set -TRANSACTION_DONE_SIGNAL true
+# /TRANSACTION_DONE_SIGNAL true
+# > directive set -DONE_FLAG {}
+# /DONE_FLAG {}
+# > directive set -READY_FLAG {}
+# /READY_FLAG {}
+# > directive set -START_FLAG {}
+# /START_FLAG {}
+# > directive set -BLOCK_SYNC none
+# /BLOCK_SYNC none
+# > directive set -TRANSACTION_SYNC ready
+# /TRANSACTION_SYNC ready
+# > directive set -DATA_SYNC none
+# /DATA_SYNC none
+# > directive set -RESET_CLEARS_ALL_REGS true
+# Warning: Boolean directive values of RESET_CLEARS_ALL_REGS directive is deprecated (SIF-24)
+# /RESET_CLEARS_ALL_REGS yes
+# > directive set -CLOCK_OVERHEAD 20.000000
+# /CLOCK_OVERHEAD 20.000000
+# > directive set -OPT_CONST_MULTS use_library
+# /OPT_CONST_MULTS use_library
+# > directive set -CHARACTERIZE_ROM false
+# /CHARACTERIZE_ROM false
+# > directive set -PROTOTYPE_ROM true
+# /PROTOTYPE_ROM true
+# > directive set -ROM_THRESHOLD 64
+# /ROM_THRESHOLD 64
+# > directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# /CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# > directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+# /CLUSTER_OPT_CONSTANT_INPUTS true
+# > directive set -CLUSTER_RTL_SYN false
+# /CLUSTER_RTL_SYN false
+# > directive set -CLUSTER_FAST_MODE false
+# /CLUSTER_FAST_MODE false
+# > directive set -CLUSTER_TYPE combinational
+# /CLUSTER_TYPE combinational
+# > directive set -COMPGRADE fast
+# /COMPGRADE fast
+# > directive set -PIPELINE_RAMP_UP true
+# /PIPELINE_RAMP_UP true
+# > go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Moving session transcript to file "/home/gel8580/CE459/Lab2/catapult.log"
+# Front End called with arguments: -- /home/gel8580/CE459/Lab2/mult_add_pipeline.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 5.0 (CIN-1)
+# $PROJECT_HOME/mult_add_pipeline.cpp(4): Pragma 'hls_design<top>' detected on routine 'mult_add_pipeline' (CIN-6)
+# solution design add mult_add_pipeline -type top -unlocked (HC-1)
+# Source file analysis completed (CIN-68)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 0.89 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# > directive set -DESIGN_HIERARCHY mult_add_pipeline
+# /DESIGN_HIERARCHY mult_add_pipeline
+# > go compile
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Found top design routine 'mult_add_pipeline' specified by directive (CIN-52)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Found top design routine 'mult_add_pipeline' specified by directive (CIN-52)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Synthesizing routine 'mult_add_pipeline' (CIN-13)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Inlining routine 'mult_add_pipeline' (CIN-14)
+# $MGC_HOME/shared/include/ac_fixed.h(1295): Inlining routine 'operator*<10, 2, true, AC_TRN, AC_WRAP, 26, false>' (CIN-14)
+# $MGC_HOME/shared/include/ac_int.h(2744): Inlining routine 'operator<<<30, false>' (CIN-14)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Optimizing block '/mult_add_pipeline' ... (CIN-4)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): INOUT port 'a' is only used as an input. (OPT-10)
+# $PROJECT_HOME/mult_add_pipeline.cpp(6): INOUT port 'b' is only used as an input. (OPT-10)
+# $PROJECT_HOME/mult_add_pipeline.cpp(7): INOUT port 'c' is only used as an input. (OPT-10)
+# $PROJECT_HOME/mult_add_pipeline.cpp(9): INOUT port 'result' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 20, Real ops = 4, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 20, Real ops = 4, Vars = 14) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 21, Real ops = 4, Vars = 13) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 21, Real ops = 4, Vars = 19) (SOL-10)
+# Info: $MGC_HOME/shared/include/ac_fixed.h(1295): Splitting object 'operator*<10,2,true,AC_TRN,AC_WRAP,26,false>:return' into 3 segments (OPT-19)
+# Info: $MGC_HOME/shared/include/ac_int.h(1925): Splitting object 'ac_int:cctor' into 2 segments (OPT-19)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 21, Real ops = 4, Vars = 15) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 14, Real ops = 3, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 14, Real ops = 3, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 14, Real ops = 3, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 14, Real ops = 3, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 14, Real ops = 3, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 14, Real ops = 3, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 14, Real ops = 3, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 14, Real ops = 3, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 14, Real ops = 3, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 14, Real ops = 3, Vars = 11) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 14, Real ops = 3, Vars = 5) (SOL-10)
+# Design 'mult_add_pipeline' was read (SOL-1)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: CDesignChecker Shell script written to '/home/gel8580/CE459/Lab2/Catapult_1/mult_add_pipeline.v1/CDesignChecker/design_checker.sh'
+# Info: Completed transformation 'compile' on solution 'mult_add_pipeline.v1': elapsed time 0.57 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# > solution library add nangate-45nm_beh -file {$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib} -- -rtlsyntool OasysRTL
+# > go libraries
+# Info: Starting transformation 'libraries' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/ccs_ioport.lib' [ccs_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/nangate/nangate-45nm_beh.lib' [nangate-45nm_beh]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+# Warning: No Process Technology File (PTF) technology libraries have been specified (LIB-192)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Info: Completed transformation 'libraries' on solution 'mult_add_pipeline.v1': elapsed time 0.21 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# > directive set -CLOCKS {clk {-CLOCK_PERIOD 1.11 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 0.555 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# /CLOCKS {clk {-CLOCK_PERIOD 1.11 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 0.555 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# > go assembly
+# Info: Starting transformation 'assembly' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 15, Real ops = 4, Vars = 13) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 15, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'mult_add_pipeline.v1': elapsed time 0.02 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# > directive set /mult_add_pipeline/core -DESIGN_GOAL area
+# /mult_add_pipeline/core/DESIGN_GOAL area
+# > directive set /mult_add_pipeline/result:rsc -MAP_TO_MODULE ccs_ioport.ccs_out_wait
+# /mult_add_pipeline/result:rsc/MAP_TO_MODULE ccs_ioport.ccs_out_wait
+# > directive set /mult_add_pipeline/gain_adjust:rsc -MAP_TO_MODULE ccs_ioport.ccs_in
+# /mult_add_pipeline/gain_adjust:rsc/MAP_TO_MODULE ccs_ioport.ccs_in
+# > directive set /mult_add_pipeline/gain:rsc -MAP_TO_MODULE ccs_ioport.ccs_in
+# /mult_add_pipeline/gain:rsc/MAP_TO_MODULE ccs_ioport.ccs_in
+# > directive set /mult_add_pipeline/core/main -PIPELINE_INIT_INTERVAL 1
+# /mult_add_pipeline/core/main/PIPELINE_INIT_INTERVAL 1
+# > directive set /mult_add_pipeline/a:rsc -MAP_TO_MODULE ccs_ioport.ccs_in_wait
+# /mult_add_pipeline/a:rsc/MAP_TO_MODULE ccs_ioport.ccs_in_wait
+# > directive set /mult_add_pipeline/b:rsc -MAP_TO_MODULE ccs_ioport.ccs_in_wait
+# /mult_add_pipeline/b:rsc/MAP_TO_MODULE ccs_ioport.ccs_in_wait
+# > directive set /mult_add_pipeline/c:rsc -MAP_TO_MODULE ccs_ioport.ccs_in_wait
+# /mult_add_pipeline/c:rsc/MAP_TO_MODULE ccs_ioport.ccs_in_wait
+# > directive set /mult_add_pipeline/core/main -PIPELINE_STALL_MODE stall
+# /mult_add_pipeline/core/main/PIPELINE_STALL_MODE stall
+# > go architect
+# Info: Starting transformation 'loops' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 19, Real ops = 4, Vars = 5) (SOL-10)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Loop '/mult_add_pipeline/core/main' is left rolled. (LOOP-4)
+# Info: Completed transformation 'loops' on solution 'mult_add_pipeline.v1': elapsed time 0.01 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'mult_add_pipeline.v1' (SOL-8)
+# $PROJECT_HOME/mult_add_pipeline.cpp(8): I/O-Port Resource '/mult_add_pipeline/gain:rsc' (from var: gain) mapped to 'ccs_ioport.ccs_in' (size: 10). (MEM-2)
+# $PROJECT_HOME/mult_add_pipeline.cpp(8): I/O-Port Resource '/mult_add_pipeline/gain_adjust:rsc' (from var: gain_adjust) mapped to 'ccs_ioport.ccs_in' (size: 1). (MEM-2)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 21, Real ops = 4, Vars = 15) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 21, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 20, Real ops = 4, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 20, Real ops = 4, Vars = 15) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'mult_add_pipeline.v1': elapsed time 0.03 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'mult_add_pipeline.v1': elapsed time 0.02 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 60, Real ops = 6, Vars = 29) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/core': (Total ops = 22, Real ops = 5, Vars = 7) (SOL-10)
+# Design 'mult_add_pipeline' contains '5' real operations. (SOL-11)
+# Info: Completed transformation 'architect' on solution 'mult_add_pipeline.v1': elapsed time 0.02 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# > go extract
+# Info: Starting transformation 'allocate' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/mult_add_pipeline/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Prescheduled LOOP '/mult_add_pipeline/core/main' (4 c-steps) (SCHD-7)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Prescheduled LOOP '/mult_add_pipeline/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/mult_add_pipeline.cpp(5): Prescheduled SEQUENTIAL '/mult_add_pipeline/core' (total length 5 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(5): Initial schedule of SEQUENTIAL '/mult_add_pipeline/core': Latency = 3, Area (Datapath, Register, Total) = 3363.21, 624.75, 3987.96 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/mult_add_pipeline/core/main': Latency = 3, Area (Datapath, Register, Total) = 3262.92, 624.75, 3887.67 (CRAAS-10)
+# Info: Optimized LOOP '/mult_add_pipeline/core/main': Latency = 3, Area (Datapath, Register, Total) = 3215.43, 624.75, 3840.18 (CRAAS-10)
+# Info: Optimized LOOP '/mult_add_pipeline/core/main': Latency = 4, Area (Datapath, Register, Total) = 2826.79, 962.62, 3789.42 (CRAAS-10)
+# Info: Optimized LOOP '/mult_add_pipeline/core/main': Latency = 4, Area (Datapath, Register, Total) = 2797.24, 962.62, 3759.87 (CRAAS-10)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(5): Final schedule of SEQUENTIAL '/mult_add_pipeline/core': Latency = 4, Area (Datapath, Register, Total) = 2797.24, 962.62, 3759.87 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'mult_add_pipeline.v1': elapsed time 0.05 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/mult_add_pipeline/core' (CRAAS-1)
+# Global signal 'a:rsc.rdy' added to design 'mult_add_pipeline' for component 'a:rsci' (LIB-3)
+# Global signal 'a:rsc.vld' added to design 'mult_add_pipeline' for component 'a:rsci' (LIB-3)
+# Global signal 'a:rsc.dat' added to design 'mult_add_pipeline' for component 'a:rsci' (LIB-3)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(11): Creating buffer for wait controller for component 'a:rsc' (SCHD-46)
+# Global signal 'b:rsc.rdy' added to design 'mult_add_pipeline' for component 'b:rsci' (LIB-3)
+# Global signal 'b:rsc.vld' added to design 'mult_add_pipeline' for component 'b:rsci' (LIB-3)
+# Global signal 'b:rsc.dat' added to design 'mult_add_pipeline' for component 'b:rsci' (LIB-3)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(11): Creating buffer for wait controller for component 'b:rsc' (SCHD-46)
+# Global signal 'c:rsc.rdy' added to design 'mult_add_pipeline' for component 'c:rsci' (LIB-3)
+# Global signal 'c:rsc.vld' added to design 'mult_add_pipeline' for component 'c:rsci' (LIB-3)
+# Global signal 'c:rsc.dat' added to design 'mult_add_pipeline' for component 'c:rsci' (LIB-3)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(12): Creating buffer for wait controller for component 'c:rsc' (SCHD-46)
+# Global signal 'gain:rsc.dat' added to design 'mult_add_pipeline' for component 'gain:rsci' (LIB-3)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(8): Creating buffer for wait controller for component 'gain:rsc' (SCHD-46)
+# Global signal 'gain_adjust:rsc.dat' added to design 'mult_add_pipeline' for component 'gain_adjust:rsci' (LIB-3)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(14): Creating buffer for wait controller for component 'gain_adjust:rsc' (SCHD-46)
+# Global signal 'result:rsc.rdy' added to design 'mult_add_pipeline' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.vld' added to design 'mult_add_pipeline' for component 'result:rsci' (LIB-3)
+# Global signal 'result:rsc.dat' added to design 'mult_add_pipeline' for component 'result:rsci' (LIB-3)
+# Global signal 'gain:rsc.triosy.lz' added to design 'mult_add_pipeline' for component 'gain:rsc.triosy:obj' (LIB-3)
+# Global signal 'gain_adjust:rsc.triosy.lz' added to design 'mult_add_pipeline' for component 'gain_adjust:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(5): Loop '/mult_add_pipeline/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 481, Real ops = 96, Vars = 363) (SOL-10)
+# Info: $PROJECT_HOME/mult_add_pipeline.cpp(9): Splitting object 'result:rsci.idat' into 2 segments (OPT-19)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 108, Real ops = 5, Vars = 27) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 100, Real ops = 5, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 97, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 416, Real ops = 62, Vars = 322) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 97, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 379, Real ops = 62, Vars = 292) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 97, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 355, Real ops = 58, Vars = 268) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 97, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 345, Real ops = 58, Vars = 260) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 97, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 341, Real ops = 58, Vars = 256) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 97, Real ops = 5, Vars = 20) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 89, Real ops = 5, Vars = 18) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 333, Real ops = 58, Vars = 254) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'mult_add_pipeline.v1': elapsed time 0.38 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/core': (Total ops = 124, Real ops = 5, Vars = 18) (SOL-10)
+# Creating shared register 'sum.sva#1.1' for variables 'sum.sva#1.1, sum.sva.2' (1 register deleted). (FSM-2)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 346, Real ops = 98, Vars = 319) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 298, Real ops = 89, Vars = 251) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 266, Real ops = 75, Vars = 217) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 260, Real ops = 75, Vars = 217) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 260, Real ops = 75, Vars = 217) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 260, Real ops = 75, Vars = 217) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 260, Real ops = 75, Vars = 217) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 260, Real ops = 71, Vars = 217) (SOL-10)
+# Warning: Extrapolation detected. Script '/home/gel8580/CE459/Lab2/Catapult_1/mult_add_pipeline.v1/adjust_char_library.tcl' generated. (LIB-142)
+# Info: Completed transformation 'dpfsm' on solution 'mult_add_pipeline.v1': elapsed time 0.20 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 268, Real ops = 76, Vars = 260) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 260, Real ops = 75, Vars = 219) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 259, Real ops = 74, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 258, Real ops = 74, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 221) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'mult_add_pipeline.v1': elapsed time 0.38 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'mult_add_pipeline.v1' (SOL-8)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 253) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 262, Real ops = 77, Vars = 220) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 262, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline': (Total ops = 261, Real ops = 77, Vars = 218) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 5) (SOL-10)
+# Info: Optimizing partition '/mult_add_pipeline/mult_add_pipeline:core/mult_add_pipeline:core_core:fsm/mult_add_pipeline:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Generating scverify_top.cpp
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /home/gel8580/CE459/Lab2/Catapult_1/mult_add_pipeline.v1/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.vhd
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab2/Catapult_1/mult_add_pipeline.v1/concat_sim_rtl.vhdl
+# Generating SCVerify testbench files
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_ncsim.mk'
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_vcs.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_ncsim.mk'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_vcs.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /home/gel8580/CE459/Lab2/Catapult_1/mult_add_pipeline.v1/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_out_wait_v1.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/mgc_io_sync_v2.v
+# Add dependent file: /vol/mentor/Catapult_Synthesis_10.4a/Mgc_home/pkgs/siflibs/ccs_in_v1.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /home/gel8580/CE459/Lab2/Catapult_1/mult_add_pipeline.v1/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_ncsim.mk'
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_vcs.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_ncsim.mk'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_vcs.mk'
+# Info: Completed transformation 'extract' on solution 'mult_add_pipeline.v1': elapsed time 2.98 seconds, memory usage 1359488kB, peak memory usage 1359488kB (SOL-9)
+# > end dofile /home/gel8580/CE459/Lab2/directives.tcl
+flow run /DesignAnalyzer/launch
+flow run /DesignAnalyzer/launch
+quit
+# Saving project file '/home/gel8580/CE459/Lab2/Catapult_1.ccs'. (PRJ-5)
+// Finish time Wed Oct 29 20:23:40 2025, time elapsed 19:18, peak memory 1.30GB, exit status 0
